@@ -1,17 +1,17 @@
 #### FizzBuzz
 
 ```typescript
-@import "../obligatory/fizzBuzz.ts";
+@import "./fizzBuzz.ts";
 ```
 
 #### Fibonacci (Iterative)
 
 ```typescript
-@import "../obligatory/iterativeFibonacci.ts";
+@import "./iterativeFibonacci.ts";
 ```
 
 #### Fibonacci (Recursive)
 
 ```typescript
-@import "../obligatory/recursiveFibonacci.ts";
+@import "./recursiveFibonacci.ts";
 ```

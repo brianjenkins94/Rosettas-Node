@@ -14,20 +14,25 @@ const inputFileReadStream = createInterface({
 
 const writeStream = fs.createWriteStream(outputFile);
 
-inputFileReadStream.on("line", function readLine(line, readStream = inputFileReadStream) {
+inputFileReadStream.on("line", function readLine(line, parentReadStream = inputFileReadStream, cwd = path.dirname(inputFile)) {
 	if (line.startsWith("@import") === true) {
-		readStream.pause();
+		parentReadStream.pause();
 
-		const childReadStream = createInterface({
-			"input": fs.createReadStream(path.resolve(path.dirname(inputFile), line.substring(line.indexOf("\"") + 1, line.lastIndexOf("\""))), { "highWaterMark": 1 })
+		const parsedPath = path.parse(line.substring(line.indexOf("\"") + 1, line.lastIndexOf("\"")));
+		const pathFragment = parsedPath.dir;
+		const fileName = parsedPath.base;
+		const filePath = path.join(cwd, pathFragment);
+
+		const readStream = createInterface({
+			"input": fs.createReadStream(path.join(filePath, fileName), { "highWaterMark": 1 })
 		});
 
-		childReadStream.on("line", function(line) {
-			readLine(line, childReadStream);
+		readStream.on("line", function(line) {
+			readLine(line, readStream, filePath);
 		});
 
-		childReadStream.on("close", function() {
-			readStream.resume();
+		readStream.on("close", function() {
+			parentReadStream.resume();
 		});
 	} else {
 		writeStream.write(line + "\n");
