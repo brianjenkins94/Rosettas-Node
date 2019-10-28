@@ -61,9 +61,9 @@ inputFileReadStream.on("line", function readLine(line, parentReadStream = inputF
 			let indentationLevel = 5;
 
 			for (const [index, { depth, id, name }] of tableOfContents.entries()) {
-				if (index === 0 || depth === tableOfContents[index - 1].depth) {
+				if (index === 0 || tableOfContents[index - 1].depth === depth) {
 					orderedList += "\t".repeat(indentationLevel) + "<li><a href=\"#" + id + "\">" + name + "</a></li>\n";
-				} else if (depth > tableOfContents[index - 1].depth) {
+				} else if (tableOfContents[index - 1].depth < depth) {
 					orderedList += "\t".repeat(indentationLevel) + "<ol>\n" + "\t".repeat(indentationLevel += 1) + "<li><a href=\"#" + id + "\">" + name + "</a></li>\n";
 				} else {
 					orderedList += "\t".repeat(indentationLevel) + "<li><a href=\"#" + id + "\">" + name + "</a></li>\n" + "\t".repeat(indentationLevel -= 1) + "</ol>\n";
