@@ -17,15 +17,15 @@
   },
   "homepage": "https://github.com/brianjenkins94/Rosettas-Node#readme",
   "dependencies": {
-    "minimist": "^1.2.0",
-    "ts-node": "^8.4.1",
-    "typescript": "^3.6.4"
+    "minimist": "latest",
+    "ts-node": "latest",
+    "typescript": "latest"
   },
   "devDependencies": {
-    "@types/minimist": "^1.2.0",
-    "@types/node": "^12.11.1",
-    "@typescript-eslint/eslint-plugin": "^2.4.0",
-    "@typescript-eslint/parser": "^2.4.0",
-    "eslint": "^6.5.1"
+    "@types/minimist": "latest",
+    "@types/node": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "eslint": "latest"
   }
 }
