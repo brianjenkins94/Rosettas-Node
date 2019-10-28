@@ -4,33 +4,7 @@
 
 > Interesting problems. Quickly described.
 
-<table>
-	<thead>
-		<tr>
-			<th align="center"><strong>Contents</strong></th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				<ol>
-					<li><a href="#obligatory">Obligatory</a></li>
-					<ol>
-						<li><a href="#fizzbuzz">FizzBuzz</a></li>
-						<li><a href="#fibonacci-_iterative_">Fibonacci (Iterative)</a></li>
-						<li><a href="#fibonacci-recursive_">Fibonacci (Recursive)</a></li>
-					</ol>
-                    <li><a href="#second-category">Second Caregory</a></li>
-					<ol>
-						<li><a href="#item">Item</a></li>
-					</ol>
-					<li><a href="#acknowledgements">Acknowledgements</a></li>
-					<li><a href="#license">License</a></li>
-				</ol>
-			</td>
-		</tr>
-	</tbody>
-</table>
+@invoke toc();
 
 ### Obligatory
 

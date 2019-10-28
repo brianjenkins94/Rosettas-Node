@@ -1,3 +1,5 @@
+@invoke toc();
+
 #### FizzBuzz
 
 ```typescript
