@@ -1,6 +1,4 @@
 function fibonacci(n) {
-	console.log(n);
-
 	if (n < 2) {
 		return n;
 	}

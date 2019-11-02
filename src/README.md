@@ -6,13 +6,21 @@
 
 @invoke toc();
 
+<hr>
+
 ### Obligatory
 
 @import "../obligatory/README.md";
 
-### Second Category
+<hr>
 
-#### Item
+### Interesting
+
+<hr>
+
+### Involved
+
+<hr>
 
 ### Acknowledgements
 
