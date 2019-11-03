@@ -29,6 +29,8 @@
 
 ### Obligatory
 
+These are the problems that have been "done to death". Anything that was once interesting about these problems has since been squashed by their repetition. With that said, this collection wouldn't be complete without them.
+
 <table>
 	<thead>
 		<tr>
@@ -253,9 +255,539 @@ for (let x = 2010; x <= 2020; x++) {
 
 ### Interesting
 
+<table>
+	<thead>
+		<tr>
+			<th align="center"><strong>Contents</strong></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<ol>
+					<li><a href="#abbreviations">Abbreviations</a></li>
+					<li><a href="#letter-blocks">Letter Blocks</a></li>
+					<li><a href="#align-columns">Align Columns</a></li>
+					<li><a href="#almost-prime">Almost Prime</a></li>
+					<li><a href="#balanced-brackets">Balanced Brackets</a></li>
+					<li><a href="#caesar-cipher">Caesar Cipher</a></li>
+					<li><a href="#calendar">Calendar</a></li>
+					<li><a href="#catalan-numbers">Catalan Numbers</a></li>
+					<li><a href="#chaocipher">Chaocipher</a></li>
+					<li><a href="#recursion-limit">Recursion Limit</a></li>
+					<li><a href="#history-variables">History Variables</a></li>
+					<li><a href="#last-letter-first-letter">Last Letter-First Letter</a></li>
+					<li><a href="#linear-congruential-generator">Linear Congruential Generator</a></li>
+					<li><a href="#ordered-words">Ordered Words</a></li>
+					<li><a href="#pangram-checker">Pangram Checker</a></li>
+					<li><a href="#pascals-triangle">Pascal's Triangle</a></li>
+					<li><a href="#pascals-triangle-puzzle">Pascal's Triangle Puzzle</a></li>
+					<li><a href="#international-bank-account-number-iban-validator">International Bank Account Number (IBAN) Validator</a></li>
+					<li><a href="#luhn-algorithm">Luhn Algorithm</a></li>
+					<li><a href="#maximum-triangle-path-sum">Maximum Triangle Path Sum</a></li>
+				</ol>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+#### Abbreviations
+
+-   Write a function to find the minimum, _fixed-length_ abbreviation for an array that would preserve each element's uniqueness.
+
+**Solution:**
+
+```typescript
+const arrays = [
+	["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+	["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+	["dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
+	["domenica", "lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato"],
+	["duminica", "luni", "marti", "miercuri", "joi", "vineri", "sambata"]
+];
+
+function getMinimumLengthUniqueAbbreviations(array) {
+	const longestStringLength = array.sort(function(a, b) { return b.length - a.length; })[0].length;
+
+	for (let x = longestStringLength; x >= 1; x--) {
+		let tempObject = {};
+
+		for (let string of array) {
+			tempObject[string.substring(0, x)] = undefined;
+		}
+
+		if (Object.keys(tempObject).length === array.length) {
+			array = Object.keys(tempObject);
+		}
+	}
+
+	return array;
+}
+
+for (const array of arrays) {
+	console.log("[\"" + array.join("\", \"") + "\"] can be abbreviated to [\"" + getMinimumLengthUniqueAbbreviations(array).join("\", \"") + "\"]");
+}
+```
+
+**Sample Output:**
+
+```
+["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] can be abbreviated to ["We", "Th", "Sa", "Tu", "Su", "Mo", "Fr"]
+["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"] can be abbreviated to ["Mi", "Do", "Vi", "Ma", "Ju", "Sá", "Lu"]
+["dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"] can be abbreviated to ["di", "Me", "Ve", "Sa", "Lu", "Ma", "Je"]
+["domenica", "lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato"] can be abbreviated to ["me", "do", "ma", "gi", "ve", "lu", "sa"]
+["duminica", "luni", "marti", "miercuri", "joi", "vineri", "sambata"] can be abbreviated to ["du", "mi", "sa", "vi", "ma", "lu", "jo"]
+```
+
+**Variants:**
+
+-   Produce an array of minimal-length strings instead of fixed-length strings.
+
+**References:**
+
+-   <http://rosettacode.org/wiki/Abbreviations,_automatic>
+
+#
+
+#### Letter Blocks
+
+-   Write a function that determines whether a word can be spelled with a given collection of blocks.
+-   Blocks are guaranteed to have the same letter pairs on them.
+
+**Solution:**
+
+```typescript
+const blocks = [
+	["B", "O"],
+	["X", "K"],
+	["D", "Q"],
+	["C", "P"],
+	["N", "A"],
+	["G", "T"],
+	["R", "E"],
+	["T", "G"],
+	["Q", "D"],
+	["F", "S"],
+	["J", "W"],
+	["H", "U"],
+	["V", "I"],
+	["A", "N"],
+	["O", "B"],
+	["E", "R"],
+	["F", "S"],
+	["L", "Y"],
+	["P", "C"],
+	["Z", "M"]
+];
+
+const words = [
+	"A",
+	"BARK",
+	"BOOK",
+	"TREAT",
+	"COMMON",
+	"SQUAD",
+	"CONFUSE"
+];
+
+function isWordSpellableWithBlocks(word, blocks) {
+	for (const letter of word) {
+		let letterFound = false;
+
+		for (const [index, block] of blocks.entries()) {
+			if (block[0] === letter || block[1] === letter) {
+				blocks[index] = ["", ""];
+				letterFound = true;
+				break;
+			}
+		}
+
+		if (letterFound === false) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+for (const word of words) {
+	if (isWordSpellableWithBlocks(word, [...blocks])) {
+		console.log("The word \"" + word + "\" can be spelled with these blocks.");
+	} else {
+		console.log("The word \"" + word + "\" can NOT be spelled with these blocks.");
+	}
+}
+```
+
+**Sample Output:**
+
+```
+The word "A" can be spelled with these blocks.
+The word "BARK" can be spelled with these blocks.
+The word "BOOK" can NOT be spelled with these blocks.
+The word "TREAT" can be spelled with these blocks.
+The word "COMMON" can NOT be spelled with these blocks.
+The word "SQUAD" can be spelled with these blocks.
+The word "CONFUSE" can be spelled with these blocks.
+```
+
+**Variants:**
+
+-   Blocks are not guaranteed to have the same letter pairs on them.
+
+**References:**
+
+-   http://rosettacode.org/wiki/ABC_Problem
+
+#
+
+#### Align Columns
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./alignColumns.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#### Almost Prime
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./almostPrime.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#### Balanced Brackets
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./balancedBrackets.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#### Caesar Cipher
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./caesarCipher.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#### Calendar
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./calendar.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#### Catalan Numbers
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./catalanNumber.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#### Chaocipher
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./chaocipher.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#### Recursion Limit
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./recursionLimit.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#### History Variables
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./historyVariables.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#### Last Letter-First Letter
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./lastLetterFirstLetter.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#### Linear Congruential Generator
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./linearCongruentialGenerator.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#### Ordered Words
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./orderedWords.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#### Pangram Checker
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./pangramChecker.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#### Pascal's Triangle
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./pangramChecker.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#### Pascal's Triangle Puzzle
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./pangramChecker.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#### International Bank Account Number (IBAN) Validator
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./ibanValidator.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#### Luhn Algorithm
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./luhnAlgorithm.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#### Maximum Triangle Path Sum
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./maximumTrianglePathSum.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
 <hr>
 
 ### Involved
+
+//@import "../involved/README.md";
 
 <hr>
 
