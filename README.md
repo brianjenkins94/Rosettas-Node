@@ -84,6 +84,8 @@ for (let i = 1; i <= 100; i++) {
 -   <http://rosettacode.org/wiki/FizzBuzz>
 -   <https://en.wikipedia.org/wiki/Fizz_buzz>
 
+#
+
 #### Fibonacci (Iterative)
 
 -   Print out the `n`th number of the Fibonacci sequence.
@@ -116,6 +118,8 @@ console.log(fibonacci(10));
 -   <http://rosettacode.org/wiki/Fibonacci_sequence>
 -   <https://en.wikipedia.org/wiki/Fibonacci_number>
 
+#
+
 #### Fibonacci (Recursive)
 
 -   Print out the `n`th number of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
@@ -145,6 +149,8 @@ console.log(fibonacci(10));
 
 -   <http://rosettacode.org/wiki/Fibonacci_sequence>
 -   <https://en.wikipedia.org/wiki/Fibonacci_number>
+
+#
 
 #### Palindrome Checker
 
@@ -198,6 +204,8 @@ for (const potentialPalindrome of potentialPalindromes) {
 -   https://www.codeabbey.com/index/task_view/palindromes
 -   http://rosettacode.org/wiki/Palindrome
 -   https://en.wikipedia.org/wiki/Palindrome
+
+#
 
 #### Leap Year Checker
 
