@@ -18,5 +18,5 @@
 		"fences": true
 	},
 	"typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
-	"typescript.format.insertSpaceBeforeFunctionParenthesis": false,
+	"typescript.format.insertSpaceBeforeFunctionParenthesis": false
 }

@@ -6,21 +6,21 @@
 
 @invoke toc();
 
-<hr>
+#
 
 ### Obligatory
 
 @import "../obligatory/README.md";
 
-<hr>
+#
 
 ### Interesting
 
-<hr>
+#
 
 ### Involved
 
-<hr>
+#
 
 ### Acknowledgements
 

@@ -25,7 +25,7 @@
 	</tbody>
 </table>
 
-<hr>
+#
 
 ### Obligatory
 
@@ -89,6 +89,8 @@ for (let i = 1; i <= 100; i++) {
 -   Print out the `n`th number of the Fibonacci sequence.
     -   The Fibonacci sequence is the sequence of numbers where each element is the sum of the two previous elements.
 
+**Solution:**
+
 ```typescript
 function fibonacci(n) {
 	const array = [0, 1];
@@ -116,8 +118,10 @@ console.log(fibonacci(10));
 
 #### Fibonacci (Recursive)
 
--   Print out the `n`th number of the Fibonacci sequence.
+-   Print out the `n`th number of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
     -   The Fibonacci sequence is the sequence of numbers where each element is the sum of the two previous elements.
+
+**Solution:**
 
 ```typescript
 function fibonacci(n) {
@@ -144,25 +148,108 @@ console.log(fibonacci(10));
 
 #### Palindrome Checker
 
+-   Write a function that checks whether a given string is a [palindrome](https://en.wikipedia.org/wiki/Palindrome).
+    -   A palindrome is a word or phrase which reads the same backward and forward.
+
+**Solution:**
+
 ```typescript
-//@import "./palindromeChecker.ts";
+const potentialPalindromes = [
+	"Able was I ere I saw Elba.",
+	"A man, a plan, a canal – Panama.",
+	"Madam, I'm Adam.",
+	"Never odd or even.",
+	"The quick brown fox jumps over the lazy dog.",
+	"Sphinx of black quartz, judge my vow.",
+	"How vexingly quick daft zebras jump!",
+	"The five boxing wizards jump quickly."
+];
+
+function isPalindrome(string) {
+	const normalizedString = string.replace(/\W/g, "").toLowerCase();
+
+	return normalizedString === normalizedString.split("").reverse().join("");
+}
+
+for (const potentialPalindrome of potentialPalindromes) {
+	if (isPalindrome(potentialPalindrome)) {
+		console.log("\"" + potentialPalindrome + "\" is a palindrome.");
+	} else {
+		console.log("\"" + potentialPalindrome + "\" is NOT a palindrome.");
+	}
+}
 ```
+
+**Sample Output:**
+
+```
+"Able was I ere I saw Elba." is a palindrome.
+"A man, a plan, a canal – Panama." is a palindrome.
+"Madam, I'm Adam." is a palindrome.
+"Never odd or even." is a palindrome.
+"The quick brown fox jumps over the lazy dog." is NOT a palindrome.
+"Sphinx of black quartz, judge my vow." is NOT a palindrome.
+"How vexingly quick daft zebras jump!" is NOT a palindrome.
+"The five boxing wizards jump quickly." is NOT a palindrome.
+```
+
+**References:**
+
+-   https://www.codeabbey.com/index/task_view/palindromes
+-   http://rosettacode.org/wiki/Palindrome
+-   https://en.wikipedia.org/wiki/Palindrome
 
 #### Leap Year Checker
 
+-   Write a function that checks whether a given year is a [leap year](https://en.wikipedia.org/wiki/Leap_year).
+    -   A leap year is a year divisible by 4 but not 100 and is not divisible by 400.
+
+**Solution:**
+
 ```typescript
-//@import "./leapYearChecker.ts";
+function isLeapYear(year) {
+    return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
+};
+
+for (let x = 2010; x <= 2020; x++) {
+    if (isLeapYear(x)) {
+        console.log(x + " is a leap year.");
+    } else {
+        console.log(x + " is NOT a leap year.");
+    }
+}
 ```
 
-<hr>
+**Sample Output:**
+
+```
+2010 is NOT a leap year.
+2011 is NOT a leap year.
+2012 is a leap year.
+2013 is NOT a leap year.
+2014 is NOT a leap year.
+2015 is NOT a leap year.
+2016 is a leap year.
+2017 is NOT a leap year.
+2018 is NOT a leap year.
+2019 is NOT a leap year.
+2020 is a leap year.
+```
+
+**References:**
+
+-   http://rosettacode.org/wiki/Leap_year
+-   https://en.wikipedia.org/wiki/Leap_year
+
+#
 
 ### Interesting
 
-<hr>
+#
 
 ### Involved
 
-<hr>
+#
 
 ### Acknowledgements
 
