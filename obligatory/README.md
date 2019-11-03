@@ -24,6 +24,8 @@
 -   <http://rosettacode.org/wiki/FizzBuzz>
 -   <https://en.wikipedia.org/wiki/Fizz_buzz>
 
+#
+
 #### Fibonacci (Iterative)
 
 -   Print out the `n`th number of the Fibonacci sequence.
@@ -46,6 +48,8 @@
 -   <http://rosettacode.org/wiki/Fibonacci_sequence>
 -   <https://en.wikipedia.org/wiki/Fibonacci_number>
 
+#
+
 #### Fibonacci (Recursive)
 
 -   Print out the `n`th number of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
@@ -67,6 +71,8 @@
 
 -   <http://rosettacode.org/wiki/Fibonacci_sequence>
 -   <https://en.wikipedia.org/wiki/Fibonacci_number>
+
+#
 
 #### Palindrome Checker
 
@@ -97,6 +103,8 @@
 -   https://www.codeabbey.com/index/task_view/palindromes
 -   http://rosettacode.org/wiki/Palindrome
 -   https://en.wikipedia.org/wiki/Palindrome
+
+#
 
 #### Leap Year Checker
 

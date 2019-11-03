@@ -25,7 +25,7 @@
 	</tbody>
 </table>
 
-#
+<hr>
 
 ### Obligatory
 
@@ -241,15 +241,15 @@ for (let x = 2010; x <= 2020; x++) {
 -   http://rosettacode.org/wiki/Leap_year
 -   https://en.wikipedia.org/wiki/Leap_year
 
-#
+<hr>
 
 ### Interesting
 
-#
+<hr>
 
 ### Involved
 
-#
+<hr>
 
 ### Acknowledgements
 
