@@ -7,7 +7,7 @@
 **Solution:**
 
 ```typescript
-@import "./abelianSandpile.ts";
+//@import "./abelianSandpile.ts";
 ```
 
 **Sample Output:**
@@ -28,7 +28,7 @@
 **Solution:**
 
 ```typescript
-@import "./gameOfLife.ts";
+//@import "./gameOfLife.ts";
 ```
 
 **Sample Output:**
@@ -49,7 +49,7 @@
 **Solution:**
 
 ```typescript
-@import "./dijkstrasAlgorithm.ts";
+//@import "./dijkstrasAlgorithm.ts";
 ```
 
 **Sample Output:**
@@ -70,7 +70,7 @@
 **Solution:**
 
 ```typescript
-@import "./dinemansProblem.ts";
+//@import "./dinemansProblem.ts";
 ```
 
 **Sample Output:**
@@ -91,7 +91,7 @@
 **Solution:**
 
 ```typescript
-@import "./diningPhilosophers.ts";
+//@import "./diningPhilosophers.ts";
 ```
 
 **Sample Output:**
@@ -112,7 +112,7 @@
 **Solution:**
 
 ```typescript
-@import "./discordianDate.ts";
+//@import "./discordianDate.ts";
 ```
 
 **Sample Output:**
@@ -133,7 +133,7 @@
 **Solution:**
 
 ```typescript
-@import "./egyptianDivision.ts";
+//@import "./egyptianDivision.ts";
 ```
 
 **Sample Output:**
@@ -154,7 +154,7 @@
 **Solution:**
 
 ```typescript
-@import "./egyptianFractions.ts";
+//@import "./egyptianFractions.ts";
 ```
 
 **Sample Output:**
@@ -175,7 +175,7 @@
 **Solution:**
 
 ```typescript
-@import "./evolutionaryAlgorithm.ts";
+//@import "./evolutionaryAlgorithm.ts";
 ```
 
 **Sample Output:**
@@ -196,7 +196,7 @@
 **Solution:**
 
 ```typescript
-@import "./markovAlgorithm.ts";
+//@import "./markovAlgorithm.ts";
 ```
 
 **Sample Output:**
@@ -217,7 +217,7 @@
 **Solution:**
 
 ```typescript
-@import "./pangramChecker.ts";
+//@import "./pangramChecker.ts";
 ```
 
 **Sample Output:**
@@ -238,7 +238,7 @@
 **Solution:**
 
 ```typescript
-@import "./galtonBox.ts";
+//@import "./galtonBox.ts";
 ```
 
 **Sample Output:**
@@ -259,7 +259,7 @@
 **Solution:**
 
 ```typescript
-@import "./chess960.ts";
+//@import "./chess960.ts";
 ```
 
 **Sample Output:**
@@ -280,7 +280,7 @@
 **Solution:**
 
 ```typescript
-@import "./randomChessPositions.ts";
+//@import "./randomChessPositions.ts";
 ```
 
 **Sample Output:**
@@ -301,7 +301,7 @@
 **Solution:**
 
 ```typescript
-@import "./huffmanEncoding.ts";
+//@import "./huffmanEncoding.ts";
 ```
 
 **Sample Output:**
@@ -322,7 +322,7 @@
 **Solution:**
 
 ```typescript
-@import "./huntTheWumpus.ts";
+//@import "./huntTheWumpus.ts";
 ```
 
 **Sample Output:**
@@ -343,7 +343,7 @@
 **Solution:**
 
 ```typescript
-@import "./invertedIndex.ts";
+//@import "./invertedIndex.ts";
 ```
 
 **Sample Output:**
@@ -364,7 +364,7 @@
 **Solution:**
 
 ```typescript
-@import "./jaroDistance.ts";
+//@import "./jaroDistance.ts";
 ```
 
 **Sample Output:**
@@ -385,7 +385,7 @@
 **Solution:**
 
 ```typescript
-@import "./josephusProblem.ts";
+//@import "./josephusProblem.ts";
 ```
 
 **Sample Output:**
@@ -406,7 +406,7 @@
 **Solution:**
 
 ```typescript
-@import "./knapsackProblem.ts";
+//@import "./knapsackProblem.ts";
 ```
 
 **Sample Output:**
@@ -427,7 +427,7 @@
 **Solution:**
 
 ```typescript
-@import "./knightsTour.ts";
+//@import "./knightsTour.ts";
 ```
 
 **Sample Output:**
@@ -448,7 +448,7 @@
 **Solution:**
 
 ```typescript
-@import "./langtonsAnt.ts";
+//@import "./langtonsAnt.ts";
 ```
 
 **Sample Output:**
@@ -469,7 +469,7 @@
 **Solution:**
 
 ```typescript
-@import "./levenshteinDistance.ts";
+//@import "./levenshteinDistance.ts";
 ```
 
 **Sample Output:**
@@ -490,7 +490,7 @@
 **Solution:**
 
 ```typescript
-@import "./longestCommonSubsequence.ts";
+//@import "./longestCommonSubsequence.ts";
 ```
 
 **Sample Output:**
@@ -511,7 +511,7 @@
 **Solution:**
 
 ```typescript
-@import "./longestCommonSubstring.ts";
+//@import "./longestCommonSubstring.ts";
 ```
 
 **Sample Output:**
@@ -532,7 +532,7 @@
 **Solution:**
 
 ```typescript
-@import "./maximumTrianglePathSum.ts";
+//@import "./maximumTrianglePathSum.ts";
 ```
 
 **Sample Output:**
@@ -553,7 +553,7 @@
 **Solution:**
 
 ```typescript
-@import "./mazeGenerator.ts";
+//@import "./mazeGenerator.ts";
 ```
 
 **Sample Output:**
@@ -574,7 +574,7 @@
 **Solution:**
 
 ```typescript
-@import "./mazeSolver.ts";
+//@import "./mazeSolver.ts";
 ```
 
 **Sample Output:**
@@ -595,7 +595,7 @@
 **Solution:**
 
 ```typescript
-@import "./meteredConcurrency.ts";
+//@import "./meteredConcurrency.ts";
 ```
 
 **Sample Output:**
@@ -616,7 +616,7 @@
 **Solution:**
 
 ```typescript
-@import "./mindBogglingCardTrick.ts";
+//@import "./mindBogglingCardTrick.ts";
 ```
 
 **Sample Output:**
@@ -637,7 +637,7 @@
 **Solution:**
 
 ```typescript
-@import "./minesweeper.ts";
+//@import "./minesweeper.ts";
 ```
 
 **Sample Output:**
@@ -658,7 +658,7 @@
 **Solution:**
 
 ```typescript
-@import "./monteCarloMethod.ts";
+//@import "./monteCarloMethod.ts";
 ```
 
 **Sample Output:**
@@ -679,7 +679,7 @@
 **Solution:**
 
 ```typescript
-@import "./monteHallProblem.ts";
+//@import "./monteHallProblem.ts";
 ```
 
 **Sample Output:**
@@ -700,7 +700,7 @@
 **Solution:**
 
 ```typescript
-@import "./morseCode.ts";
+//@import "./morseCode.ts";
 ```
 
 **Sample Output:**
@@ -721,7 +721,7 @@
 **Solution:**
 
 ```typescript
-@import "./moveToFrontAlgorithm.ts";
+//@import "./moveToFrontAlgorithm.ts";
 ```
 
 **Sample Output:**
@@ -742,7 +742,7 @@
 **Solution:**
 
 ```typescript
-@import "./nQueensProblem.ts";
+//@import "./nQueensProblem.ts";
 ```
 
 **Sample Output:**
@@ -763,7 +763,7 @@
 **Solution:**
 
 ```typescript
-@import "./rpnCalculatorAlgorithm.ts";
+//@import "./rpnCalculatorAlgorithm.ts";
 ```
 
 **Sample Output:**
@@ -784,7 +784,7 @@
 **Solution:**
 
 ```typescript
-@import "./rpnToInfixConverter.ts";
+//@import "./rpnToInfixConverter.ts";
 ```
 
 **Sample Output:**
@@ -805,7 +805,7 @@
 **Solution:**
 
 ```typescript
-@import "./shuntingYardAlgorithm.ts";
+//@import "./shuntingYardAlgorithm.ts";
 ```
 
 **Sample Output:**
@@ -826,7 +826,7 @@
 **Solution:**
 
 ```typescript
-@import "./passwordGenerator.ts";
+//@import "./passwordGenerator.ts";
 ```
 
 **Sample Output:**
@@ -847,7 +847,7 @@
 **Solution:**
 
 ```typescript
-@import "./sokoban.ts";
+//@import "./sokoban.ts";
 ```
 
 **Sample Output:**
@@ -868,7 +868,7 @@
 **Solution:**
 
 ```typescript
-@import "./straddlingCheckerboard.ts";
+//@import "./straddlingCheckerboard.ts";
 ```
 
 **Sample Output:**
@@ -889,7 +889,7 @@
 **Solution:**
 
 ```typescript
-@import "./sudokuGenerator.ts";
+//@import "./sudokuGenerator.ts";
 ```
 
 **Sample Output:**
@@ -910,7 +910,7 @@
 **Solution:**
 
 ```typescript
-@import "./sudokuSolver.ts";
+//@import "./sudokuSolver.ts";
 ```
 
 **Sample Output:**
