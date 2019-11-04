@@ -62,7 +62,7 @@ These are the problems that have been "done to death". Anything that was once in
 **Solution:**
 
 ```typescript
-for (let i = 1; i <= 100; i++) {
+for (let i = 1; i <= 10; i++) {
 	if (i % 15 === 0) {
 		console.log("FizzBuzz");
 	} else if (i % 3 === 0) {
@@ -78,7 +78,16 @@ for (let i = 1; i <= 100; i++) {
 **Sample Output:**
 
 ```
-1⏎ 2⏎ Fizz⏎ 4⏎ Buzz⏎ Fizz⏎ 7⏎ 8⏎ Fizz⏎ Buzz⏎ 11⏎ Fizz⏎ 13⏎ 14⏎ FizzBuzz⏎ 16⏎ 17⏎ Fizz⏎ 19⏎ Buzz⏎ Fizz⏎ 22⏎ 23⏎ Fizz⏎ Buzz⏎ 26⏎ Fizz⏎ 28⏎ 29⏎ FizzBuzz⏎ 31⏎ 32⏎ Fizz⏎ 34⏎ Buzz⏎ Fizz⏎ 37⏎ 38⏎ Fizz⏎ Buzz⏎ 41⏎ Fizz⏎ 43⏎ 44⏎ FizzBuzz⏎ 46⏎ 47⏎ Fizz⏎ 49⏎ Buzz⏎ Fizz⏎ 52⏎ 53⏎ Fizz⏎ Buzz⏎ 56⏎ Fizz⏎ 58⏎ 59⏎ FizzBuzz⏎ 61⏎ 62⏎ Fizz⏎ 64⏎ Buzz⏎ Fizz⏎ 67⏎ 68⏎ Fizz⏎ Buzz⏎ 71⏎ Fizz⏎ 73⏎ 74⏎ FizzBuzz⏎ 76⏎ 77⏎ Fizz⏎ 79⏎ Buzz⏎ Fizz⏎ 82⏎ 83⏎ Fizz⏎ Buzz⏎ 86⏎ Fizz⏎ 88⏎ 89⏎ FizzBuzz⏎ 91⏎ 92⏎ Fizz⏎ 94⏎ Buzz⏎ Fizz⏎ 97⏎ 98⏎ Fizz⏎ Buzz
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
 ```
 
 **References:**
@@ -90,7 +99,7 @@ for (let i = 1; i <= 100; i++) {
 
 #### Fibonacci (Iterative)
 
--   Print out the `n`th number of the Fibonacci sequence.
+-   Print out the `n`th number of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
     -   The Fibonacci sequence is the sequence of numbers where each element is the sum of the two previous elements.
 
 **Solution:**
@@ -270,8 +279,8 @@ for (let x = 2010; x <= 2020; x++) {
 					<li><a href="#almost-prime">Almost Prime</a></li>
 					<li><a href="#balanced-brackets">Balanced Brackets</a></li>
 					<li><a href="#caesar-cipher">Caesar Cipher</a></li>
+					<li><a href="#caesar-cipher-solver">Caesar Cipher Solver</a></li>
 					<li><a href="#calendar">Calendar</a></li>
-					<li><a href="#catalan-numbers">Catalan Numbers</a></li>
 					<li><a href="#chaocipher">Chaocipher</a></li>
 					<li><a href="#recursion-limit">Recursion Limit</a></li>
 					<li><a href="#history-variables">History Variables</a></li>
@@ -284,6 +293,22 @@ for (let x = 2010; x <= 2020; x++) {
 					<li><a href="#international-bank-account-number-iban-validator">International Bank Account Number (IBAN) Validator</a></li>
 					<li><a href="#luhn-algorithm">Luhn Algorithm</a></li>
 					<li><a href="#maximum-triangle-path-sum">Maximum Triangle Path Sum</a></li>
+					<li><a href="#poker-hand-analyzer">Poker Hand Analyzer</a></li>
+					<li><a href="#perfect-shuffle">Perfect Shuffle</a></li>
+					<li><a href="#quine">Quine</a></li>
+					<li><a href="#remove-duplicate-elements">Remove Duplicate Elements</a></li>
+					<li><a href="#semordnilap">Semordnilap</a></li>
+					<li><a href="#sparkline">Sparkline</a></li>
+					<li><a href="#textonyms">Textonyms</a></li>
+					<li><a href="#towers-of-hanoi">Towers of Hanoi</a></li>
+					<li><a href="#truth-tables">Truth Tables</a></li>
+					<li><a href="#ulam-spiral">Ulam spiral</a></li>
+					<li><a href="#vigenre-cipher">Vigenère cipher</a></li>
+					<li><a href="#visualize-a-tree">Visualize a Tree</a></li>
+					<li><a href="#water-collected-between-towers">Water Collected Between Towers</a></li>
+					<li><a href="#word-search-generator">Word Search Generator</a></li>
+					<li><a href="#word-search-solver">Word Search Solver</a></li>
+					<li><a href="#word-wrap">Word Wrap</a></li>
 				</ol>
 			</td>
 		</tr>
@@ -447,7 +472,50 @@ The word "CONFUSE" can be spelled with these blocks.
 **Solution:**
 
 ```typescript
-//@import "./alignColumns.ts";
+const input = [
+	"Given a multiline input string, where the words within a line".split(" "),
+	"are delineated by a single space character, write a program".split(" "),
+	"that aligns each column of words by ensuring that the words in".split(" "),
+	"each column are separated by at least one space.".split(" "),
+	"Further, allow for each word in a column to be either left".split(" "),
+	"justified, right justified, or center justified within its column.".split(" ")
+];
+
+function getLongestRow(input) {
+	let longestRow = 0;
+
+	for (const row of input) {
+		if (row.length > longestRow) {
+			longestRow = row.length;
+		}
+	}
+
+	return longestRow;
+}
+
+function alignLeft(input) {
+	const longestRow = getLongestRow(input);
+
+}
+
+function alignRight(input) {
+	const longestRow = getLongestRow(input);
+
+}
+
+function alignCenter(input) {
+	const longestRow = getLongestRow(input);
+
+}
+
+console.log("Left:");
+console.log(alignLeft(input));
+
+console.log("Right:");
+console.log(alignRight(input));
+
+console.log("Center:");
+console.log(alignCenter(input));
 ```
 
 **Sample Output:**
@@ -458,6 +526,8 @@ The word "CONFUSE" can be spelled with these blocks.
 **References:**
 
 -
+
+#
 
 #### Almost Prime
 
@@ -478,6 +548,8 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -
 
+#
+
 #### Balanced Brackets
 
 -
@@ -496,6 +568,8 @@ The word "CONFUSE" can be spelled with these blocks.
 **References:**
 
 -
+
+#
 
 #### Caesar Cipher
 
@@ -516,6 +590,29 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -
 
+#
+
+#### Caesar Cipher Solver
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./caesarCipherSolver.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
 #### Calendar
 
 -
@@ -535,24 +632,7 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -
 
-#### Catalan Numbers
-
--
-
-**Solution:**
-
-```typescript
-//@import "./catalanNumber.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
+#
 
 #### Chaocipher
 
@@ -573,6 +653,8 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -
 
+#
+
 #### Recursion Limit
 
 -
@@ -591,6 +673,8 @@ The word "CONFUSE" can be spelled with these blocks.
 **References:**
 
 -
+
+#
 
 #### History Variables
 
@@ -611,6 +695,8 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -
 
+#
+
 #### Last Letter-First Letter
 
 -
@@ -629,6 +715,8 @@ The word "CONFUSE" can be spelled with these blocks.
 **References:**
 
 -
+
+#
 
 #### Linear Congruential Generator
 
@@ -649,6 +737,8 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -
 
+#
+
 #### Ordered Words
 
 -
@@ -667,6 +757,8 @@ The word "CONFUSE" can be spelled with these blocks.
 **References:**
 
 -
+
+#
 
 #### Pangram Checker
 
@@ -687,6 +779,8 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -
 
+#
+
 #### Pascal's Triangle
 
 -
@@ -705,6 +799,8 @@ The word "CONFUSE" can be spelled with these blocks.
 **References:**
 
 -
+
+#
 
 #### Pascal's Triangle Puzzle
 
@@ -725,6 +821,8 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -
 
+#
+
 #### International Bank Account Number (IBAN) Validator
 
 -
@@ -743,6 +841,8 @@ The word "CONFUSE" can be spelled with these blocks.
 **References:**
 
 -
+
+#
 
 #### Luhn Algorithm
 
@@ -763,6 +863,8 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -
 
+#
+
 #### Maximum Triangle Path Sum
 
 -
@@ -781,6 +883,344 @@ The word "CONFUSE" can be spelled with these blocks.
 **References:**
 
 -
+
+#
+
+#### Poker Hand Analyzer
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./pokerHandAnalyzer.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Perfect Shuffle
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./perfectShuffle.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Quine
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./quine.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Remove Duplicate Elements
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./removeDuplicateElements.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Semordnilap
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./semordnilap.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Sparkline
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./sparkline.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Textonyms
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./textonyms.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Towers of Hanoi
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./textonyms.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Truth Tables
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./truthTables.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Ulam spiral
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./ulamSpiral.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Vigenère cipher
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./vigenereCipher.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Visualize a Tree
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./visualizeATree.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Water Collected Between Towers
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./visualizeATree.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Word Search Generator
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./wordSearchGenerator.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Word Search Solver
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./wordSearchSolver.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Word Wrap
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./wordWrap.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
 
 <hr>
 
