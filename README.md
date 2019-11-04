@@ -203,7 +203,6 @@ for (const potentialPalindrome of potentialPalindromes) {
 
 **References:**
 
--   https://www.codeabbey.com/index/task_view/palindromes
 -   http://rosettacode.org/wiki/Palindrome
 -   https://en.wikipedia.org/wiki/Palindrome
 

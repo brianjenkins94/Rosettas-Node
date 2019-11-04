@@ -28,7 +28,7 @@
 
 #### Fibonacci (Iterative)
 
--   Print out the `n`th number of the Fibonacci sequence.
+-   Print out the `n`th number of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
     -   The Fibonacci sequence is the sequence of numbers where each element is the sum of the two previous elements.
 
 **Solution:**
@@ -100,7 +100,6 @@
 
 **References:**
 
--   https://www.codeabbey.com/index/task_view/palindromes
 -   http://rosettacode.org/wiki/Palindrome
 -   https://en.wikipedia.org/wiki/Palindrome
 

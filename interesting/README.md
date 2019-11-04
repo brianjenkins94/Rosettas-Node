@@ -70,7 +70,7 @@ The word "CONFUSE" can be spelled with these blocks.
 **Solution:**
 
 ```typescript
-//@import "./alignColumns.ts";
+@import "./alignColumns.ts";
 ```
 
 **Sample Output:**
@@ -81,6 +81,8 @@ The word "CONFUSE" can be spelled with these blocks.
 **References:**
 
 -
+
+#
 
 #### Almost Prime
 
@@ -101,6 +103,8 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -
 
+#
+
 #### Balanced Brackets
 
 -
@@ -119,6 +123,8 @@ The word "CONFUSE" can be spelled with these blocks.
 **References:**
 
 -
+
+#
 
 #### Caesar Cipher
 
@@ -139,6 +145,29 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -
 
+#
+
+#### Caesar Cipher Solver
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./caesarCipherSolver.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
 #### Calendar
 
 -
@@ -158,24 +187,7 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -
 
-#### Catalan Numbers
-
--
-
-**Solution:**
-
-```typescript
-//@import "./catalanNumber.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
+#
 
 #### Chaocipher
 
@@ -196,6 +208,8 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -
 
+#
+
 #### Recursion Limit
 
 -
@@ -214,6 +228,8 @@ The word "CONFUSE" can be spelled with these blocks.
 **References:**
 
 -
+
+#
 
 #### History Variables
 
@@ -234,6 +250,8 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -
 
+#
+
 #### Last Letter-First Letter
 
 -
@@ -252,6 +270,8 @@ The word "CONFUSE" can be spelled with these blocks.
 **References:**
 
 -
+
+#
 
 #### Linear Congruential Generator
 
@@ -272,6 +292,8 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -
 
+#
+
 #### Ordered Words
 
 -
@@ -290,6 +312,8 @@ The word "CONFUSE" can be spelled with these blocks.
 **References:**
 
 -
+
+#
 
 #### Pangram Checker
 
@@ -310,6 +334,8 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -
 
+#
+
 #### Pascal's Triangle
 
 -
@@ -328,6 +354,8 @@ The word "CONFUSE" can be spelled with these blocks.
 **References:**
 
 -
+
+#
 
 #### Pascal's Triangle Puzzle
 
@@ -348,6 +376,8 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -
 
+#
+
 #### International Bank Account Number (IBAN) Validator
 
 -
@@ -366,6 +396,8 @@ The word "CONFUSE" can be spelled with these blocks.
 **References:**
 
 -
+
+#
 
 #### Luhn Algorithm
 
@@ -386,6 +418,8 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -
 
+#
+
 #### Maximum Triangle Path Sum
 
 -
@@ -404,3 +438,341 @@ The word "CONFUSE" can be spelled with these blocks.
 **References:**
 
 -
+
+#
+
+#### Poker Hand Analyzer
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./pokerHandAnalyzer.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Perfect Shuffle
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./perfectShuffle.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Quine
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./quine.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Remove Duplicate Elements
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./removeDuplicateElements.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Semordnilap
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./semordnilap.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Sparkline
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./sparkline.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Textonyms
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./textonyms.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Towers of Hanoi
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./textonyms.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Truth Tables
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./truthTables.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Ulam spiral
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./ulamSpiral.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Vigenère cipher
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./vigenereCipher.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Visualize a Tree
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./visualizeATree.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Water Collected Between Towers
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./visualizeATree.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Word Search Generator
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./wordSearchGenerator.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Word Search Solver
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./wordSearchSolver.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Word Wrap
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./wordWrap.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
