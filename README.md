@@ -29,7 +29,7 @@
 
 ### Obligatory
 
-These are the problems that have been "done to death". Anything that was once interesting about these problems has since been squashed by their repetition. With that said, this collection wouldn't be complete without them.
+These are the problems that have been "done to death". Anything that was once interesting about these problems has since been nullified by their repetition. With that said, this collection wouldn't be complete without them.
 
 <table>
 	<thead>
@@ -309,6 +309,9 @@ for (let x = 2010; x <= 2020; x++) {
 					<li><a href="#word-search-generator">Word Search Generator</a></li>
 					<li><a href="#word-search-solver">Word Search Solver</a></li>
 					<li><a href="#word-wrap">Word Wrap</a></li>
+					<li><a href="#birthday-problem">Birthday Problem</a></li>
+					<li><a href="#substitution-cipher">Substitution Cipher</a></li>
+					<li><a href="#suffix-tree-generator">Suffix Tree Generator</a></li>
 				</ol>
 			</td>
 		</tr>
@@ -1209,6 +1212,69 @@ console.log(alignCenter(input));
 
 ```typescript
 //@import "./wordWrap.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Birthday Problem
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./birthdayProblem.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Substitution Cipher
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./subtitutionCipher.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Suffix Tree Generator
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./suffixTreeGenerator.ts";
 ```
 
 **Sample Output:**
@@ -2207,8 +2273,6 @@ console.log(alignCenter(input));
 **References:**
 
 -
-
-#
 
 <hr>
 

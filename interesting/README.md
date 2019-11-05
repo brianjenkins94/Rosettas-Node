@@ -776,3 +776,66 @@ The word "CONFUSE" can be spelled with these blocks.
 -
 
 #
+
+#### Birthday Problem
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./birthdayProblem.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Substitution Cipher
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./subtitutionCipher.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Suffix Tree Generator
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./suffixTreeGenerator.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#

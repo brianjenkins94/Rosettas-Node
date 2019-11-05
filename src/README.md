@@ -10,7 +10,7 @@
 
 ### Obligatory
 
-These are the problems that have been "done to death". Anything that was once interesting about these problems has since been squashed by their repetition. With that said, this collection wouldn't be complete without them.
+These are the problems that have been "done to death". Anything that was once interesting about these problems has since been nullified by their repetition. With that said, this collection wouldn't be complete without them.
 
 @import "../obligatory/README.md";
 
