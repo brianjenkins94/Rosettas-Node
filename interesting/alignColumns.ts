@@ -1,10 +1,10 @@
 const input = [
-	"Given a multiline input string, where the words within a line".split(" "),
-	"are delineated by a single space character, write a program".split(" "),
-	"that aligns each column of words by ensuring that the words in".split(" "),
-	"each column are separated by at least one space.".split(" "),
-	"Further, allow for each word in a column to be either left".split(" "),
-	"justified, right justified, or center justified within its column.".split(" ")
+	["Write", "a", "program,", "that", "aligns", "each", "column", "of", "words"],
+	["by", "ensuring", "that", "the", "words", "in", "each", "column"],
+	["are", "separated", "by", "at", "least", "one", "space."],
+	["Further,", "allow", "for", "each", "word", "in", "a", "column"],
+	["to", "be", "either", "left", "justified,", "right", "justified,"],
+	["or", "center", "justified", "within", "its", "column."]
 ];
 
 function getLongestRow(input) {

@@ -3,7 +3,7 @@
 
 #### Abbreviations
 
--   Write a function to find the minimum, _fixed-length_ abbreviation for an array that would preserve each element's uniqueness.
+-   Write a program to find the minimum, _fixed-length_ abbreviation for an array that would preserve each element's uniqueness.
 
 **Solution:**
 
@@ -16,9 +16,9 @@
 ```
 ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] can be abbreviated to ["We", "Th", "Sa", "Tu", "Su", "Mo", "Fr"]
 ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"] can be abbreviated to ["Mi", "Do", "Vi", "Ma", "Ju", "Sá", "Lu"]
-["dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"] can be abbreviated to ["di", "Me", "Ve", "Sa", "Lu", "Ma", "Je"]
-["domenica", "lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato"] can be abbreviated to ["me", "do", "ma", "gi", "ve", "lu", "sa"]
-["duminica", "luni", "marti", "miercuri", "joi", "vineri", "sambata"] can be abbreviated to ["du", "mi", "sa", "vi", "ma", "lu", "jo"]
+["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"] can be abbreviated to ["Di", "Me", "Ve", "Sa", "Lu", "Ma", "Je"]
+["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"] can be abbreviated to ["Me", "Do", "Ma", "Gi", "Ve", "Lu", "Sa"]
+["Duminica", "Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata"] can be abbreviated to ["Du", "Mi", "Sa", "Vi", "Ma", "Lu", "Jo"]
 ```
 
 **Variants:**
@@ -33,7 +33,7 @@
 
 #### Letter Blocks
 
--   Write a function that determines whether a word can be spelled with a given collection of blocks.
+-   Write a program that determines whether a word can be spelled with a given collection of blocks.
 -   Blocks are guaranteed to have the same letter pairs on them.
 
 **Solution:**
@@ -66,7 +66,7 @@ The word "CONFUSE" can be spelled with these blocks.
 
 #### Align Columns
 
--
+-   Write a program that aligns each column of words by ensuring that the words in each column are separated by at least one space. Further, allow for each word in a column to be either left a justified, right justified, or center justified within its column.
 
 **Solution:**
 
@@ -78,28 +78,28 @@ The word "CONFUSE" can be spelled with these blocks.
 
 ```
 Left:
-Given      a          multiline  input     string, where     the        words    within  a       line
-are        delineated by         a         single  space     character, write    a       program
-that       aligns     each       column    of      words     by         ensuring that    the     words  in
-each       column     are        separated by      at        least      one      space.
-Further,   allow      for        each      word    in        a          column   to      be      either left
-justified, right      justified, or        center  justified within     its      column.
+Write    a         program,  that   aligns     each    column     of     words
+by       ensuring  that      the    words      in      each       column
+are      separated by        at     least      one     space.
+Further, allow     for       each   word       in      a          column
+to       be        either    left   justified, right   justified,
+or       center    justified within its        column.
 
 Right:
-     Given          a  multiline     input string,     where        the    words  within       a   line
-       are delineated         by         a  single     space character,    write       a program
-      that     aligns       each    column      of     words         by ensuring    that     the  words   in
-      each     column        are separated      by        at      least      one  space.
-  Further,      allow        for      each    word        in          a   column      to      be either left
-justified,      right justified,        or  center justified     within      its column.
+   Write         a  program,   that     aligns    each     column     of words
+      by  ensuring      that    the      words      in       each column
+     are separated        by     at      least     one     space.
+Further,     allow       for   each       word      in          a column
+      to        be    either   left justified,   right justified,
+      or    center justified within        its column.
 
 Center:
-  Given        a      multiline    input   string,   where      the      words   within     a     line
-   are     delineated     by         a     single    space   character,  write      a    program
-   that      aligns      each     column     of      words       by     ensuring  that     the   words   in
-   each      column      are     separated   by       at       least      one    space.
- Further,    allow       for       each     word      in         a       column    to      be    either left
-justified,   right    justified,    or     center  justified   within     its    column.
+ Write       a     program,   that    aligns    each     column     of   words
+   by    ensuring    that     the     words      in       each    column
+  are    separated    by       at     least      one     space.
+Further,   allow      for     each     word      in        a      column
+   to       be      either    left  justified,  right  justified,
+   or     center   justified within    its     column.
 ```
 
 **Variants:**
