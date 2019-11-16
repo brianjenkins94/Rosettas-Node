@@ -1,3 +1,4 @@
+@invoke alphabetize();
 @invoke toc();
 
 #### Abbreviations
@@ -59,7 +60,7 @@ The word "CONFUSE" can be spelled with these blocks.
 
 **References:**
 
--   http://rosettacode.org/wiki/ABC_Problem
+-   <http://rosettacode.org/wiki/ABC_Problem>
 
 #
 
@@ -76,11 +77,40 @@ The word "CONFUSE" can be spelled with these blocks.
 **Sample Output:**
 
 ```
+Left:
+Given      a          multiline  input     string, where     the        words    within  a       line
+are        delineated by         a         single  space     character, write    a       program
+that       aligns     each       column    of      words     by         ensuring that    the     words  in
+each       column     are        separated by      at        least      one      space.
+Further,   allow      for        each      word    in        a          column   to      be      either left
+justified, right      justified, or        center  justified within     its      column.
+
+Right:
+     Given          a  multiline     input string,     where        the    words  within       a   line
+       are delineated         by         a  single     space character,    write       a program
+      that     aligns       each    column      of     words         by ensuring    that     the  words   in
+      each     column        are separated      by        at      least      one  space.
+  Further,      allow        for      each    word        in          a   column      to      be either left
+justified,      right justified,        or  center justified     within      its column.
+
+Center:
+  Given        a      multiline    input   string,   where      the      words   within     a     line
+   are     delineated     by         a     single    space   character,  write      a    program
+   that      aligns      each     column     of      words       by     ensuring  that     the   words   in
+   each      column      are     separated   by       at       least      one    space.
+ Further,    allow       for       each     word      in         a       column    to      be    either left
+justified,   right    justified,    or     center  justified   within     its    column.
 ```
+
+**Variants:**
+
+-   Word wrap to some number of columns.
+-   Justify words to some number of columns.
+-   Preserve punctuation, but don't align by it.
 
 **References:**
 
--
+-   <https://www.rosettacode.org/wiki/Align_columns>
 
 #
 

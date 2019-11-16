@@ -1,3 +1,4 @@
+@invoke alphabetize();
 @invoke toc();
 
 #### Abelian Sandpile Model

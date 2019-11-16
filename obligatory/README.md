@@ -1,3 +1,4 @@
+@invoke alphabetize();
 @invoke toc();
 
 #### FizzBuzz
@@ -109,8 +110,8 @@ Buzz
 
 **References:**
 
--   http://rosettacode.org/wiki/Palindrome
--   https://en.wikipedia.org/wiki/Palindrome
+-   <http://rosettacode.org/wiki/Palindrome>
+-   <https://en.wikipedia.org/wiki/Palindrome>
 
 #
 
@@ -143,5 +144,5 @@ Buzz
 
 **References:**
 
--   http://rosettacode.org/wiki/Leap_year
--   https://en.wikipedia.org/wiki/Leap_year
+-   <http://rosettacode.org/wiki/Leap_year>
+-   <https://en.wikipedia.org/wiki/Leap_year>

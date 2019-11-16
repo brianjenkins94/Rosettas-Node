@@ -212,8 +212,8 @@ for (const potentialPalindrome of potentialPalindromes) {
 
 **References:**
 
--   http://rosettacode.org/wiki/Palindrome
--   https://en.wikipedia.org/wiki/Palindrome
+-   <http://rosettacode.org/wiki/Palindrome>
+-   <https://en.wikipedia.org/wiki/Palindrome>
 
 #
 
@@ -256,8 +256,8 @@ for (let x = 2010; x <= 2020; x++) {
 
 **References:**
 
--   http://rosettacode.org/wiki/Leap_year
--   https://en.wikipedia.org/wiki/Leap_year
+-   <http://rosettacode.org/wiki/Leap_year>
+-   <https://en.wikipedia.org/wiki/Leap_year>
 
 <hr>
 
@@ -464,7 +464,7 @@ The word "CONFUSE" can be spelled with these blocks.
 
 **References:**
 
--   http://rosettacode.org/wiki/ABC_Problem
+-   <http://rosettacode.org/wiki/ABC_Problem>
 
 #
 
@@ -496,19 +496,85 @@ function getLongestRow(input) {
 	return longestRow;
 }
 
-function alignLeft(input) {
+function getColumnWidths(input) {
 	const longestRow = getLongestRow(input);
 
+	const columnWidths = [];
+
+	for (let x = 0; x < longestRow; x++) {
+		let columnWidth = 0;
+
+		for (let y = 0; y < input.length; y++) {
+			if ((input[y][x] || "").length > columnWidth) {
+				columnWidth = (input[y][x] || "").length;
+			}
+		}
+
+		columnWidths.push(columnWidth);
+	}
+
+	return columnWidths;
+}
+
+function alignLeft(input) {
+	const columnWidths = getColumnWidths(input);
+
+	let output = "";
+
+	for (let x = 0; x < input.length; x++) {
+		for (let y = 0; y < input[x].length; y++) {
+			const word = input[x][y] || "";
+			const padding = columnWidths[y] - (word.length);
+
+			output += word + " ".repeat(padding + 1);
+		}
+
+		output += "\n";
+	}
+
+	return output;
 }
 
 function alignRight(input) {
-	const longestRow = getLongestRow(input);
+	const columnWidths = getColumnWidths(input);
 
+	let output = "";
+
+	for (let x = 0; x < input.length; x++) {
+		for (let y = 0; y < input[x].length; y++) {
+			const word = input[x][y] || "";
+			const padding = columnWidths[y] - word.length;
+
+			output += " ".repeat(padding) + word + " ";
+		}
+
+		output += "\n";
+	}
+
+	return output;
 }
 
 function alignCenter(input) {
-	const longestRow = getLongestRow(input);
+	const columnWidths = getColumnWidths(input);
 
+	let output = "";
+
+	for (let x = 0; x < input.length; x++) {
+		for (let y = 0; y < input[x].length; y++) {
+			const word = input[x][y] || "";
+			const padding = Math.floor(columnWidths[y] - word.length) / 2;
+
+			if (((columnWidths[y] - word.length) / 2) % 1) {
+				output += " ".repeat(padding) + word + " ".repeat(padding + 2);
+			} else {
+				output += " ".repeat(padding) + word + " ".repeat(padding + 1);
+			}
+		}
+
+		output += "\n";
+	}
+
+	return output;
 }
 
 console.log("Left:");
@@ -524,11 +590,40 @@ console.log(alignCenter(input));
 **Sample Output:**
 
 ```
+Left:
+Given      a          multiline  input     string, where     the        words    within  a       line
+are        delineated by         a         single  space     character, write    a       program
+that       aligns     each       column    of      words     by         ensuring that    the     words  in
+each       column     are        separated by      at        least      one      space.
+Further,   allow      for        each      word    in        a          column   to      be      either left
+justified, right      justified, or        center  justified within     its      column.
+
+Right:
+     Given          a  multiline     input string,     where        the    words  within       a   line
+       are delineated         by         a  single     space character,    write       a program
+      that     aligns       each    column      of     words         by ensuring    that     the  words   in
+      each     column        are separated      by        at      least      one  space.
+  Further,      allow        for      each    word        in          a   column      to      be either left
+justified,      right justified,        or  center justified     within      its column.
+
+Center:
+  Given        a      multiline    input   string,   where      the      words   within     a     line
+   are     delineated     by         a     single    space   character,  write      a    program
+   that      aligns      each     column     of      words       by     ensuring  that     the   words   in
+   each      column      are     separated   by       at       least      one    space.
+ Further,    allow       for       each     word      in         a       column    to      be    either left
+justified,   right    justified,    or     center  justified   within     its    column.
 ```
+
+**Variants:**
+
+-   Word wrap to some number of columns.
+-   Justify words to some number of columns.
+-   Preserve punctuation, but don't align by it.
 
 **References:**
 
--
+-   <https://www.rosettacode.org/wiki/Align_columns>
 
 #
 

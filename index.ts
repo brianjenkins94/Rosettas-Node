@@ -74,6 +74,8 @@ inputFileReadStream.on("line", function readLine(line, parentReadStream = inputF
 
 			parentReadStream.resume();
 		});
+	} else if (/^@invoke alphabetize\(\);$/.test(line)) {
+		console.warn("Not yet implemented.");
 	} else {
 		writeStream.write(line + "\n");
 	}

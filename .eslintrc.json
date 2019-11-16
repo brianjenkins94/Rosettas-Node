@@ -23,6 +23,7 @@
 		// Configured
 		"@typescript-eslint/indent": ["warn", "tab"], // Indent using tabs
 		"@typescript-eslint/no-misused-promises": ["warn", { "checksVoidReturn": false }], // No promises in conditionals
+		"@typescript-eslint/no-unnecessary-condition": ["warn", { "ignoreRhs": true }], // Allow boolean operators for short-circuiting
 		"array-bracket-newline": ["warn", "consistent"], // Per-array consistent formatting
 		"array-element-newline": ["warn", "consistent"], // Per-array consistent formatting
 		"dot-location": ["warn", "property"], // Dot on the next line for chained functions
@@ -52,6 +53,7 @@
 		"@typescript-eslint/promise-function-async": "off",
 		"@typescript-eslint/require-array-sort-compare": "off",
 		"@typescript-eslint/restrict-plus-operands": "off",
+		"@typescript-eslint/strict-boolean-expressions": "off",
 		"@typescript-eslint/typedef": "off",
 		"capitalized-comments": "off",
 		"class-methods-use-this": "off",
