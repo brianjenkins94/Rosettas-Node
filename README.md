@@ -276,7 +276,6 @@ for (let x = 2010; x <= 2020; x++) {
 					<li><a href="#abbreviations">Abbreviations</a></li>
 					<li><a href="#letter-blocks">Letter Blocks</a></li>
 					<li><a href="#align-columns">Align Columns</a></li>
-					<li><a href="#almost-prime">Almost Prime</a></li>
 					<li><a href="#balanced-brackets">Balanced Brackets</a></li>
 					<li><a href="#caesar-cipher">Caesar Cipher</a></li>
 					<li><a href="#caesar-cipher-solver">Caesar Cipher Solver</a></li>
@@ -472,14 +471,14 @@ The word "CONFUSE" can be spelled with these blocks.
 
 #### Align Columns
 
--   Write a program that aligns each column of words by ensuring that the words in each column are separated by at least one space. Further, allow for each word in a column to be either left a justified, right justified, or center justified within its column.
+-   Write a program that aligns words into columns, ensuring that the words in each column are separated by at least one space. Further, allow for each word in a column to be either left a justified, right justified, or center justified within its column.
 
 **Solution:**
 
 ```typescript
 const input = [
-	["Write", "a", "program,", "that", "aligns", "each", "column", "of", "words"],
-	["by", "ensuring", "that", "the", "words", "in", "each", "column"],
+	["Write", "a", "program,", "that", "aligns", "words", "into", "columns,"],
+	["ensuring", "that", "the", "words", "in", "each", "column"],
 	["are", "separated", "by", "at", "least", "one", "space."],
 	["Further,", "allow", "for", "each", "word", "in", "a", "column"],
 	["to", "be", "either", "left", "justified,", "right", "justified,"],
@@ -593,26 +592,26 @@ console.log(alignCenter(input));
 
 ```
 Left:
-Write    a         program,  that   aligns     each    column     of     words
-by       ensuring  that      the    words      in      each       column
+Write    a         program,  that   aligns     words   into       columns,
+ensuring that      the       words  in         each    column
 are      separated by        at     least      one     space.
 Further, allow     for       each   word       in      a          column
 to       be        either    left   justified, right   justified,
 or       center    justified within its        column.
 
 Right:
-   Write         a  program,   that     aligns    each     column     of words
-      by  ensuring      that    the      words      in       each column
+   Write         a  program,   that     aligns   words       into columns,
+ensuring      that       the  words         in    each     column
      are separated        by     at      least     one     space.
-Further,     allow       for   each       word      in          a column
+Further,     allow       for   each       word      in          a   column
       to        be    either   left justified,   right justified,
       or    center justified within        its column.
 
 Center:
- Write       a     program,   that    aligns    each     column     of   words
-   by    ensuring    that     the     words      in       each    column
+ Write       a     program,   that    aligns    words     into    columns,
+ensuring   that       the    words      in      each     column
   are    separated    by       at     least      one     space.
-Further,   allow      for     each     word      in        a      column
+Further,   allow      for     each     word      in        a       column
    to       be      either    left  justified,  right  justified,
    or     center   justified within    its     column.
 ```
@@ -629,45 +628,84 @@ Further,   allow      for     each     word      in        a      column
 
 #
 
-#### Almost Prime
-
--
-
-**Solution:**
-
-```typescript
-//@import "./almostPrime.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
 #### Balanced Brackets
 
--
+-   Determine whether the generated string is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.
 
 **Solution:**
 
 ```typescript
-//@import "./balancedBrackets.ts";
+const input = [
+	"[[]][[]]]]",
+	"][]][[][][",
+	"[][]]][[[]",
+	"][][[[][[]",
+	"[[[][]]][]",
+	"][][]][[[[",
+	"][][[[[]][",
+	"][[][]][[]",
+	"[[]][[]][]",
+	"[][]]][]]]"
+];
+
+function isBalanced(input) {
+	let leftStack = 0;
+	let rightStack = 0;
+
+	for (const [index, character] of Object.entries(input)) {
+		if (character === "[") {
+			leftStack += 1;
+		} else if (leftStack > rightStack) {
+			rightStack += 1;
+		} else {
+			return parseInt(index, 10);
+		}
+	}
+
+	return true;
+}
+
+for (const string of input) {
+	const balanced = isBalanced(string);
+
+	if (balanced === true) {
+		console.log(string + " is balanced.");
+		console.log();
+	} else {
+		console.log(string + " is NOT balanced.");
+		console.log(" ".repeat(balanced) + "^");
+	}
+}
 ```
 
 **Sample Output:**
 
 ```
+[[]][[]]]] is NOT balanced.
+        ^
+][]][[][][ is NOT balanced.
+^
+[][]]][[[] is NOT balanced.
+    ^
+][][[[][[] is NOT balanced.
+^
+[[[][]]][] is balanced.
+
+][][]][[[[ is NOT balanced.
+^
+][][[[[]][ is NOT balanced.
+^
+][[][]][[] is NOT balanced.
+^
+[[]][[]][] is balanced.
+
+[][]]][]]] is NOT balanced.
+    ^
 ```
 
 **References:**
 
--
+-   <http://rosettacode.org/wiki/Balanced_brackets>
 
 #
 

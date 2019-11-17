@@ -151,7 +151,7 @@ Further,   allow      for     each     word      in        a       column
 
 **References:**
 
--   http://rosettacode.org/wiki/Balanced_brackets
+-   <http://rosettacode.org/wiki/Balanced_brackets>
 
 #
 
