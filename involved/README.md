@@ -22,6 +22,27 @@
 
 #
 
+#### Chaocipher
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./chaocipher.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-   http://www.rosettacode.org/wiki/Chaocipher
+
+#
+
 #### Conway's Game of Life
 
 -

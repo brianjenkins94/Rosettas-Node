@@ -3,7 +3,7 @@
 
 #### Abbreviations
 
--   Write a program to find the minimum, _fixed-length_ abbreviation for an array that would preserve each element's uniqueness.
+-   Write a program to find the minimum, same-length_ abbreviation for an array that would preserve each element's uniqueness.
 
 **Solution:**
 
@@ -23,7 +23,7 @@
 
 **Variants:**
 
--   Produce an array of minimal-length strings instead of fixed-length strings.
+-   Produce an array of minimal-length strings instead of same-length strings.
 
 **References:**
 
@@ -157,7 +157,8 @@ Further,   allow      for     each     word      in        a       column
 
 #### Caesar Cipher
 
--
+-   Write a program that can encode and decode a string using a Caesar cipher given a key (an integer from 1 to 25).
+    - The [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) is a type of [substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher) in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
 
 **Solution:**
 
@@ -168,18 +169,24 @@ Further,   allow      for     each     word      in        a       column
 **Sample Output:**
 
 ```
-
+Encoded:
+Dro combod vsoc gsdr Mrkbvyddo.
+Decoded:
+The secret lies with Charlotte.
 ```
 
 **References:**
 
 -   http://rosettacode.org/wiki/Caesar_cipher
+-   https://en.wikipedia.org/wiki/Caesar_cipher
+-   https://en.wikipedia.org/wiki/Substitution_cipher
 
 #
 
 #### Caesar Cipher Solver
 
--
+-   Use a dictionary to attempt to decode the message encoded by your [Caesar cipher](#caesar-cipher).
+    -   Windows users must bring their own dictionary or match against a dictionary containing the decoded message.
 
 **Solution:**
 
@@ -196,15 +203,25 @@ Decoded:
 The secret lies with Charlotte.
 
 20% match with a shift of 4.
+    Dro -> Znk
+    combod -> ykixkz
     vsoc -> roky
+    gsdr -> cozn
+    Mrkbvyddo. -> Ingxruzzk.
 
 60% match with a shift of 10.
     Dro -> The
     combod -> secret
+    vsoc -> lies
     gsdr -> with
+    Mrkbvyddo. -> Charlotte.
 
 20% match with a shift of 17.
     Dro -> Max
+    combod -> lxvkxm
+    vsoc -> ebxl
+    gsdr -> pbma
+    Mrkbvyddo. -> Vatkehmmx.
 ```
 
 **References:**
@@ -213,87 +230,68 @@ The secret lies with Charlotte.
 
 #
 
-#### Calendar
-
--
-
-**Solution:**
-
-```typescript
-//@import "./calendar.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
-#### Chaocipher
-
--
-
-**Solution:**
-
-```typescript
-//@import "./chaocipher.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
 #### Recursion Limit
 
--
+-   Find the limit of [recursion](https://en.wikipedia.org/wiki/Recursion_(computer_science)).
 
 **Solution:**
 
 ```typescript
-//@import "./recursionLimit.ts";
+import "./recursionLimit.ts";
 ```
 
 **Sample Output:**
 
 ```
+The recursion limit is: 12569
 ```
 
 **References:**
 
--
+-   http://rosettacode.org/wiki/Find_limit_of_recursion
+-   https://en.wikipedia.org/wiki/Recursion_(computer_science)
 
 #
 
 #### History Variables
 
--
+- Implement history variables.
+    - History variables are variables in a programming language which store not only their current value, but also the values they have contained in the past.
 
 **Solution:**
 
 ```typescript
-//@import "./historyVariables.ts";
+@import "./historyVariables.ts";
 ```
 
 **Sample Output:**
 
 ```
+> Print the history
+[
+  'uno',   'dos',
+  'tres',  'cuatro',
+  'cinco', 'cinco',
+  'seis'
+]
+
+> Print the previous value
+cinco
+
+> Roll back twice
+
+> Set the value to "seis"
+
+> Get the value we just added
+seis
+
+> Print the history
+[ 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis' ]
 ```
 
 **References:**
 
--
+-   http://rosettacode.org/wiki/History_variables
 
 #
 
@@ -530,22 +528,25 @@ The secret lies with Charlotte.
 
 #### Quine
 
--
+-   Write a quine.
+    -   A [Quine](https://en.wikipedia.org/wiki/Quine_(computing)) a computer program which takes no input and produces a copy of its own source code as its only output.
 
 **Solution:**
 
 ```typescript
-//@import "./quine.ts";
+@import "./quine.ts";
 ```
 
 **Sample Output:**
 
 ```
+@import "./quine.ts";
 ```
 
 **References:**
 
--
+-   http://rosettacode.org/wiki/Quine
+-   https://en.wikipedia.org/wiki/Quine_(computing)
 
 #
 

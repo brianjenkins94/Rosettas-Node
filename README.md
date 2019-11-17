@@ -279,8 +279,6 @@ for (let x = 2010; x <= 2020; x++) {
 					<li><a href="#balanced-brackets">Balanced Brackets</a></li>
 					<li><a href="#caesar-cipher">Caesar Cipher</a></li>
 					<li><a href="#caesar-cipher-solver">Caesar Cipher Solver</a></li>
-					<li><a href="#calendar">Calendar</a></li>
-					<li><a href="#chaocipher">Chaocipher</a></li>
 					<li><a href="#recursion-limit">Recursion Limit</a></li>
 					<li><a href="#history-variables">History Variables</a></li>
 					<li><a href="#last-letter-first-letter">Last Letter-First Letter</a></li>
@@ -319,7 +317,7 @@ for (let x = 2010; x <= 2020; x++) {
 
 #### Abbreviations
 
--   Write a program to find the minimum, _fixed-length_ abbreviation for an array that would preserve each element's uniqueness.
+-   Write a program to find the minimum, same-length_ abbreviation for an array that would preserve each element's uniqueness.
 
 **Solution:**
 
@@ -369,7 +367,7 @@ for (const array of arrays) {
 
 **Variants:**
 
--   Produce an array of minimal-length strings instead of fixed-length strings.
+-   Produce an array of minimal-length strings instead of same-length strings.
 
 **References:**
 
@@ -711,7 +709,8 @@ for (const string of input) {
 
 #### Caesar Cipher
 
--
+-   Write a program that can encode and decode a string using a Caesar cipher given a key (an integer from 1 to 25).
+    - The [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) is a type of [substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher) in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
 
 **Solution:**
 
@@ -745,18 +744,24 @@ console.log(decode(encode(secret, 10), 10));
 **Sample Output:**
 
 ```
-
+Encoded:
+Dro combod vsoc gsdr Mrkbvyddo.
+Decoded:
+The secret lies with Charlotte.
 ```
 
 **References:**
 
 -   http://rosettacode.org/wiki/Caesar_cipher
+-   https://en.wikipedia.org/wiki/Caesar_cipher
+-   https://en.wikipedia.org/wiki/Substitution_cipher
 
 #
 
 #### Caesar Cipher Solver
 
--
+-   Use a dictionary to attempt to decode the message encoded by your [Caesar cipher](#caesar-cipher).
+    -   Windows users must bring their own dictionary or match against a dictionary containing the decoded message.
 
 **Solution:**
 
@@ -833,15 +838,25 @@ Decoded:
 The secret lies with Charlotte.
 
 20% match with a shift of 4.
+    Dro -> Znk
+    combod -> ykixkz
     vsoc -> roky
+    gsdr -> cozn
+    Mrkbvyddo. -> Ingxruzzk.
 
 60% match with a shift of 10.
     Dro -> The
     combod -> secret
+    vsoc -> lies
     gsdr -> with
+    Mrkbvyddo. -> Charlotte.
 
 20% match with a shift of 17.
     Dro -> Max
+    combod -> lxvkxm
+    vsoc -> ebxl
+    gsdr -> pbma
+    Mrkbvyddo. -> Vatkehmmx.
 ```
 
 **References:**
@@ -850,87 +865,132 @@ The secret lies with Charlotte.
 
 #
 
-#### Calendar
-
--
-
-**Solution:**
-
-```typescript
-//@import "./calendar.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
-#### Chaocipher
-
--
-
-**Solution:**
-
-```typescript
-//@import "./chaocipher.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
 #### Recursion Limit
 
--
+-   Find the limit of [recursion](https://en.wikipedia.org/wiki/Recursion_(computer_science)).
 
 **Solution:**
 
 ```typescript
-//@import "./recursionLimit.ts";
+import "./recursionLimit.ts";
 ```
 
 **Sample Output:**
 
 ```
+The recursion limit is: 12569
 ```
 
 **References:**
 
--
+-   http://rosettacode.org/wiki/Find_limit_of_recursion
+-   https://en.wikipedia.org/wiki/Recursion_(computer_science)
 
 #
 
 #### History Variables
 
--
+- Implement history variables.
+    - History variables are variables in a programming language which store not only their current value, but also the values they have contained in the past.
 
 **Solution:**
 
 ```typescript
-//@import "./historyVariables.ts";
+class HistoryVariable {
+	private readonly history = [];
+
+	public constructor(initialValue?) {
+		this.history.push(initialValue);
+	}
+
+	public setValue(value) {
+		this.history.push(value);
+	}
+
+	public getValue(index?) {
+		if (index !== undefined) {
+			if (index < 0) {
+				// A negative index starts from the end
+				return this.history[(this.history.length - 1) + index];
+			} else {
+				// A positive index or zero starts from the beginning
+				return this.history[index];
+			}
+		} else {
+			// No index returns the current value
+			return this.history[this.history.length - 1];
+		}
+	}
+
+	public getHistory() {
+		return this.history;
+	}
+
+	public rollback() {
+		if (this.history.length > 0) {
+			this.history.pop();
+		}
+
+		return this;
+	}
+}
+
+const historyVariable = new HistoryVariable("uno");
+
+historyVariable.setValue("dos");
+historyVariable.setValue("tres");
+historyVariable.setValue("cuatro");
+historyVariable.setValue("cinco");
+historyVariable.setValue("cinco");
+historyVariable.setValue("seis");
+
+console.log("> Print the history");
+console.log(historyVariable.getHistory());
+
+console.log("\n> Print the previous value");
+console.log(historyVariable.getValue(-1));
+
+console.log("\n> Roll back twice");
+historyVariable.rollback().rollback();
+
+console.log("\n> Set the value to \"seis\"");
+historyVariable.setValue("seis");
+
+console.log("\n> Get the value we just added");
+console.log(historyVariable.getValue());
+
+console.log("\n> Print the history");
+console.log(historyVariable.getHistory());
 ```
 
 **Sample Output:**
 
 ```
+> Print the history
+[
+  'uno',   'dos',
+  'tres',  'cuatro',
+  'cinco', 'cinco',
+  'seis'
+]
+
+> Print the previous value
+cinco
+
+> Roll back twice
+
+> Set the value to "seis"
+
+> Get the value we just added
+seis
+
+> Print the history
+[ 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis' ]
 ```
 
 **References:**
 
--
+-   http://rosettacode.org/wiki/History_variables
 
 #
 
@@ -1167,22 +1227,29 @@ The secret lies with Charlotte.
 
 #### Quine
 
--
+-   Write a quine.
+    -   A [Quine](https://en.wikipedia.org/wiki/Quine_(computing)) a computer program which takes no input and produces a copy of its own source code as its only output.
 
 **Solution:**
 
 ```typescript
-//@import "./quine.ts";
+(function quine() {
+    console.log("(" + quine.toString() + ")();");
+})();
 ```
 
 **Sample Output:**
 
 ```
+(function quine() {
+    console.log("(" + quine.toString() + ")();");
+})();
 ```
 
 **References:**
 
--
+-   http://rosettacode.org/wiki/Quine
+-   https://en.wikipedia.org/wiki/Quine_(computing)
 
 #
 
@@ -1537,6 +1604,7 @@ The secret lies with Charlotte.
 			<td>
 				<ol>
 					<li><a href="#abelian-sandpile-model">Abelian Sandpile Model</a></li>
+					<li><a href="#chaocipher">Chaocipher</a></li>
 					<li><a href="#conways-game-of-life">Conway's Game of Life</a></li>
 					<li><a href="#dijkstras-algorithm">Dijkstra's Algorithm</a></li>
 					<li><a href="#dinesmans-multiple-dwelling-problem">Dinesman's Multiple-dwelling Problem</a></li>
@@ -1604,6 +1672,27 @@ The secret lies with Charlotte.
 **References:**
 
 -
+
+#
+
+#### Chaocipher
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./chaocipher.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-   http://www.rosettacode.org/wiki/Chaocipher
 
 #
 
