@@ -66,7 +66,7 @@ The word "CONFUSE" can be spelled with these blocks.
 
 #### Align Columns
 
--   Write a program that aligns each column of words by ensuring that the words in each column are separated by at least one space. Further, allow for each word in a column to be either left a justified, right justified, or center justified within its column.
+-   Write a program that aligns words into columns, ensuring that the words in each column are separated by at least one space. Further, allow for each word in a column to be either left a justified, right justified, or center justified within its column.
 
 **Solution:**
 
@@ -78,26 +78,26 @@ The word "CONFUSE" can be spelled with these blocks.
 
 ```
 Left:
-Write    a         program,  that   aligns     each    column     of     words
-by       ensuring  that      the    words      in      each       column
+Write    a         program,  that   aligns     words   into       columns,
+ensuring that      the       words  in         each    column
 are      separated by        at     least      one     space.
 Further, allow     for       each   word       in      a          column
 to       be        either    left   justified, right   justified,
 or       center    justified within its        column.
 
 Right:
-   Write         a  program,   that     aligns    each     column     of words
-      by  ensuring      that    the      words      in       each column
+   Write         a  program,   that     aligns   words       into columns,
+ensuring      that       the  words         in    each     column
      are separated        by     at      least     one     space.
-Further,     allow       for   each       word      in          a column
+Further,     allow       for   each       word      in          a   column
       to        be    either   left justified,   right justified,
       or    center justified within        its column.
 
 Center:
- Write       a     program,   that    aligns    each     column     of   words
-   by    ensuring    that     the     words      in       each    column
+ Write       a     program,   that    aligns    words     into    columns,
+ensuring   that       the    words      in      each     column
   are    separated    by       at     least      one     space.
-Further,   allow      for     each     word      in        a      column
+Further,   allow      for     each     word      in        a       column
    to       be      either    left  justified,  right  justified,
    or     center   justified within    its     column.
 ```
@@ -114,45 +114,44 @@ Further,   allow      for     each     word      in        a      column
 
 #
 
-#### Almost Prime
-
--
-
-**Solution:**
-
-```typescript
-//@import "./almostPrime.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
 #### Balanced Brackets
 
--
+-   Determine whether the generated string is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.
 
 **Solution:**
 
 ```typescript
-//@import "./balancedBrackets.ts";
+@import "./balancedBrackets.ts";
 ```
 
 **Sample Output:**
 
 ```
+[[]][[]]]] is NOT balanced.
+        ^
+][]][[][][ is NOT balanced.
+^
+[][]]][[[] is NOT balanced.
+    ^
+][][[[][[] is NOT balanced.
+^
+[[[][]]][] is balanced.
+
+][][]][[[[ is NOT balanced.
+^
+][][[[[]][ is NOT balanced.
+^
+][[][]][[] is NOT balanced.
+^
+[[]][[]][] is balanced.
+
+[][]]][]]] is NOT balanced.
+    ^
 ```
 
 **References:**
 
--
+-   http://rosettacode.org/wiki/Balanced_brackets
 
 #
 

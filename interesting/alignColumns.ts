@@ -1,6 +1,6 @@
 const input = [
-	["Write", "a", "program,", "that", "aligns", "each", "column", "of", "words"],
-	["by", "ensuring", "that", "the", "words", "in", "each", "column"],
+	["Write", "a", "program,", "that", "aligns", "words", "into", "columns,"],
+	["ensuring", "that", "the", "words", "in", "each", "column"],
 	["are", "separated", "by", "at", "least", "one", "space."],
 	["Further,", "allow", "for", "each", "word", "in", "a", "column"],
 	["to", "be", "either", "left", "justified,", "right", "justified,"],
