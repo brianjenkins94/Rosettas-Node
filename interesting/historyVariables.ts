@@ -52,7 +52,7 @@ console.log(historyVariable.getHistory());
 console.log("\n> Print the previous value");
 console.log(historyVariable.getValue(-1));
 
-console.log("\n> Roll back twice");
+console.log("\n> Rollback twice");
 historyVariable.rollback().rollback();
 
 console.log("\n> Set the value to \"seis\"");

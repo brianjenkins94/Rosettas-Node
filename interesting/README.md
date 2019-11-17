@@ -237,7 +237,7 @@ The secret lies with Charlotte.
 **Solution:**
 
 ```typescript
-import "./recursionLimit.ts";
+@import "./recursionLimit.ts";
 ```
 
 **Sample Output:**
