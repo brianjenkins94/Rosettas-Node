@@ -162,17 +162,18 @@ Further,   allow      for     each     word      in        a       column
 **Solution:**
 
 ```typescript
-//@import "./caesarCipher.ts";
+@import "./caesarCipher.ts";
 ```
 
 **Sample Output:**
 
 ```
+
 ```
 
 **References:**
 
--
+-   http://rosettacode.org/wiki/Caesar_cipher
 
 #
 
@@ -183,17 +184,32 @@ Further,   allow      for     each     word      in        a       column
 **Solution:**
 
 ```typescript
-//@import "./caesarCipherSolver.ts";
+@import "./caesarCipherSolver.ts";
 ```
 
 **Sample Output:**
 
 ```
+Encoded:
+Dro combod vsoc gsdr Mrkbvyddo.
+Decoded:
+The secret lies with Charlotte.
+
+20% match with a shift of 4.
+    vsoc -> roky
+
+60% match with a shift of 10.
+    Dro -> The
+    combod -> secret
+    gsdr -> with
+
+20% match with a shift of 17.
+    Dro -> Max
 ```
 
 **References:**
 
--
+-   http://rosettacode.org/wiki/Caesar_cipher
 
 #
 

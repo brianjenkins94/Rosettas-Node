@@ -716,17 +716,41 @@ for (const string of input) {
 **Solution:**
 
 ```typescript
-//@import "./caesarCipher.ts";
+export const secret = "The secret lies with Charlotte.";
+
+const ASCII_UPPERCASE_A = 65;
+const ASCII_LOWERCASE_A = 97;
+export const ALPHABET_LENGTH = 26;
+
+export function encode(string, key) {
+	return string.replace(/\w/g, function(a) {
+		if (a.charCodeAt(0) < ASCII_LOWERCASE_A) {
+			return String.fromCharCode(ASCII_UPPERCASE_A + ((a.charCodeAt(0) - ASCII_UPPERCASE_A + key) % ALPHABET_LENGTH));
+		} else {
+			return String.fromCharCode(ASCII_LOWERCASE_A + ((a.charCodeAt(0) - ASCII_LOWERCASE_A + key) % ALPHABET_LENGTH));
+		}
+	});
+}
+
+export function decode(string, key) {
+	return encode(string, ALPHABET_LENGTH - key);
+}
+
+console.log("Encoded:");
+console.log(encode(secret, 10));
+console.log("Decoded:");
+console.log(decode(encode(secret, 10), 10));
 ```
 
 **Sample Output:**
 
 ```
+
 ```
 
 **References:**
 
--
+-   http://rosettacode.org/wiki/Caesar_cipher
 
 #
 
@@ -737,17 +761,92 @@ for (const string of input) {
 **Solution:**
 
 ```typescript
-//@import "./caesarCipherSolver.ts";
+// [!] This problem has external dependencies on `/usr/share/dict/words` and `./caesarCipher.ts`.
+// Windows users will need to bring their own dictionary.
+
+import { createInterface } from "readline";
+import * as fs from "fs";
+import * as path from "path";
+
+import { secret, ALPHABET_LENGTH, encode, decode } from "./caesarCipher";
+
+function loadDictionary() {
+	return new Promise(function(resolve, reject) {
+		const inputFileReadStream = createInterface({
+			"input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
+		});
+
+		const dictionary = [];
+
+		inputFileReadStream.on("line", function(line) {
+			dictionary.push(line);
+		});
+
+		inputFileReadStream.on("close", function() {
+			resolve(dictionary);
+		});
+	});
+}
+
+let dictionary;
+
+function getNumberOfMatches(string, key) {
+	let matches = 0;
+
+	for (const word of string.split(" ")) {
+		if (dictionary.indexOf(decode(word, key)) !== -1) {
+			matches += 1;
+		}
+	}
+
+	return matches;
+}
+
+(async function() {
+	dictionary = await loadDictionary();
+
+	const encodedSecret = encode(secret, 10);
+
+	for (let x = 0; x < ALPHABET_LENGTH; x++) {
+		const matchCount = getNumberOfMatches(encodedSecret, x);
+
+		if (matchCount !== 0) {
+			const encodedWords = encodedSecret.split(" ");
+			const decodedWords = decode(encodedSecret, x).split(" ");
+
+			console.log("\n" + (((matchCount / encodedWords.length) * 100) + "% match with a shift of " + x + "."));
+
+			for (let y = 0; y < encodedWords.length; y++) {
+				console.log("\t" + encodedWords[y] + " -> " + decodedWords[y]);
+			}
+		}
+	}
+})();
 ```
 
 **Sample Output:**
 
 ```
+Encoded:
+Dro combod vsoc gsdr Mrkbvyddo.
+Decoded:
+The secret lies with Charlotte.
+
+20% match with a shift of 4.
+    vsoc -> roky
+
+60% match with a shift of 10.
+    Dro -> The
+    combod -> secret
+    gsdr -> with
+
+20% match with a shift of 17.
+    Dro -> Max
 ```
 
 **References:**
 
--
+-   http://rosettacode.org/wiki/Caesar_cipher
 
 #
 
