@@ -1,3 +1,3 @@
 (function quine() {
-    console.log("(" + quine.toString() + ")();");
+	console.log("(" + quine.toString() + ")();");
 })();

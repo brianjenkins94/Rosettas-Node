@@ -957,7 +957,7 @@ console.log(historyVariable.getHistory());
 > Print the previous value
 cinco
 
-> Roll back twice
+> Rollback twice
 
 > Set the value to "seis"
 
@@ -1288,8 +1288,8 @@ for (const potentialPangram of potentialPangrams) {
 
 #### Quine
 
--   Write a quine.
-    -   A [Quine](https://en.wikipedia.org/wiki/Quine_(computing)) a computer program which takes no input and produces a copy of its own source code as its only output.
+-   Write a [Quine](https://en.wikipedia.org/wiki/Quine_(computing)).
+    -   A quite is a computer program which takes no input and produces a copy of its own source code as its only output.
 
 **Solution:**
 
