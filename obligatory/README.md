@@ -87,7 +87,7 @@ Buzz
 
 #### Palindrome Checker
 
--   Write a function that checks whether a given string is a [palindrome](https://en.wikipedia.org/wiki/Palindrome).
+-   Write a program that checks whether a given string is a [palindrome](https://en.wikipedia.org/wiki/Palindrome).
     -   A palindrome is a word or phrase which reads the same backward and forward.
 
 **Solution:**
@@ -118,7 +118,7 @@ Buzz
 
 #### Leap Year Checker
 
--   Write a function that checks whether a given year is a [leap year](https://en.wikipedia.org/wiki/Leap_year).
+-   Write a program that checks whether a given year is a [leap year](https://en.wikipedia.org/wiki/Leap_year).
     -   A leap year is a year divisible by 4 but not 100 and is not divisible by 400.
 
 **Solution:**

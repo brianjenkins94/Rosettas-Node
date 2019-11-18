@@ -10,9 +10,9 @@ const potentialPalindromes = [
 ];
 
 function isPalindrome(string) {
-	const normalizedString = string.replace(/\W/g, "").toLowerCase();
+	const sanitizedString = string.replace(/\W/g, "").toLowerCase();
 
-	return normalizedString === normalizedString.split("").reverse().join("");
+	return sanitizedString === sanitizedString.split("").reverse().join("");
 }
 
 for (const potentialPalindrome of potentialPalindromes) {

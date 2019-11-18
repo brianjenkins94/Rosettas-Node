@@ -157,8 +157,8 @@ Further,   allow      for     each     word      in        a       column
 
 #### Caesar Cipher
 
--   Write a program that can encode and decode a string using the Caesar cipher, given a key (an integer from 1 to 25).
-    - The [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) is a type of [substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher) in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
+-   Write a program that can encode and decode a string using the [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher), given a key (an integer from 1 to 25).
+    - The Caesar cipher is a type of [substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher) in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
 
 **Solution:**
 
@@ -186,7 +186,7 @@ The secret lies with Charlotte.
 #### Caesar Cipher Solver
 
 -   Use a dictionary to attempt to decode the message encoded by your [Caesar cipher](#caesar-cipher).
-    -   Windows users must bring their own dictionary or match against a dictionary containing the decoded message.
+-   Windows users must bring their own dictionary or match against a dictionary containing the decoded message.
 
 **Solution:**
 
@@ -327,66 +327,68 @@ Exeggutor
 
 #
 
-#### Linear Congruential Generator
-
--
-
-**Solution:**
-
-```typescript
-//@import "./linearCongruentialGenerator.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
 #### Ordered Words
 
--
+-   Write a program to find all the ordered words from a given dictionary.
+    -   An ordered word is a word in which the letters appear in alphabetic order.
+-   Windows users must bring their own dictionary.
 
 **Solution:**
 
 ```typescript
-//@import "./orderedWords.ts";
+@import "./orderedWords.ts";
 ```
 
 **Sample Output:**
 
 ```
+Ab
+abdest
+Abe
+Abel
+abet
+abey
+abhor
+abilo
+abir
+ablow
+...
 ```
 
 **References:**
 
--
+-   https://rosettacode.org/wiki/Ordered_words
 
 #
 
 #### Pangram Checker
 
--
+-   Write a program that checks whether a given string is a [pangram](https://en.wikipedia.org/wiki/Pangram).
+    -   A pangram is a word or phrase that contains every letter of the alphabet.
 
 **Solution:**
 
 ```typescript
-//@import "./pangramChecker.ts";
+@import "./isPangram.ts";
 ```
 
 **Sample Output:**
 
 ```
+"The quick brown fox jumps over the lazy dog." is a pangram.
+"Sphinx of black quartz, judge my vow." is a pangram.
+"How vexingly quick daft zebras jump!" is a pangram.
+"The five boxing wizards jump quickly." is a pangram.
+"Able was I ere I saw Elba." is NOT a pangram.
+"A man, a plan, a canal – Panama." is NOT a pangram.
+"Madam, I'm Adam." is NOT a pangram.
+"Never odd or even." is NOT a pangram.
 ```
 
 **References:**
 
--
+-   https://rosettacode.org/wiki/Pangram_checker
+-   https://en.wikipedia.org/wiki/Pangram
 
 #
 

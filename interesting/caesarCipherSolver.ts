@@ -1,5 +1,5 @@
 // [!] This problem has external dependencies on `/usr/share/dict/words` and `./caesarCipher.ts`.
-// Windows users will need to bring their own dictionary.
+// Windows users will need to bring their own dictionary or match against a dictionary containing the decoded message.
 
 import { createInterface } from "readline";
 import * as fs from "fs";
@@ -15,8 +15,8 @@ function loadDictionary() {
 
 		const dictionary = [];
 
-		inputFileReadStream.on("line", function(line) {
-			dictionary.push(line);
+		inputFileReadStream.on("line", function(word) {
+			dictionary.push(word);
 		});
 
 		inputFileReadStream.on("close", function() {

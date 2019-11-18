@@ -166,7 +166,7 @@ console.log(fibonacci(10));
 
 #### Palindrome Checker
 
--   Write a function that checks whether a given string is a [palindrome](https://en.wikipedia.org/wiki/Palindrome).
+-   Write a program that checks whether a given string is a [palindrome](https://en.wikipedia.org/wiki/Palindrome).
     -   A palindrome is a word or phrase which reads the same backward and forward.
 
 **Solution:**
@@ -184,9 +184,9 @@ const potentialPalindromes = [
 ];
 
 function isPalindrome(string) {
-	const normalizedString = string.replace(/\W/g, "").toLowerCase();
+	const sanitizedString = string.replace(/\W/g, "").toLowerCase();
 
-	return normalizedString === normalizedString.split("").reverse().join("");
+	return sanitizedString === sanitizedString.split("").reverse().join("");
 }
 
 for (const potentialPalindrome of potentialPalindromes) {
@@ -220,7 +220,7 @@ for (const potentialPalindrome of potentialPalindromes) {
 
 #### Leap Year Checker
 
--   Write a function that checks whether a given year is a [leap year](https://en.wikipedia.org/wiki/Leap_year).
+-   Write a program that checks whether a given year is a [leap year](https://en.wikipedia.org/wiki/Leap_year).
     -   A leap year is a year divisible by 4 but not 100 and is not divisible by 400.
 
 **Solution:**
@@ -284,7 +284,6 @@ for (let x = 2000; x <= 2020; x++) {
 					<li><a href="#recursion-limit">Recursion Limit</a></li>
 					<li><a href="#history-variables">History Variables</a></li>
 					<li><a href="#last-letter-first-letter">Last Letter-First Letter</a></li>
-					<li><a href="#linear-congruential-generator">Linear Congruential Generator</a></li>
 					<li><a href="#ordered-words">Ordered Words</a></li>
 					<li><a href="#pangram-checker">Pangram Checker</a></li>
 					<li><a href="#pascals-triangle">Pascal's Triangle</a></li>
@@ -682,8 +681,8 @@ for (const string of input) {
 
 #### Caesar Cipher
 
--   Write a program that can encode and decode a string using the Caesar cipher, given a key (an integer from 1 to 25).
-    - The [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) is a type of [substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher) in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
+-   Write a program that can encode and decode a string using the [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher), given a key (an integer from 1 to 25).
+    - The Caesar cipher is a type of [substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher) in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
 
 **Solution:**
 
@@ -734,13 +733,13 @@ The secret lies with Charlotte.
 #### Caesar Cipher Solver
 
 -   Use a dictionary to attempt to decode the message encoded by your [Caesar cipher](#caesar-cipher).
-    -   Windows users must bring their own dictionary or match against a dictionary containing the decoded message.
+-   Windows users must bring their own dictionary or match against a dictionary containing the decoded message.
 
 **Solution:**
 
 ```typescript
 // [!] This problem has external dependencies on `/usr/share/dict/words` and `./caesarCipher.ts`.
-// Windows users will need to bring their own dictionary.
+// Windows users will need to bring their own dictionary or match against a dictionary containing the decoded message.
 
 import { createInterface } from "readline";
 import * as fs from "fs";
@@ -756,8 +755,8 @@ function loadDictionary() {
 
 		const dictionary = [];
 
-		inputFileReadStream.on("line", function(line) {
-			dictionary.push(line);
+		inputFileReadStream.on("line", function(word) {
+			dictionary.push(word);
 		});
 
 		inputFileReadStream.on("close", function() {
@@ -1019,66 +1018,124 @@ Exeggutor
 
 #
 
-#### Linear Congruential Generator
-
--
-
-**Solution:**
-
-```typescript
-//@import "./linearCongruentialGenerator.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
 #### Ordered Words
 
--
+-   Write a program to find all the ordered words from a given dictionary.
+    -   An ordered word is a word in which the letters appear in alphabetic order.
+-   Windows users must bring their own dictionary.
 
 **Solution:**
 
 ```typescript
-//@import "./orderedWords.ts";
+// [!] This problem has external dependencies on `/usr/share/dict/words`.
+// Windows users will need to bring their own dictionary.
+
+import { createInterface } from "readline";
+import * as fs from "fs";
+import * as path from "path";
+
+const inputFileReadStream = createInterface({
+    "input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
+});
+
+inputFileReadStream.on("line", function(word) {
+    const lowercaseWord = word.toLowerCase();
+
+    for (let x = 1; x < lowercaseWord.length; x++) {
+        if (lowercaseWord.charCodeAt(x - 1) >= lowercaseWord.charCodeAt(x)) {
+            return;
+        }
+    }
+
+    console.log(word);
+});
 ```
 
 **Sample Output:**
 
 ```
+Ab
+abdest
+Abe
+Abel
+abet
+abey
+abhor
+abilo
+abir
+ablow
+...
 ```
 
 **References:**
 
--
+-   https://rosettacode.org/wiki/Ordered_words
 
 #
 
 #### Pangram Checker
 
--
+-   Write a program that checks whether a given string is a [pangram](https://en.wikipedia.org/wiki/Pangram).
+    -   A pangram is a word or phrase that contains every letter of the alphabet.
 
 **Solution:**
 
 ```typescript
-//@import "./pangramChecker.ts";
+const potentialPangrams = [
+	"The quick brown fox jumps over the lazy dog.",
+	"Sphinx of black quartz, judge my vow.",
+	"How vexingly quick daft zebras jump!",
+	"The five boxing wizards jump quickly.",
+	"Able was I ere I saw Elba.",
+	"A man, a plan, a canal – Panama.",
+	"Madam, I'm Adam.",
+	"Never odd or even."
+];
+
+function isPangram(string) {
+	const sanitizedString = string.replace(/\W/g, "").toLowerCase();
+
+	const letters = { "a": false, "b": false, "c": false, "d": false, "e": false, "f": false, "g": false, "h": false, "i": false, "j": false, "k": false, "l": false, "m": false, "n": false, "o": false, "p": false, "q": false, "r": false, "s": false, "t": false, "u": false, "v": false, "w": false, "x": false, "y": false, "z": false };
+
+	for (const character of sanitizedString) {
+		letters[character] = true;
+	}
+
+	for (const letter of Object.keys(letters)) {
+		if (letters[letter] === false) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+for (const potentialPangram of potentialPangrams) {
+	if (isPangram(potentialPangram)) {
+		console.log("\"" + potentialPangram + "\" is a pangram.");
+	} else {
+		console.log("\"" + potentialPangram + "\" is NOT a pangram.");
+	}
+}
 ```
 
 **Sample Output:**
 
 ```
+"The quick brown fox jumps over the lazy dog." is a pangram.
+"Sphinx of black quartz, judge my vow." is a pangram.
+"How vexingly quick daft zebras jump!" is a pangram.
+"The five boxing wizards jump quickly." is a pangram.
+"Able was I ere I saw Elba." is NOT a pangram.
+"A man, a plan, a canal – Panama." is NOT a pangram.
+"Madam, I'm Adam." is NOT a pangram.
+"Never odd or even." is NOT a pangram.
 ```
 
 **References:**
 
--
+-   https://rosettacode.org/wiki/Pangram_checker
+-   https://en.wikipedia.org/wiki/Pangram
 
 #
 
