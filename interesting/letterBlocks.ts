@@ -1,35 +1,6 @@
-const blocks = [
-	["B", "O"],
-	["X", "K"],
-	["D", "Q"],
-	["C", "P"],
-	["N", "A"],
-	["G", "T"],
-	["R", "E"],
-	["T", "G"],
-	["Q", "D"],
-	["F", "S"],
-	["J", "W"],
-	["H", "U"],
-	["V", "I"],
-	["A", "N"],
-	["O", "B"],
-	["E", "R"],
-	["F", "S"],
-	["L", "Y"],
-	["P", "C"],
-	["Z", "M"]
-];
+const blocks = [["B", "O"], ["X", "K"], ["D", "Q"], ["C", "P"], ["N", "A"], ["G", "T"], ["R", "E"], ["T", "G"], ["Q", "D"], ["F", "S"], ["J", "W"], ["H", "U"], ["V", "I"], ["A", "N"], ["O", "B"], ["E", "R"], ["F", "S"], ["L", "Y"], ["P", "C"], ["Z", "M"]];
 
-const words = [
-	"A",
-	"BARK",
-	"BOOK",
-	"TREAT",
-	"COMMON",
-	"SQUAD",
-	"CONFUSE"
-];
+const words = ["A", "BARK", "BOOK", "TREAT", "COMMON", "SQUAD", "CONFUSE"];
 
 function isWordSpellableWithBlocks(word, blocks) {
 	for (const letter of word) {

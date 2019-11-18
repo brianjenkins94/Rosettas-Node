@@ -3,7 +3,7 @@
 
 #### Abbreviations
 
--   Write a program to find the minimum, same-length_ abbreviation for an array that would preserve each element's uniqueness.
+-   Write a program to find the minimum, _same-length_ abbreviation for an array that would preserve each element's uniqueness.
 
 **Solution:**
 
@@ -104,7 +104,7 @@ Further,   allow      for     each     word      in        a       column
 
 **Variants:**
 
--   Word wrap to some number of columns.
+-   [Word wrap](#word-wrap) to some number of columns.
 -   Justify words to some number of columns.
 -   Preserve punctuation, but don't align by it.
 
@@ -116,7 +116,7 @@ Further,   allow      for     each     word      in        a       column
 
 #### Balanced Brackets
 
--   Determine whether the generated string is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.
+-   Determine whether a given string is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.
 
 **Solution:**
 
@@ -157,7 +157,7 @@ Further,   allow      for     each     word      in        a       column
 
 #### Caesar Cipher
 
--   Write a program that can encode and decode a string using a Caesar cipher given a key (an integer from 1 to 25).
+-   Write a program that can encode and decode a string using the Caesar cipher, given a key (an integer from 1 to 25).
     - The [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) is a type of [substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher) in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
 
 **Solution:**
@@ -256,7 +256,7 @@ The recursion limit is: 12569
 #### History Variables
 
 - Implement history variables.
-    - History variables are variables in a programming language which store not only their current value, but also the values they have contained in the past.
+    - History variables are variables which store not only their current value, but also the values they have contained in the past.
 
 **Solution:**
 
@@ -302,17 +302,28 @@ seis
 **Solution:**
 
 ```typescript
-//@import "./lastLetterFirstLetter.ts";
+@import "./lastLetterFirstLetter.ts";
 ```
 
 **Sample Output:**
 
 ```
+Bulbasaur
+Rattata
+Arbok
+Kakuna
+Arcanine
+Ekans
+Squirtle
+Electrode
+Exeggcute
+Exeggutor
+...
 ```
 
 **References:**
 
--
+-   http://rosettacode.org/wiki/Last_letter-first_letter
 
 #
 
@@ -883,5 +894,3 @@ seis
 **References:**
 
 -
-
-#

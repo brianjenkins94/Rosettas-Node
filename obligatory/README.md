@@ -27,6 +27,7 @@ Fizz
 8
 Fizz
 Buzz
+...
 ```
 
 **References:**
@@ -129,17 +130,18 @@ Buzz
 **Sample Output:**
 
 ```
+2000 is a leap year.
+2001 is NOT a leap year.
+2002 is NOT a leap year.
+2003 is NOT a leap year.
+2004 is a leap year.
+2005 is NOT a leap year.
+2006 is NOT a leap year.
+2007 is NOT a leap year.
+2008 is a leap year.
+2009 is NOT a leap year.
 2010 is NOT a leap year.
-2011 is NOT a leap year.
-2012 is a leap year.
-2013 is NOT a leap year.
-2014 is NOT a leap year.
-2015 is NOT a leap year.
-2016 is a leap year.
-2017 is NOT a leap year.
-2018 is NOT a leap year.
-2019 is NOT a leap year.
-2020 is a leap year.
+...
 ```
 
 **References:**

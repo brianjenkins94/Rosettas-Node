@@ -62,15 +62,15 @@ These are the problems that have been "done to death". Anything that was once in
 **Solution:**
 
 ```typescript
-for (let i = 1; i <= 10; i++) {
-	if (i % 15 === 0) {
+for (let x = 1; x <= 100; x++) {
+	if (x % 15 === 0) {
 		console.log("FizzBuzz");
-	} else if (i % 3 === 0) {
+	} else if (x % 3 === 0) {
 		console.log("Fizz");
-	} else if (i % 5 === 0) {
+	} else if (x % 5 === 0) {
 		console.log("Buzz");
 	} else {
-		console.log(i);
+		console.log(x);
 	}
 }
 ```
@@ -88,6 +88,7 @@ Fizz
 8
 Fizz
 Buzz
+...
 ```
 
 **References:**
@@ -108,8 +109,8 @@ Buzz
 function fibonacci(n) {
 	const array = [0, 1];
 
-	for (let i = 2; i <= n; i++) {
-		array.push(array[i - 2] + array[i - 1]);
+	for (let x = 2; x <= n; x++) {
+		array.push(array[x - 2] + array[x - 1]);
 	}
 
 	return array[n];
@@ -229,7 +230,7 @@ function isLeapYear(year) {
     return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
 };
 
-for (let x = 2010; x <= 2020; x++) {
+for (let x = 2000; x <= 2020; x++) {
     if (isLeapYear(x)) {
         console.log(x + " is a leap year.");
     } else {
@@ -241,17 +242,18 @@ for (let x = 2010; x <= 2020; x++) {
 **Sample Output:**
 
 ```
+2000 is a leap year.
+2001 is NOT a leap year.
+2002 is NOT a leap year.
+2003 is NOT a leap year.
+2004 is a leap year.
+2005 is NOT a leap year.
+2006 is NOT a leap year.
+2007 is NOT a leap year.
+2008 is a leap year.
+2009 is NOT a leap year.
 2010 is NOT a leap year.
-2011 is NOT a leap year.
-2012 is a leap year.
-2013 is NOT a leap year.
-2014 is NOT a leap year.
-2015 is NOT a leap year.
-2016 is a leap year.
-2017 is NOT a leap year.
-2018 is NOT a leap year.
-2019 is NOT a leap year.
-2020 is a leap year.
+...
 ```
 
 **References:**
@@ -317,7 +319,7 @@ for (let x = 2010; x <= 2020; x++) {
 
 #### Abbreviations
 
--   Write a program to find the minimum, same-length_ abbreviation for an array that would preserve each element's uniqueness.
+-   Write a program to find the minimum, _same-length_ abbreviation for an array that would preserve each element's uniqueness.
 
 **Solution:**
 
@@ -383,38 +385,9 @@ for (const array of arrays) {
 **Solution:**
 
 ```typescript
-const blocks = [
-	["B", "O"],
-	["X", "K"],
-	["D", "Q"],
-	["C", "P"],
-	["N", "A"],
-	["G", "T"],
-	["R", "E"],
-	["T", "G"],
-	["Q", "D"],
-	["F", "S"],
-	["J", "W"],
-	["H", "U"],
-	["V", "I"],
-	["A", "N"],
-	["O", "B"],
-	["E", "R"],
-	["F", "S"],
-	["L", "Y"],
-	["P", "C"],
-	["Z", "M"]
-];
+const blocks = [["B", "O"], ["X", "K"], ["D", "Q"], ["C", "P"], ["N", "A"], ["G", "T"], ["R", "E"], ["T", "G"], ["Q", "D"], ["F", "S"], ["J", "W"], ["H", "U"], ["V", "I"], ["A", "N"], ["O", "B"], ["E", "R"], ["F", "S"], ["L", "Y"], ["P", "C"], ["Z", "M"]];
 
-const words = [
-	"A",
-	"BARK",
-	"BOOK",
-	"TREAT",
-	"COMMON",
-	"SQUAD",
-	"CONFUSE"
-];
+const words = ["A", "BARK", "BOOK", "TREAT", "COMMON", "SQUAD", "CONFUSE"];
 
 function isWordSpellableWithBlocks(word, blocks) {
 	for (const letter of word) {
@@ -616,7 +589,7 @@ Further,   allow      for     each     word      in        a       column
 
 **Variants:**
 
--   Word wrap to some number of columns.
+-   [Word wrap](#word-wrap) to some number of columns.
 -   Justify words to some number of columns.
 -   Preserve punctuation, but don't align by it.
 
@@ -628,7 +601,7 @@ Further,   allow      for     each     word      in        a       column
 
 #### Balanced Brackets
 
--   Determine whether the generated string is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.
+-   Determine whether a given string is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.
 
 **Solution:**
 
@@ -709,7 +682,7 @@ for (const string of input) {
 
 #### Caesar Cipher
 
--   Write a program that can encode and decode a string using a Caesar cipher given a key (an integer from 1 to 25).
+-   Write a program that can encode and decode a string using the Caesar cipher, given a key (an integer from 1 to 25).
     - The [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) is a type of [substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher) in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
 
 **Solution:**
@@ -899,7 +872,7 @@ The recursion limit is: 12569
 #### History Variables
 
 - Implement history variables.
-    - History variables are variables in a programming language which store not only their current value, but also the values they have contained in the past.
+    - History variables are variables which store not only their current value, but also the values they have contained in the past.
 
 **Solution:**
 
@@ -1009,17 +982,40 @@ seis
 **Solution:**
 
 ```typescript
-//@import "./lastLetterFirstLetter.ts";
+const pokemonNames = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate", "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu", "Raichu", "Sandshrew", "Sandslash", "Nidoran", "Nidorina", "Nidoqueen", "Nidorino", "Nidoking", "Clefairy", "Clefable", "Vulpix", "Ninetales", "Jigglypuff", "Wigglytuff", "Zubat", "Golbat", "Oddish", "Gloom", "Vileplume", "Paras", "Parasect", "Venonat", "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck", "Golduck", "Mankey", "Primeape", "Growlithe", "Arcanine", "Poliwag", "Poliwhirl", "Poliwrath", "Abra", "Kadabra", "Alakazam", "Machop", "Machoke", "Machamp", "Bellsprout", "Weepinbell", "Victreebel", "Tentacool", "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash", "Slowpoke", "Slowbro", "Magnemite", "Magneton", "Farfetch'd", "Doduo", "Dodrio", "Seel", "Dewgong", "Grimer", "Muk", "Shellder", "Cloyster", "Gastly", "Haunter", "Gengar", "Onix", "Drowzee", "Hypno", "Krabby", "Kingler", "Voltorb", "Electrode", "Exeggcute", "Exeggutor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan", "Lickitung", "Koffing", "Weezing", "Rhyhorn", "Rhydon", "Chansey", "Tangela", "Kangaskhan", "Horsea", "Seadra", "Goldeen", "Seaking", "Staryu", "Starmie", "Mr. Mime", "Scyther", "Jynx", "Electabuzz", "Magmar", "Pinsir", "Tauros", "Magikarp", "Gyarados", "Lapras", "Ditto", "Eevee", "Vaporeon", "Jolteon", "Flareon", "Porygon", "Omanyte", "Omastar", "Kabuto", "Kabutops", "Aerodactyl", "Snorlax", "Articuno", "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo", "Mew"];
+
+(function play(choice = "Bulbasaur") {
+	console.log(choice);
+
+	pokemonNames[pokemonNames.indexOf(choice)] = "";
+
+	for (const name of pokemonNames) {
+		if (name[0] === choice[choice.length - 1].toUpperCase()) {
+			play(name);
+		}
+	}
+})();
 ```
 
 **Sample Output:**
 
 ```
+Bulbasaur
+Rattata
+Arbok
+Kakuna
+Arcanine
+Ekans
+Squirtle
+Electrode
+Exeggcute
+Exeggutor
+...
 ```
 
 **References:**
 
--
+-   http://rosettacode.org/wiki/Last_letter-first_letter
 
 #
 
@@ -1594,8 +1590,6 @@ seis
 **References:**
 
 -
-
-#
 
 <hr>
 
