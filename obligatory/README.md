@@ -14,6 +14,8 @@
 @import "./fizzBuzz.ts";
 ```
 
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "FizzBuzz");
+
 **Sample Output:**
 
 ```
@@ -48,6 +50,8 @@ Buzz
 @import "./iterativeFibonacci.ts";
 ```
 
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Fibonacci (Iterative)");
+
 **Sample Output:**
 
 ```
@@ -72,6 +76,8 @@ Buzz
 @import "./recursiveFibonacci.ts";
 ```
 
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Fibonacci (Recursive)");
+
 **Sample Output:**
 
 ```
@@ -95,6 +101,8 @@ Buzz
 ```typescript
 @import "./isPalindrome.ts";
 ```
+
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Palindrome Checker");
 
 **Sample Output:**
 
@@ -126,6 +134,8 @@ Buzz
 ```typescript
 @import "./isLeapYear.ts";
 ```
+
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Leap Year Checker");
 
 **Sample Output:**
 

@@ -640,7 +640,7 @@ Min: 0.5        Max: 7.5
 **Solution:**
 
 ```typescript
-//@import "./textonyms.ts";
+//@import "./towersOfHanoi.ts";
 ```
 
 **Sample Output:**

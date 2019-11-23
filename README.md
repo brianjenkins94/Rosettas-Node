@@ -75,6 +75,7 @@ for (let x = 1; x <= 100; x++) {
 }
 ```
 
+<p align="right">[<sup>Improve this answer</sup>]("https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for FizzBuzz)</p>
 **Sample Output:**
 
 ```
@@ -119,6 +120,7 @@ function fibonacci(n) {
 console.log(fibonacci(10));
 ```
 
+<p align="right">[<sup>Improve this answer</sup>]("https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Iterative))</p>
 **Sample Output:**
 
 ```
@@ -151,6 +153,7 @@ function fibonacci(n) {
 console.log(fibonacci(10));
 ```
 
+<p align="right">[<sup>Improve this answer</sup>]("https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Recursive))</p>
 **Sample Output:**
 
 ```
@@ -198,6 +201,7 @@ for (const potentialPalindrome of potentialPalindromes) {
 }
 ```
 
+<p align="right">[<sup>Improve this answer</sup>]("https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Palindrome Checker)</p>
 **Sample Output:**
 
 ```
@@ -239,6 +243,7 @@ for (let x = 2000; x <= 2020; x++) {
 }
 ```
 
+<p align="right">[<sup>Improve this answer</sup>]("https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Leap Year Checker)</p>
 **Sample Output:**
 
 ```
@@ -1496,7 +1501,7 @@ inputFileReadStream.on("close", function() {
 **Solution:**
 
 ```typescript
-//@import "./textonyms.ts";
+//@import "./towersOfHanoi.ts";
 ```
 
 **Sample Output:**
