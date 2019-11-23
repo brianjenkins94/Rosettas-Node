@@ -1414,8 +1414,8 @@ Input: 1.5, 0.5, 3.5, 2.5, 5.5, 4.5, 7.5, 6.5
 
 #### Textonyms
 
--    Use a dictionary to find all of the words that are [Textonyms](https://en.wikipedia.org/wiki/Predictive_text#Textonyms).
-    -    Textonyms are words produced by the same combination of keypresses on a phone keypad.
+-   Use a dictionary to find all of the words that are [Textonyms](https://en.wikipedia.org/wiki/Predictive_text#Textonyms).
+    -   Textonyms are words produced by the same combination of keypresses on a phone keypad.
 
 **Solution:**
 
@@ -1487,8 +1487,8 @@ inputFileReadStream.on("close", function() {
 
 **References:**
 
--   https://www.rosettacode.org/wiki/Textonyms
--   https://en.wikipedia.org/wiki/Predictive_text#Textonyms
+-   <https://www.rosettacode.org/wiki/Textonyms>
+-   <https://en.wikipedia.org/wiki/Predictive_text#Textonyms>
 
 #
 

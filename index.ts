@@ -18,7 +18,7 @@ inputFileReadStream.on("line", function readLine(line, parentReadStream = inputF
 	if (/^@import "(.*)";$/.test(line)) {
 		parentReadStream.pause();
 
-		const parsedPath = path.parse(line.substring(line.indexOf("\"") + 1, line.lastIndexOf("\"")));
+		const parsedPath = path.parse(line.substring(line.indexOf("\"") + 1, line.length - 2));
 		const pathFragment = parsedPath.dir;
 		const fileName = parsedPath.base;
 		const filePath = path.join(path.dirname(parentReadStream.input.path), pathFragment);
@@ -77,7 +77,7 @@ inputFileReadStream.on("line", function readLine(line, parentReadStream = inputF
 	} else if (/^@invoke alphabetize\(\);$/.test(line)) {
 		console.warn("Not yet implemented.");
 	} else if (/^@insert improveThisAnswer\(.*\);$/.test(line)) {
-		const [username, repository, problemName] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.lastIndexOf(")")) + "]");
+		const [username, repository, problemName] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.length - 2) + "]");
 
 		writeStream.write("<p align=\"right\"><em><sup><a href=\"https://github.com/" + username + "/" + repository + "/issues/new?title=Suggestion for " + problemName + "\">Improve this answer</a></sup></em></p>\n");
 	} else {
