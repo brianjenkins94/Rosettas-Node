@@ -22,10 +22,5 @@ function sparkline(dataset) {
 for (const dataset of input) {
 	console.log("Input: " + dataset.join(", "));
 
-	const min = Math.min(...dataset);
-	const max = Math.max(...dataset);
-
-	console.log("Min: " + min + "\tMax: " + max);
-
 	console.log(sparkline(dataset) + "\n");
 }
