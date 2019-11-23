@@ -1,9 +1,9 @@
-function computeMaxCallStackSize() {
+function computeMaximumCallStackSize() {
 	try {
-		return 1 + computeMaxCallStackSize();
+		return 1 + computeMaximumCallStackSize();
 	} catch (error) {
 		return 1;
 	}
 }
 
-console.log("The recursion limit is: " + computeMaxCallStackSize());
+console.log("The recursion limit is: " + computeMaximumCallStackSize());

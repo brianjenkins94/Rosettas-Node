@@ -158,7 +158,7 @@ Further,   allow      for     each     word      in        a       column
 #### Caesar Cipher
 
 -   Write a program that can encode and decode a string using the [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher), given a key (an integer from 1 to 25).
-    - The Caesar cipher is a type of [substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher) in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
+    -   The Caesar cipher is a type of [substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher) in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
 
 **Solution:**
 
@@ -177,9 +177,9 @@ The secret lies with Charlotte.
 
 **References:**
 
--   http://rosettacode.org/wiki/Caesar_cipher
--   https://en.wikipedia.org/wiki/Caesar_cipher
--   https://en.wikipedia.org/wiki/Substitution_cipher
+-   <http://rosettacode.org/wiki/Caesar_cipher>
+-   <https://en.wikipedia.org/wiki/Caesar_cipher>
+-   <https://en.wikipedia.org/wiki/Substitution_cipher>
 
 #
 
@@ -226,7 +226,7 @@ The secret lies with Charlotte.
 
 **References:**
 
--   http://rosettacode.org/wiki/Caesar_cipher
+-   <http://rosettacode.org/wiki/Caesar_cipher>
 
 #
 
@@ -248,15 +248,15 @@ The recursion limit is: 12569
 
 **References:**
 
--   http://rosettacode.org/wiki/Find_limit_of_recursion
--   https://en.wikipedia.org/wiki/Recursion_(computer_science)
+-   <http://rosettacode.org/wiki/Find_limit_of_recursion>
+-   <https://en.wikipedia.org/wiki/Recursion_(computer_science>)
 
 #
 
 #### History Variables
 
-- Implement history variables.
-    - History variables are variables which store not only their current value, but also the values they have contained in the past.
+-   Implement history variables.
+    -   History variables are variables which store not only their current value, but also the values they have contained in the past.
 
 **Solution:**
 
@@ -291,7 +291,7 @@ seis
 
 **References:**
 
--   http://rosettacode.org/wiki/History_variables
+-   <http://rosettacode.org/wiki/History_variables>
 
 #
 
@@ -323,7 +323,7 @@ Exeggutor
 
 **References:**
 
--   http://rosettacode.org/wiki/Last_letter-first_letter
+-   <http://rosettacode.org/wiki/Last_letter-first_letter>
 
 #
 
@@ -357,7 +357,7 @@ ablow
 
 **References:**
 
--   https://rosettacode.org/wiki/Ordered_words
+-   <https://rosettacode.org/wiki/Ordered_words>
 
 #
 
@@ -387,8 +387,8 @@ ablow
 
 **References:**
 
--   https://rosettacode.org/wiki/Pangram_checker
--   https://en.wikipedia.org/wiki/Pangram
+-   <https://rosettacode.org/wiki/Pangram_checker>
+-   <https://en.wikipedia.org/wiki/Pangram>
 
 #
 
@@ -420,8 +420,8 @@ ablow
 
 **References:**
 
--   https://rosettacode.org/wiki/Pascal%27s_triangle
--   https://en.wikipedia.org/wiki/Pascal%27s_triangle
+-   <https://rosettacode.org/wiki/Pascal%27s_triangle>
+-   <https://en.wikipedia.org/wiki/Pascal%27s_triangle>
 
 #
 
@@ -507,50 +507,65 @@ ablow
 
 **References:**
 
--   http://rosettacode.org/wiki/Quine
--   https://en.wikipedia.org/wiki/Quine_(computing)
+-   <http://rosettacode.org/wiki/Quine>
+-   <https://en.wikipedia.org/wiki/Quine_(computing>)
 
 #
 
 #### Remove Duplicate Elements
 
--
+-   Given an array with duplicates, remove the duplicates.
 
 **Solution:**
 
 ```typescript
-//@import "./removeDuplicateElements.ts";
+@import "./removeDuplicateElements.ts";
 ```
 
 **Sample Output:**
 
 ```
+[1, 2, 3, 4]
 ```
 
 **References:**
 
--
+-   <https://www.rosettacode.org/wiki/Remove_duplicate_elements>
 
 #
 
 #### Semordnilap
 
--
+-   Write a program that determines whether a word is a [semordnilap](https://en.wikipedia.org/wiki/Palindrome#Semordnilap).
+    -   A semordnilap is a word that spells a different word in reverse.
+-   Windows users must bring their own dictionary
 
 **Solution:**
 
 ```typescript
-//@import "./semordnilap.ts";
+@import "./isSemordnilap.ts";
 ```
 
 **Sample Output:**
 
 ```
+A
+a
+aa
+aba
+Abba
+acca
+Ada
+Adda
+adda
+Adinida
+...
 ```
 
 **References:**
 
--
+-   <https://rosettacode.org/wiki/Semordnilap>
+-   <https://en.wikipedia.org/wiki/Palindrome#Semordnilap>
 
 #
 
@@ -567,11 +582,18 @@ ablow
 **Sample Output:**
 
 ```
+Input:	1, 2, 3, 4, 5, 6, 7, 8, 7, 6, 5, 4, 3, 2, 1
+Min: 1	Max: 8
+▁▂▃▄▅▆▇█▇▆▅▄▃▂▁
+
+Input:  1.5, 0.5, 3.5, 2.5, 5.5, 4.5, 7.5, 6.5
+Min: 0.5	Max: 7.5
+▂▁▄▃▆▅█▇
 ```
 
 **References:**
 
--
+-   <https://www.rosettacode.org/wiki/Sparkline_in_unicode>
 
 #
 
