@@ -287,9 +287,6 @@ for (let x = 2000; x <= 2020; x++) {
 					<li><a href="#ordered-words">Ordered Words</a></li>
 					<li><a href="#pangram-checker">Pangram Checker</a></li>
 					<li><a href="#pascals-triangle">Pascal's Triangle</a></li>
-					<li><a href="#pascals-triangle-puzzle">Pascal's Triangle Puzzle</a></li>
-					<li><a href="#international-bank-account-number-iban-validator">International Bank Account Number (IBAN) Validator</a></li>
-					<li><a href="#luhn-algorithm">Luhn Algorithm</a></li>
 					<li><a href="#maximum-triangle-path-sum">Maximum Triangle Path Sum</a></li>
 					<li><a href="#poker-hand-analyzer">Poker Hand Analyzer</a></li>
 					<li><a href="#perfect-shuffle">Perfect Shuffle</a></li>
@@ -487,7 +484,7 @@ function getColumnWidths(input) {
 	return columnWidths;
 }
 
-function alignLeft(input) {
+function align(alignment, input) {
 	const columnWidths = getColumnWidths(input);
 
 	let output = "";
@@ -495,50 +492,30 @@ function alignLeft(input) {
 	for (let x = 0; x < input.length; x++) {
 		for (let y = 0; y < input[x].length; y++) {
 			const word = input[x][y] || "";
-			const padding = columnWidths[y] - (word.length);
+			let padding;
 
-			output += word + " ".repeat(padding + 1);
-		}
+			switch (alignment) {
+				case "left":
+					padding = columnWidths[y] - (word.length);
 
-		output += "\n";
-	}
+					output += word + " ".repeat(padding + 1);
+					break;
+				case "right":
+					padding = columnWidths[y] - word.length;
 
-	return output;
-}
+					output += " ".repeat(padding) + word + " ";
+					break;
+				case "center":
+					padding = Math.floor(columnWidths[y] - word.length) / 2;
 
-function alignRight(input) {
-	const columnWidths = getColumnWidths(input);
-
-	let output = "";
-
-	for (let x = 0; x < input.length; x++) {
-		for (let y = 0; y < input[x].length; y++) {
-			const word = input[x][y] || "";
-			const padding = columnWidths[y] - word.length;
-
-			output += " ".repeat(padding) + word + " ";
-		}
-
-		output += "\n";
-	}
-
-	return output;
-}
-
-function alignCenter(input) {
-	const columnWidths = getColumnWidths(input);
-
-	let output = "";
-
-	for (let x = 0; x < input.length; x++) {
-		for (let y = 0; y < input[x].length; y++) {
-			const word = input[x][y] || "";
-			const padding = Math.floor(columnWidths[y] - word.length) / 2;
-
-			if (((columnWidths[y] - word.length) / 2) % 1) {
-				output += " ".repeat(padding) + word + " ".repeat(padding + 2);
-			} else {
-				output += " ".repeat(padding) + word + " ".repeat(padding + 1);
+					if (((columnWidths[y] - word.length) / 2) % 1) {
+						output += " ".repeat(padding) + word + " ".repeat(padding + 2);
+					} else {
+						output += " ".repeat(padding) + word + " ".repeat(padding + 1);
+					}
+					break;
+				default:
+					throw new Error("Invalid option for `alignment`.");
 			}
 		}
 
@@ -549,13 +526,13 @@ function alignCenter(input) {
 }
 
 console.log("Left:");
-console.log(alignLeft(input));
+console.log(align("left", input));
 
 console.log("Right:");
-console.log(alignRight(input));
+console.log(align("right", input));
 
 console.log("Center:");
-console.log(alignCenter(input));
+console.log(align("center", input));
 ```
 
 **Sample Output:**
@@ -976,20 +953,20 @@ seis
 
 #### Last Letter-First Letter
 
--
+-   Given a collection of words and a starting value, chain as many answers together that start with the last letter of the previous word without repeating.
 
 **Solution:**
 
 ```typescript
 const pokemonNames = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate", "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu", "Raichu", "Sandshrew", "Sandslash", "Nidoran", "Nidorina", "Nidoqueen", "Nidorino", "Nidoking", "Clefairy", "Clefable", "Vulpix", "Ninetales", "Jigglypuff", "Wigglytuff", "Zubat", "Golbat", "Oddish", "Gloom", "Vileplume", "Paras", "Parasect", "Venonat", "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck", "Golduck", "Mankey", "Primeape", "Growlithe", "Arcanine", "Poliwag", "Poliwhirl", "Poliwrath", "Abra", "Kadabra", "Alakazam", "Machop", "Machoke", "Machamp", "Bellsprout", "Weepinbell", "Victreebel", "Tentacool", "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash", "Slowpoke", "Slowbro", "Magnemite", "Magneton", "Farfetch'd", "Doduo", "Dodrio", "Seel", "Dewgong", "Grimer", "Muk", "Shellder", "Cloyster", "Gastly", "Haunter", "Gengar", "Onix", "Drowzee", "Hypno", "Krabby", "Kingler", "Voltorb", "Electrode", "Exeggcute", "Exeggutor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan", "Lickitung", "Koffing", "Weezing", "Rhyhorn", "Rhydon", "Chansey", "Tangela", "Kangaskhan", "Horsea", "Seadra", "Goldeen", "Seaking", "Staryu", "Starmie", "Mr. Mime", "Scyther", "Jynx", "Electabuzz", "Magmar", "Pinsir", "Tauros", "Magikarp", "Gyarados", "Lapras", "Ditto", "Eevee", "Vaporeon", "Jolteon", "Flareon", "Porygon", "Omanyte", "Omastar", "Kabuto", "Kabutops", "Aerodactyl", "Snorlax", "Articuno", "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo", "Mew"];
 
-(function play(choice = "Bulbasaur") {
-	console.log(choice);
+(function play(answer = "Bulbasaur") {
+	console.log(answer);
 
-	pokemonNames[pokemonNames.indexOf(choice)] = "";
+	pokemonNames[pokemonNames.indexOf(answer)] = "";
 
 	for (const name of pokemonNames) {
-		if (name[0] === choice[choice.length - 1].toUpperCase()) {
+		if (name[0] === answer[answer.length - 1].toUpperCase()) {
 			play(name);
 		}
 	}
@@ -1141,85 +1118,62 @@ for (const potentialPangram of potentialPangrams) {
 
 #### Pascal's Triangle
 
--
+-   Print the first 10 rows of [Pascal's Triangle](https://en.wikipedia.org/wiki/Pascal%27s_triangle).
+    -   Pascal's Triangle is a triangular array where each successive element is the sum of the two above it.
 
 **Solution:**
 
 ```typescript
-//@import "./pangramChecker.ts";
+const TAB_SIZE = 4;
+
+const triangle = [];
+
+for (let x = 0; x < 10; x++) {
+	for (let y = 0; y < x + 1; y++) {
+		if (y === 0) {
+			triangle.push(new Array(x + 1));
+
+			triangle[x][y] = 1;
+		} else if (y === (triangle[x].length - 1)) {
+			triangle[x][y] = 1;
+		} else {
+			triangle[x][y] = triangle[x - 1][y - 1] + triangle[x - 1][y];
+		}
+	}
+}
+
+const lastRowLength = triangle[triangle.length - 1].length;
+
+for (let x = 0; x < triangle.length; x++) {
+	let row = " ".repeat((lastRowLength - (x + 1)) * (TAB_SIZE / 2));
+
+	for (const element of triangle[x]) {
+		row += " ".repeat(TAB_SIZE - element.toString().length) + element;
+	}
+
+	console.log(row);
+}
 ```
 
 **Sample Output:**
 
 ```
+                     1
+                   1   1
+                 1   2   1
+               1   3   3   1
+             1   4   6   4   1
+           1   5  10  10   5   1
+         1   6  15  20  15   6   1
+       1   7  21  35  35  21   7   1
+     1   8  28  56  70  56  28   8   1
+   1   9  36  84 126 126  84  36   9   1
 ```
 
 **References:**
 
--
-
-#
-
-#### Pascal's Triangle Puzzle
-
--
-
-**Solution:**
-
-```typescript
-//@import "./pangramChecker.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
-#### International Bank Account Number (IBAN) Validator
-
--
-
-**Solution:**
-
-```typescript
-//@import "./ibanValidator.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
-#### Luhn Algorithm
-
--
-
-**Solution:**
-
-```typescript
-//@import "./luhnAlgorithm.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
+-   https://rosettacode.org/wiki/Pascal%27s_triangle
+-   https://en.wikipedia.org/wiki/Pascal%27s_triangle
 
 #
 
@@ -1288,14 +1242,14 @@ for (const potentialPangram of potentialPangrams) {
 
 #### Quine
 
--   Write a [Quine](https://en.wikipedia.org/wiki/Quine_(computing)).
-    -   A quite is a computer program which takes no input and produces a copy of its own source code as its only output.
+-   Write a quine.
+    -   A [Quine](https://en.wikipedia.org/wiki/Quine_(computing)) a computer program which takes no input and produces a copy of its own source code as its only output.
 
 **Solution:**
 
 ```typescript
 (function quine() {
-    console.log("(" + quine.toString() + ")();");
+	console.log("(" + quine.toString() + ")();");
 })();
 ```
 
@@ -1303,7 +1257,7 @@ for (const potentialPangram of potentialPangrams) {
 
 ```
 (function quine() {
-    console.log("(" + quine.toString() + ")();");
+	console.log("(" + quine.toString() + ")();");
 })();
 ```
 

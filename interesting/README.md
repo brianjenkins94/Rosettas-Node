@@ -297,7 +297,7 @@ seis
 
 #### Last Letter-First Letter
 
--
+-   Given a collection of words and a starting value, chain as many answers together that start with the last letter of the previous word without repeating.
 
 **Solution:**
 
@@ -395,7 +395,7 @@ ablow
 #### Pascal's Triangle
 
 -   Print the first 10 rows of [Pascal's Triangle](https://en.wikipedia.org/wiki/Pascal%27s_triangle).
-    -   Pascal's Triangle
+    -   Pascal's Triangle is a triangular array where each successive element is the sum of the two above it.
 
 **Solution:**
 
@@ -406,85 +406,22 @@ ablow
 **Sample Output:**
 
 ```
-                  1
-                1   1
-              1   2   1
-            1   3   3   1
-          1   4   6   4   1
-        1   5  10  10   5   1
-      1   6  15  20  15   6   1
-    1   7  21  35  35  21   7   1
-  1   8  28  56  70  56  28   8   1
-1   9  36  84  126 126 84  36   9   1
+                     1
+                   1   1
+                 1   2   1
+               1   3   3   1
+             1   4   6   4   1
+           1   5  10  10   5   1
+         1   6  15  20  15   6   1
+       1   7  21  35  35  21   7   1
+     1   8  28  56  70  56  28   8   1
+   1   9  36  84 126 126  84  36   9   1
 ```
 
 **References:**
 
 -   https://rosettacode.org/wiki/Pascal%27s_triangle
 -   https://en.wikipedia.org/wiki/Pascal%27s_triangle
-
-#
-
-#### Pascal's Triangle Puzzle
-
--
-
-**Solution:**
-
-```typescript
-//@import "./pascalsTrianglePuzzle.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
-#### International Bank Account Number (IBAN) Validator
-
--
-
-**Solution:**
-
-```typescript
-//@import "./ibanValidator.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
-#### Luhn Algorithm
-
--
-
-**Solution:**
-
-```typescript
-//@import "./luhnAlgorithm.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
 
 #
 
