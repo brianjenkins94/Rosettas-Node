@@ -595,27 +595,41 @@ Min: 0.5        Max: 7.5
 **References:**
 
 -   <https://www.rosettacode.org/wiki/Sparkline_in_unicode>
+-   <https://en.wikipedia.org/wiki/Sparkline>
 
 #
 
 #### Textonyms
 
--
+-    Use a dictionary to find all of the words that are [Textonyms](https://en.wikipedia.org/wiki/Predictive_text#Textonyms).
+    -    Textonyms are words produced by the same combination of keypresses on a phone keypad.
 
 **Solution:**
 
 ```typescript
-//@import "./textonyms.ts";
+@import "./textonyms.ts";
 ```
 
 **Sample Output:**
 
 ```
+2 spells the words: A, a, B, b, C, c
+3 spells the words: D, d, E, e, F, f
+4 spells the words: G, g, H, h, I, i
+5 spells the words: J, j, K, k, L, l
+6 spells the words: M, m, N, n, O, o
+7 spells the words: P, p, Q, q, R, r, S, s
+8 spells the words: T, t, U, u, V, v
+9 spells the words: W, w, X, x, Y, y, Z, z
+22 spells the words: aa, Ab, ba, ca
+23 spells the words: ad, ae, be, ce
+...
 ```
 
 **References:**
 
--
+-   https://www.rosettacode.org/wiki/Textonyms
+-   https://en.wikipedia.org/wiki/Predictive_text#Textonyms
 
 #
 

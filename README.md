@@ -668,6 +668,7 @@ export const secret = "The secret lies with Charlotte.";
 
 const ASCII_UPPERCASE_A = 65;
 const ASCII_LOWERCASE_A = 97;
+
 export const ALPHABET_LENGTH = 26;
 
 export function encode(string, key) {
@@ -1004,7 +1005,7 @@ Exeggutor
 **Solution:**
 
 ```typescript
-// [!] This problem has external dependencies on `/usr/share/dict/words`.
+// [!] This problem has an external dependency on `/usr/share/dict/words`.
 // Windows users will need to bring their own dictionary.
 
 import { createInterface } from "readline";
@@ -1276,7 +1277,7 @@ for (let x = 0; x < triangle.length; x++) {
 
 ```typescript
 function removeDuplicates(array) {
-    return [... new Set(array)]
+	return [...new Set(array)];
 }
 
 console.log(removeDuplicates([1, 2, 3, 4, 1, 2, 3, 4]));
@@ -1303,7 +1304,7 @@ console.log(removeDuplicates([1, 2, 3, 4, 1, 2, 3, 4]));
 **Solution:**
 
 ```typescript
-// [!] This problem has external dependencies on `/usr/share/dict/words`.
+// [!] This problem has an external dependency on `/usr/share/dict/words`.
 // Windows users will need to bring their own dictionary.
 
 import { createInterface } from "readline";
@@ -1311,17 +1312,17 @@ import * as fs from "fs";
 import * as path from "path";
 
 const inputFileReadStream = createInterface({
-    "input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
+	"input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
 });
 
 inputFileReadStream.on("line", function(word) {
-    const lowercaseWord = word.toLowerCase();
+	const lowercaseWord = word.toLowerCase();
 
-    if (lowercaseWord !== lowercaseWord.split("").reverse().join("")) {
-        return;
-    }
+	if (lowercaseWord !== lowercaseWord.split("").reverse().join("")) {
+		return;
+	}
 
-    console.log(word);
+	console.log(word);
 });
 ```
 
@@ -1404,27 +1405,87 @@ Min: 0.5        Max: 7.5
 **References:**
 
 -   <https://www.rosettacode.org/wiki/Sparkline_in_unicode>
+-   <https://en.wikipedia.org/wiki/Sparkline>
 
 #
 
 #### Textonyms
 
--
+-    Use a dictionary to find all of the words that are [Textonyms](https://en.wikipedia.org/wiki/Predictive_text#Textonyms).
+    -    Textonyms are words produced by the same combination of keypresses on a phone keypad.
 
 **Solution:**
 
 ```typescript
-//@import "./textonyms.ts";
+// [!] This problem has an external dependency on `/usr/share/dict/words`.
+// Windows users will need to bring their own dictionary.
+
+import { createInterface } from "readline";
+import * as fs from "fs";
+import * as path from "path";
+
+const inputFileReadStream = createInterface({
+    "input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
+});
+
+const textonyms = {};
+
+const keypad = {
+    "a": 2, "b": 2, "c": 2,
+    "d": 3, "e": 3, "f": 3,
+    "g": 4, "h": 4, "i": 4,
+    "j": 5, "k": 5, "l": 5,
+    "m": 6, "n": 6, "o": 6,
+    "p": 7, "q": 7, "r": 7, "s": 7,
+    "t": 8, "u": 8, "v": 8,
+    "w": 9, "x": 9, "y": 9, "z": 9
+};
+
+inputFileReadStream.on("line", function(word) {
+    const lowercaseWord = word.toLowerCase();
+
+    let key = ""
+
+    for (const letter of lowercaseWord) {
+        key += keypad[letter];
+    }
+
+    if (textonyms[key] !== undefined) {
+        textonyms[key].push(word);
+    } else {
+        textonyms[key] = [word];
+    }
+});
+
+inputFileReadStream.on("close", function() {
+    for (const [key, value] of Object.entries(textonyms)) {
+        if ((value as string[]).length > 1) {
+            console.log(key + " spells the words: " + (value as string[]).join(", "))
+        }
+    }
+});
 ```
 
 **Sample Output:**
 
 ```
+2 spells the words: A, a, B, b, C, c
+3 spells the words: D, d, E, e, F, f
+4 spells the words: G, g, H, h, I, i
+5 spells the words: J, j, K, k, L, l
+6 spells the words: M, m, N, n, O, o
+7 spells the words: P, p, Q, q, R, r, S, s
+8 spells the words: T, t, U, u, V, v
+9 spells the words: W, w, X, x, Y, y, Z, z
+22 spells the words: aa, Ab, ba, ca
+23 spells the words: ad, ae, be, ce
+...
 ```
 
 **References:**
 
--
+-   https://www.rosettacode.org/wiki/Textonyms
+-   https://en.wikipedia.org/wiki/Predictive_text#Textonyms
 
 #
 

@@ -1,4 +1,4 @@
-// [!] This problem has external dependencies on `/usr/share/dict/words`.
+// [!] This problem has an external dependency on `/usr/share/dict/words`.
 // Windows users will need to bring their own dictionary.
 
 import { createInterface } from "readline";
