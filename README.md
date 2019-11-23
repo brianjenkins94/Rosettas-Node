@@ -75,7 +75,7 @@ for (let x = 1; x <= 100; x++) {
 }
 ```
 
-<p align="right"><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for FizzBuzz">Improve this answer</a></sup></p>
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for FizzBuzz">Improve this answer</a></sup></em></p>
 
 **Sample Output:**
 
@@ -121,7 +121,7 @@ function fibonacci(n) {
 console.log(fibonacci(10));
 ```
 
-<p align="right"><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Iterative)">Improve this answer</a></sup></p>
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Iterative)">Improve this answer</a></sup></em></p>
 
 **Sample Output:**
 
@@ -155,7 +155,7 @@ function fibonacci(n) {
 console.log(fibonacci(10));
 ```
 
-<p align="right"><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Recursive)">Improve this answer</a></sup></p>
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Recursive)">Improve this answer</a></sup></em></p>
 
 **Sample Output:**
 
@@ -204,7 +204,7 @@ for (const potentialPalindrome of potentialPalindromes) {
 }
 ```
 
-<p align="right"><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Palindrome Checker">Improve this answer</a></sup></p>
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Palindrome Checker">Improve this answer</a></sup></em></p>
 
 **Sample Output:**
 
@@ -247,7 +247,7 @@ for (let x = 2000; x <= 2020; x++) {
 }
 ```
 
-<p align="right"><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Leap Year Checker">Improve this answer</a></sup></p>
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Leap Year Checker">Improve this answer</a></sup></em></p>
 
 **Sample Output:**
 
