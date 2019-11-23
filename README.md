@@ -75,7 +75,7 @@ for (let x = 1; x <= 100; x++) {
 }
 ```
 
-<p align="right">[<sup>Improve this answer</sup>](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for FizzBuzz)</p>
+<sup align="right">[Improve this answer](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for FizzBuzz)</sup>
 **Sample Output:**
 
 ```
@@ -120,7 +120,7 @@ function fibonacci(n) {
 console.log(fibonacci(10));
 ```
 
-<p align="right">[<sup>Improve this answer</sup>](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Iterative))</p>
+<sup align="right">[Improve this answer](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Iterative))</sup>
 **Sample Output:**
 
 ```
@@ -153,7 +153,7 @@ function fibonacci(n) {
 console.log(fibonacci(10));
 ```
 
-<p align="right">[<sup>Improve this answer</sup>](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Recursive))</p>
+<sup align="right">[Improve this answer](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Recursive))</sup>
 **Sample Output:**
 
 ```
@@ -201,7 +201,7 @@ for (const potentialPalindrome of potentialPalindromes) {
 }
 ```
 
-<p align="right">[<sup>Improve this answer</sup>](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Palindrome Checker)</p>
+<sup align="right">[Improve this answer](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Palindrome Checker)</sup>
 **Sample Output:**
 
 ```
@@ -243,7 +243,7 @@ for (let x = 2000; x <= 2020; x++) {
 }
 ```
 
-<p align="right">[<sup>Improve this answer</sup>](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Leap Year Checker)</p>
+<sup align="right">[Improve this answer](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Leap Year Checker)</sup>
 **Sample Output:**
 
 ```
