@@ -39,7 +39,7 @@ function getColumnWidths(input) {
 	return columnWidths;
 }
 
-function alignLeft(input) {
+function align(alignment, input) {
 	const columnWidths = getColumnWidths(input);
 
 	let output = "";
@@ -47,50 +47,30 @@ function alignLeft(input) {
 	for (let x = 0; x < input.length; x++) {
 		for (let y = 0; y < input[x].length; y++) {
 			const word = input[x][y] || "";
-			const padding = columnWidths[y] - (word.length);
+			let padding;
 
-			output += word + " ".repeat(padding + 1);
-		}
+			switch (alignment) {
+				case "left":
+					padding = columnWidths[y] - (word.length);
 
-		output += "\n";
-	}
+					output += word + " ".repeat(padding + 1);
+					break;
+				case "right":
+					padding = columnWidths[y] - word.length;
 
-	return output;
-}
+					output += " ".repeat(padding) + word + " ";
+					break;
+				case "center":
+					padding = Math.floor(columnWidths[y] - word.length) / 2;
 
-function alignRight(input) {
-	const columnWidths = getColumnWidths(input);
-
-	let output = "";
-
-	for (let x = 0; x < input.length; x++) {
-		for (let y = 0; y < input[x].length; y++) {
-			const word = input[x][y] || "";
-			const padding = columnWidths[y] - word.length;
-
-			output += " ".repeat(padding) + word + " ";
-		}
-
-		output += "\n";
-	}
-
-	return output;
-}
-
-function alignCenter(input) {
-	const columnWidths = getColumnWidths(input);
-
-	let output = "";
-
-	for (let x = 0; x < input.length; x++) {
-		for (let y = 0; y < input[x].length; y++) {
-			const word = input[x][y] || "";
-			const padding = Math.floor(columnWidths[y] - word.length) / 2;
-
-			if (((columnWidths[y] - word.length) / 2) % 1) {
-				output += " ".repeat(padding) + word + " ".repeat(padding + 2);
-			} else {
-				output += " ".repeat(padding) + word + " ".repeat(padding + 1);
+					if (((columnWidths[y] - word.length) / 2) % 1) {
+						output += " ".repeat(padding) + word + " ".repeat(padding + 2);
+					} else {
+						output += " ".repeat(padding) + word + " ".repeat(padding + 1);
+					}
+					break;
+				default:
+					throw new Error("Invalid option for `alignment`.");
 			}
 		}
 
@@ -101,10 +81,10 @@ function alignCenter(input) {
 }
 
 console.log("Left:");
-console.log(alignLeft(input));
+console.log(align("left", input));
 
 console.log("Right:");
-console.log(alignRight(input));
+console.log(align("right", input));
 
 console.log("Center:");
-console.log(alignCenter(input));
+console.log(align("center", input));
