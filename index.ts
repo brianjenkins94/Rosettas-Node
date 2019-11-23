@@ -15,7 +15,7 @@ const inputFileReadStream = createInterface({
 const writeStream = fs.createWriteStream(outputFile);
 
 inputFileReadStream.on("line", function readLine(line, parentReadStream = inputFileReadStream) {
-	if (/^@import "(.*)";$/.test(line)) {
+	if (/^@import ".*";$/.test(line)) {
 		parentReadStream.pause();
 
 		const parsedPath = path.parse(line.substring(line.indexOf("\"") + 1, line.length - 2));
@@ -34,7 +34,7 @@ inputFileReadStream.on("line", function readLine(line, parentReadStream = inputF
 		readStream.on("close", function() {
 			parentReadStream.resume();
 		});
-	} else if (/^@invoke toc\((.*)\);$/.test(line)) {
+	} else if (/^@invoke toc\(.*\);$/.test(line)) {
 		parentReadStream.pause();
 
 		const readStream = createInterface({

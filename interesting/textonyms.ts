@@ -25,7 +25,7 @@ const keypad = {
 inputFileReadStream.on("line", function(word) {
 	const lowercaseWord = word.toLowerCase();
 
-	let key = ""
+	let key = "";
 
 	for (const letter of lowercaseWord) {
 		key += keypad[letter];
@@ -41,7 +41,7 @@ inputFileReadStream.on("line", function(word) {
 inputFileReadStream.on("close", function() {
 	for (const [key, value] of Object.entries(textonyms)) {
 		if ((value as string[]).length > 1) {
-			console.log(key + " spells the words: " + (value as string[]).join(", "))
+			console.log(key + " spells the words: " + (value as string[]).join(", "));
 		}
 	}
 });
