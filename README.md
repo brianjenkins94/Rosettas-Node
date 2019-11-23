@@ -76,6 +76,7 @@ for (let x = 1; x <= 100; x++) {
 ```
 
 <sup align="right">[Improve this answer](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for FizzBuzz)</sup>
+
 **Sample Output:**
 
 ```
@@ -121,6 +122,7 @@ console.log(fibonacci(10));
 ```
 
 <sup align="right">[Improve this answer](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Iterative))</sup>
+
 **Sample Output:**
 
 ```
@@ -154,6 +156,7 @@ console.log(fibonacci(10));
 ```
 
 <sup align="right">[Improve this answer](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Recursive))</sup>
+
 **Sample Output:**
 
 ```
@@ -202,6 +205,7 @@ for (const potentialPalindrome of potentialPalindromes) {
 ```
 
 <sup align="right">[Improve this answer](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Palindrome Checker)</sup>
+
 **Sample Output:**
 
 ```
@@ -244,6 +248,7 @@ for (let x = 2000; x <= 2020; x++) {
 ```
 
 <sup align="right">[Improve this answer](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Leap Year Checker)</sup>
+
 **Sample Output:**
 
 ```

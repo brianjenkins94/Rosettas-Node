@@ -79,7 +79,7 @@ inputFileReadStream.on("line", function readLine(line, parentReadStream = inputF
 	} else if (/^@insert improveThisAnswer\(.*\);$/.test(line)) {
 		const [username, repository, problemName] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.lastIndexOf(")")) + "]");
 
-		writeStream.write("<sup align=\"right\">[Improve this answer](https://github.com/" + username + "/" + repository + "/issues/new?title=Suggestion for " + problemName + ")</sup>");
+		writeStream.write("<sup align=\"right\">[Improve this answer](https://github.com/" + username + "/" + repository + "/issues/new?title=Suggestion for " + problemName + ")</sup>\n");
 	} else {
 		writeStream.write(line + "\n");
 	}
