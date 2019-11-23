@@ -75,7 +75,7 @@ for (let x = 1; x <= 100; x++) {
 }
 ```
 
-<sup align="right">[Improve this answer](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for FizzBuzz)</sup>
+<p align="right"><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for FizzBuzz">Improve this answer</a></sup></p>
 
 **Sample Output:**
 
@@ -121,7 +121,7 @@ function fibonacci(n) {
 console.log(fibonacci(10));
 ```
 
-<sup align="right">[Improve this answer](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Iterative))</sup>
+<p align="right"><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Iterative)">Improve this answer</a></sup></p>
 
 **Sample Output:**
 
@@ -155,7 +155,7 @@ function fibonacci(n) {
 console.log(fibonacci(10));
 ```
 
-<sup align="right">[Improve this answer](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Recursive))</sup>
+<p align="right"><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Recursive)">Improve this answer</a></sup></p>
 
 **Sample Output:**
 
@@ -204,7 +204,7 @@ for (const potentialPalindrome of potentialPalindromes) {
 }
 ```
 
-<sup align="right">[Improve this answer](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Palindrome Checker)</sup>
+<p align="right"><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Palindrome Checker">Improve this answer</a></sup></p>
 
 **Sample Output:**
 
@@ -247,7 +247,7 @@ for (let x = 2000; x <= 2020; x++) {
 }
 ```
 
-<sup align="right">[Improve this answer](https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Leap Year Checker)</sup>
+<p align="right"><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Leap Year Checker">Improve this answer</a></sup></p>
 
 **Sample Output:**
 
