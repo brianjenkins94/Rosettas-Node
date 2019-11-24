@@ -20,13 +20,53 @@ function discussThisProblem(line) {
 	writeStream.write("<p align=\"right\"><em><sup><a href=\"https://github.com/" + username + "/" + repository + "/issues/new?title=[Discussion] " + problemName + "\">Discuss this problem</a></sup></em></p>\n");
 }
 
+function expandableCodeBlock(cwd, line) {
+	const [language, unparsedPath] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.length - 2) + "]");
+
+	const parsedPath = path.parse(unparsedPath);
+	const pathFragment = parsedPath.dir;
+	const fileName = parsedPath.base;
+	const filePath = path.join(path.dirname(cwd), pathFragment);
+
+	const readStream = createInterface({
+		"input": fs.createReadStream(path.join(filePath, fileName), { "highWaterMark": 1 })
+	});
+
+	let lineCount = 0;
+
+	const aboveTheFold = [];
+	const belowTheFold = [];
+
+	readStream.on("line", function(line) {
+		if (lineCount < 10) {
+			aboveTheFold.push(line);
+		} else {
+			belowTheFold.push(line);
+		}
+
+		lineCount += 1;
+	});
+
+	return new Promise(function(resolve, reject) {
+		readStream.on("close", function() {
+			if (aboveTheFold.length < 10) {
+				writeStream.write("<table><tbody><tr></tr><tr><td><details open><summary><strong>Solution:</strong>\n\n```" + language + "\n" + aboveTheFold.join("\n") + "\n```\n<summary></details></td></tr></tbody></table>\n");
+			} else {
+				writeStream.write("<table><tbody><tr></tr><tr><td><details><summary><strong>Solution:</strong>\n\n```" + language + "\n" + aboveTheFold.join("\n") + "\n```\n<summary>\n\n```" + language + "\n" + belowTheFold.join("\n") + "\n```\n</details></td></tr></tbody></table>\n");
+			}
+
+			resolve();
+		});
+	});
+}
+
 function improveThisAnswer(line) {
 	const [username, repository, problemName] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.length - 2) + "]");
 
 	writeStream.write("<p align=\"right\"><em><sup><a href=\"https://github.com/" + username + "/" + repository + "/issues/new?title=Suggestion for " + problemName + "\">Improve this answer</a></sup></em></p>\n");
 }
 
-readStream.on("line", function readLine(line, parentReadStream = readStream) {
+readStream.on("line", async function readLine(line, parentReadStream = readStream) {
 	switch (true) {
 		case /^@import ".*";$/.test(line):
 			parentReadStream.pause();
@@ -93,6 +133,13 @@ readStream.on("line", function readLine(line, parentReadStream = readStream) {
 					break;
 				case /^@insert discussThisProblem\(.*\);$/.test(line):
 					discussThisProblem(line);
+					break;
+				case /^@insert expandableCodeBlock\(.*\);$/.test(line):
+					parentReadStream.pause();
+
+					await expandableCodeBlock(parentReadStream.input.path, line);
+
+					parentReadStream.resume();
 					break;
 				case /^@insert improveThisAnswer\(.*\);$/.test(line):
 					improveThisAnswer(line);

@@ -10,11 +10,7 @@
 
 @insert discussThisProblem("brianjenkins94", "Rosettas-Node", "FizzBuzz");
 
-**Solution:**
-
-```typescript
-@import "./fizzBuzz.ts";
-```
+@insert expandableCodeBlock("typescript", "./fizzBuzz.ts");
 
 @insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "FizzBuzz");
 
@@ -48,11 +44,7 @@ Buzz
 
 @insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Fibonacci (Iterative)");
 
-**Solution:**
-
-```typescript
-@import "./iterativeFibonacci.ts";
-```
+@insert expandableCodeBlock("typescript", "./iterativeFibonacci.ts");
 
 @insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Fibonacci (Iterative)");
 
@@ -76,11 +68,7 @@ Buzz
 
 @insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Fibonacci (Recursive)");
 
-**Solution:**
-
-```typescript
-@import "./recursiveFibonacci.ts";
-```
+@insert expandableCodeBlock("typescript", "./recursiveFibonacci.ts");
 
 @insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Fibonacci (Recursive)");
 
@@ -104,11 +92,7 @@ Buzz
 
 @insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Palindrome Checker");
 
-**Solution:**
-
-```typescript
-@import "./isPalindrome.ts";
-```
+@insert expandableCodeBlock("typescript", "./isPalindrome.ts");
 
 @insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Palindrome Checker");
 
@@ -139,11 +123,7 @@ Buzz
 
 @insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Leap Year Checker");
 
-**Solution:**
-
-```typescript
-@import "./isLeapYear.ts";
-```
+@insert expandableCodeBlock("typescript", "./isLeapYear.ts");
 
 @insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Leap Year Checker");
 

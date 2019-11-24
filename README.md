@@ -4,6 +4,8 @@
 
 > Interesting problems. Quickly described.
 
+The problems listed here are the interesting problems from the programming [chrestomathy](https://en.wikipedia.org/wiki/Chrestomathy) site, [Rosetta's Code](http://rosettacode.org/wiki/Rosetta_Code). I personally reviewed some 1,200 or so programming tasks, selecting the ones that didn't require a degree in advanced mathematics, weren't prescriptive about how to write the solution, and that were, above all, interesting.
+
 <table>
 	<thead>
 		<tr>
@@ -61,7 +63,7 @@ These are the problems that have been "done to death". Anything that was once in
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] FizzBuzz">Discuss this problem</a></sup></em></p>
 
-**Solution:**
+<table><tbody><tr></tr><tr><td><details><summary><strong>Solution:</strong>
 
 ```typescript
 for (let x = 1; x <= 100; x++) {
@@ -74,8 +76,13 @@ for (let x = 1; x <= 100; x++) {
 	} else {
 		console.log(x);
 	}
+```
+<summary>
+
+```typescript
 }
 ```
+</details></td></tr></tbody></table>
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for FizzBuzz">Improve this answer</a></sup></em></p>
 
@@ -109,7 +116,7 @@ Buzz
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Fibonacci (Iterative)">Discuss this problem</a></sup></em></p>
 
-**Solution:**
+<table><tbody><tr></tr><tr><td><details><summary><strong>Solution:</strong>
 
 ```typescript
 function fibonacci(n) {
@@ -122,8 +129,13 @@ function fibonacci(n) {
 	return array[n];
 }
 
+```
+<summary>
+
+```typescript
 console.log(fibonacci(10));
 ```
+</details></td></tr></tbody></table>
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Iterative)">Improve this answer</a></sup></em></p>
 
@@ -147,7 +159,7 @@ console.log(fibonacci(10));
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Fibonacci (Recursive)">Discuss this problem</a></sup></em></p>
 
-**Solution:**
+<table><tbody><tr></tr><tr><td><details open><summary><strong>Solution:</strong>
 
 ```typescript
 function fibonacci(n) {
@@ -160,6 +172,7 @@ function fibonacci(n) {
 
 console.log(fibonacci(10));
 ```
+<summary></details></td></tr></tbody></table>
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Recursive)">Improve this answer</a></sup></em></p>
 
@@ -183,7 +196,7 @@ console.log(fibonacci(10));
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Palindrome Checker">Discuss this problem</a></sup></em></p>
 
-**Solution:**
+<table><tbody><tr></tr><tr><td><details><summary><strong>Solution:</strong>
 
 ```typescript
 const potentialPalindromes = [
@@ -196,6 +209,10 @@ const potentialPalindromes = [
 	"How vexingly quick daft zebras jump!",
 	"The five boxing wizards jump quickly."
 ];
+```
+<summary>
+
+```typescript
 
 function isPalindrome(string) {
 	const sanitizedString = string.replace(/\W/g, "").toLowerCase();
@@ -211,6 +228,7 @@ for (const potentialPalindrome of potentialPalindromes) {
 	}
 }
 ```
+</details></td></tr></tbody></table>
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Palindrome Checker">Improve this answer</a></sup></em></p>
 
@@ -241,21 +259,26 @@ for (const potentialPalindrome of potentialPalindromes) {
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Leap Year Checker">Discuss this problem</a></sup></em></p>
 
-**Solution:**
+<table><tbody><tr></tr><tr><td><details><summary><strong>Solution:</strong>
 
 ```typescript
 function isLeapYear(year) {
-    return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
+	return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
 };
 
 for (let x = 2000; x <= 2020; x++) {
-    if (isLeapYear(x)) {
-        console.log(x + " is a leap year.");
-    } else {
-        console.log(x + " is NOT a leap year.");
-    }
+	if (isLeapYear(x)) {
+		console.log(x + " is a leap year.");
+	} else {
+		console.log(x + " is NOT a leap year.");
+	}
+```
+<summary>
+
+```typescript
 }
 ```
+</details></td></tr></tbody></table>
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Leap Year Checker">Improve this answer</a></sup></em></p>
 
