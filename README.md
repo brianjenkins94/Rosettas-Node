@@ -77,7 +77,7 @@ for (let x = 1; x <= 100; x++) {
 		console.log(x);
 	}
 ```
-<summary>
+</summary>
 
 ```typescript
 }
@@ -130,7 +130,7 @@ function fibonacci(n) {
 }
 
 ```
-<summary>
+</summary>
 
 ```typescript
 console.log(fibonacci(10));
@@ -172,7 +172,7 @@ function fibonacci(n) {
 
 console.log(fibonacci(10));
 ```
-<summary></details></td></tr></tbody></table>
+</summary></details></td></tr></tbody></table>
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Recursive)">Improve this answer</a></sup></em></p>
 
@@ -210,7 +210,7 @@ const potentialPalindromes = [
 	"The five boxing wizards jump quickly."
 ];
 ```
-<summary>
+</summary>
 
 ```typescript
 
@@ -273,7 +273,7 @@ for (let x = 2000; x <= 2020; x++) {
 		console.log(x + " is NOT a leap year.");
 	}
 ```
-<summary>
+</summary>
 
 ```typescript
 }
