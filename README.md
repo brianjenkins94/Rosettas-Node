@@ -737,17 +737,17 @@ import { secret, ALPHABET_LENGTH, encode, decode } from "./caesarCipher";
 
 function loadDictionary() {
 	return new Promise(function(resolve, reject) {
-		const inputFileReadStream = createInterface({
+		const readStream = createInterface({
 			"input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
 		});
 
 		const dictionary = [];
 
-		inputFileReadStream.on("line", function(word) {
+		readStream.on("line", function(word) {
 			dictionary.push(word);
 		});
 
-		inputFileReadStream.on("close", function() {
+		readStream.on("close", function() {
 			resolve(dictionary);
 		});
 	});
@@ -1022,11 +1022,11 @@ import { createInterface } from "readline";
 import * as fs from "fs";
 import * as path from "path";
 
-const inputFileReadStream = createInterface({
+const readStream = createInterface({
 	"input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
 });
 
-inputFileReadStream.on("line", function(word) {
+readStream.on("line", function(word) {
 	const lowercaseWord = word.toLowerCase();
 
 	for (let x = 1; x < lowercaseWord.length; x++) {
@@ -1190,22 +1190,50 @@ for (let x = 0; x < triangle.length; x++) {
 
 #### Maximum Triangle Path Sum
 
--
+-   Given a triangular array of integers, write a program that can determine the maximum sum of a path from the top of the triangle to the bottom of the triangle.
 
 **Solution:**
 
 ```typescript
-//@import "./maximumTrianglePathSum.ts";
+const triangle = [
+	[55],
+	[94, 48],
+	[95, 30, 96],
+	[77, 71, 26, 67],
+	[97, 13, 76, 38, 45],
+	[07, 36, 79, 16, 37, 68],
+	[48, 07, 09, 18, 70, 26, 06],
+	[18, 72, 79, 46, 59, 79, 29, 90],
+	[20, 76, 87, 11, 32, 07, 07, 49, 18],
+	[27, 83, 58, 35, 71, 11, 25, 57, 29, 85],
+	[14, 64, 36, 96, 27, 11, 58, 56, 92, 18, 55],
+	[02, 90, 03, 60, 48, 49, 41, 46, 33, 36, 47, 23],
+	[92, 50, 48, 02, 36, 59, 42, 79, 72, 20, 82, 77, 42],
+	[56, 78, 38, 80, 39, 75, 02, 71, 66, 66, 01, 03, 55, 72],
+	[44, 25, 67, 84, 71, 67, 11, 61, 40, 57, 58, 89, 40, 56, 36],
+	[85, 32, 25, 85, 57, 48, 84, 35, 47, 62, 17, 01, 01, 99, 89, 52],
+	[06, 71, 28, 75, 94, 48, 37, 10, 23, 51, 06, 48, 53, 18, 74, 98, 15],
+	[27, 02, 92, 23, 08, 71, 76, 84, 15, 52, 92, 63, 81, 10, 44, 10, 69, 93]
+];
+
+for (let x = triangle.length - 2; x >= 0; x--) {
+	for (let y = 0; y <= x; y++) {
+		triangle[x][y] += Math.max(triangle[x + 1][y], triangle[x + 1][y + 1]);
+	}
+}
+
+console.log(triangle[0][0]);
 ```
 
 **Sample Output:**
 
 ```
+1320
 ```
 
 **References:**
 
--
+-   <https://rosettacode.org/wiki/Maximum_triangle_path_sum>
 
 #
 
@@ -1216,7 +1244,24 @@ for (let x = 0; x < triangle.length; x++) {
 **Solution:**
 
 ```typescript
-//@import "./pokerHandAnalyzer.ts";
+const input = [
+	"2♥ 2♦ 2♣ K♣ Q♦",	// Three-of-a-kind
+	"2♥ 5♥ 7♦ 8♣ 9♠",	// High-card
+	"A♥ 2♦ 3♣ 4♣ 5♦",	// Straight
+	"2♥ 3♥ 2♦ 3♣ 3♦",	// Full-house
+	"2♥ 7♥ 2♦ 3♣ 3♦",	// Two-pair
+	"2♥ 7♥ 7♦ 7♣ 7♠",	// Four-of-a-kind
+	"10♥ J♥ Q♥ K♥ A♥",	// Straight-flush
+	"4♥ 4♠ K♠ 5♦ 10♠",	// One-pair
+	"Q♣ 10♣ 7♣ 6♣ 4♣"	// Flush
+];
+
+const deck = {
+	"spades": ["A♠", "2♠", "3♠", "4♠", "5♠", "6♠", "7♠", "8♠", "9♠", "10♠", "J♠", "Q♠", "K♠"],
+	"hearts": ["A♥", "2♥", "3♥", "4♥", "5♥", "6♥", "7♥", "8♥", "9♥", "10♥", "J♥", "Q♥", "K♥"],
+	"diamonds": ["A♦", "2♦", "3♦", "4♦", "5♦", "6♦", "7♦", "8♦", "9♦", "10♦", "J♦", "Q♦", "K♦"],
+	"clubs": ["A♣", "2♣", "3♣", "4♣", "5♣", "6♣", "7♣", "8♣", "9♣", "10♣", "J♣", "Q♣", "K♣"]
+}
 ```
 
 **Sample Output:**
@@ -1253,7 +1298,7 @@ for (let x = 0; x < triangle.length; x++) {
 
 #### Quine
 
--   Write a [Quine](https://en.wikipedia.org/wiki/Quine_(computing)).
+-   Write a [quine](https://en.wikipedia.org/wiki/Quine_(computing)).
     -   A quine a computer program which takes no input and produces a copy of its own source code as its only output.
 
 **Solution:**
@@ -1321,11 +1366,11 @@ import { createInterface } from "readline";
 import * as fs from "fs";
 import * as path from "path";
 
-const inputFileReadStream = createInterface({
+const readStream = createInterface({
 	"input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
 });
 
-inputFileReadStream.on("line", function(word) {
+readStream.on("line", function(word) {
 	const lowercaseWord = word.toLowerCase();
 
 	if (lowercaseWord !== lowercaseWord.split("").reverse().join("")) {
@@ -1414,7 +1459,7 @@ Input: 1.5, 0.5, 3.5, 2.5, 5.5, 4.5, 7.5, 6.5
 
 #### Textonyms
 
--   Use a dictionary to find all of the words that are [Textonyms](https://en.wikipedia.org/wiki/Predictive_text#Textonyms).
+-   Use a dictionary to find all of the words that are [textonyms](https://en.wikipedia.org/wiki/Predictive_text#Textonyms).
     -   Textonyms are words produced by the same combination of keypresses on a phone keypad.
 
 **Solution:**
@@ -1427,7 +1472,7 @@ import { createInterface } from "readline";
 import * as fs from "fs";
 import * as path from "path";
 
-const inputFileReadStream = createInterface({
+const readStream = createInterface({
 	"input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
 });
 
@@ -1444,10 +1489,10 @@ const keypad = {
 	"w": 9, "x": 9, "y": 9, "z": 9
 };
 
-inputFileReadStream.on("line", function(word) {
+readStream.on("line", function(word) {
 	const lowercaseWord = word.toLowerCase();
 
-	let key = ""
+	let key = "";
 
 	for (const letter of lowercaseWord) {
 		key += keypad[letter];
@@ -1460,10 +1505,10 @@ inputFileReadStream.on("line", function(word) {
 	}
 });
 
-inputFileReadStream.on("close", function() {
+readStream.on("close", function() {
 	for (const [key, value] of Object.entries(textonyms)) {
 		if ((value as string[]).length > 1) {
-			console.log(key + " spells the words: " + (value as string[]).join(", "))
+			console.log(key + " spells the words: " + (value as string[]).join(", "));
 		}
 	}
 });

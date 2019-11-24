@@ -5,7 +5,7 @@ import { createInterface } from "readline";
 import * as fs from "fs";
 import * as path from "path";
 
-const inputFileReadStream = createInterface({
+const readStream = createInterface({
 	"input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
 });
 
@@ -22,7 +22,7 @@ const keypad = {
 	"w": 9, "x": 9, "y": 9, "z": 9
 };
 
-inputFileReadStream.on("line", function(word) {
+readStream.on("line", function(word) {
 	const lowercaseWord = word.toLowerCase();
 
 	let key = "";
@@ -38,7 +38,7 @@ inputFileReadStream.on("line", function(word) {
 	}
 });
 
-inputFileReadStream.on("close", function() {
+readStream.on("close", function() {
 	for (const [key, value] of Object.entries(textonyms)) {
 		if ((value as string[]).length > 1) {
 			console.log(key + " spells the words: " + (value as string[]).join(", "));

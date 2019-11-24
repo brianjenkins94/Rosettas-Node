@@ -9,17 +9,17 @@ import { secret, ALPHABET_LENGTH, encode, decode } from "./caesarCipher";
 
 function loadDictionary() {
 	return new Promise(function(resolve, reject) {
-		const inputFileReadStream = createInterface({
+		const readStream = createInterface({
 			"input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
 		});
 
 		const dictionary = [];
 
-		inputFileReadStream.on("line", function(word) {
+		readStream.on("line", function(word) {
 			dictionary.push(word);
 		});
 
-		inputFileReadStream.on("close", function() {
+		readStream.on("close", function() {
 			resolve(dictionary);
 		});
 	});

@@ -427,22 +427,23 @@ ablow
 
 #### Maximum Triangle Path Sum
 
--
+-   Given a triangular array of integers, write a program that can determine the maximum sum of a path from the top of the triangle to the bottom of the triangle.
 
 **Solution:**
 
 ```typescript
-//@import "./maximumTrianglePathSum.ts";
+@import "./maximumTrianglePathSum.ts";
 ```
 
 **Sample Output:**
 
 ```
+1320
 ```
 
 **References:**
 
--
+-   <https://rosettacode.org/wiki/Maximum_triangle_path_sum>
 
 #
 
@@ -453,7 +454,7 @@ ablow
 **Solution:**
 
 ```typescript
-//@import "./pokerHandAnalyzer.ts";
+@import "./pokerHandAnalyzer.ts";
 ```
 
 **Sample Output:**
@@ -490,7 +491,7 @@ ablow
 
 #### Quine
 
--   Write a [Quine](https://en.wikipedia.org/wiki/Quine_(computing)).
+-   Write a [quine](https://en.wikipedia.org/wiki/Quine_(computing)).
     -   A quine a computer program which takes no input and produces a copy of its own source code as its only output.
 
 **Solution:**
@@ -599,7 +600,7 @@ Input: 1.5, 0.5, 3.5, 2.5, 5.5, 4.5, 7.5, 6.5
 
 #### Textonyms
 
--   Use a dictionary to find all of the words that are [Textonyms](https://en.wikipedia.org/wiki/Predictive_text#Textonyms).
+-   Use a dictionary to find all of the words that are [textonyms](https://en.wikipedia.org/wiki/Predictive_text#Textonyms).
     -   Textonyms are words produced by the same combination of keypresses on a phone keypad.
 
 **Solution:**

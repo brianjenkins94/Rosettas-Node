@@ -8,13 +8,13 @@ const argv = minimist(process.argv.slice(2));
 const inputFile = path.resolve(argv._[0]);
 const outputFile = path.resolve(argv._[1]);
 
-const inputFileReadStream = createInterface({
+const readStream = createInterface({
 	"input": fs.createReadStream(inputFile, { "highWaterMark": 1 })
 });
 
 const writeStream = fs.createWriteStream(outputFile);
 
-inputFileReadStream.on("line", function readLine(line, parentReadStream = inputFileReadStream) {
+readStream.on("line", function readLine(line, parentReadStream = readStream) {
 	if (/^@import ".*";$/.test(line)) {
 		parentReadStream.pause();
 

@@ -5,11 +5,11 @@ import { createInterface } from "readline";
 import * as fs from "fs";
 import * as path from "path";
 
-const inputFileReadStream = createInterface({
+const readStream = createInterface({
 	"input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
 });
 
-inputFileReadStream.on("line", function(word) {
+readStream.on("line", function(word) {
 	const lowercaseWord = word.toLowerCase();
 
 	if (lowercaseWord !== lowercaseWord.split("").reverse().join("")) {

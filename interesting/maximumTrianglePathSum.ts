@@ -19,3 +19,10 @@ const triangle = [
 	[27, 02, 92, 23, 08, 71, 76, 84, 15, 52, 92, 63, 81, 10, 44, 10, 69, 93]
 ];
 
+for (let x = triangle.length - 2; x >= 0; x--) {
+	for (let y = 0; y <= x; y++) {
+		triangle[x][y] += Math.max(triangle[x + 1][y], triangle[x + 1][y + 1]);
+	}
+}
+
+console.log(triangle[0][0]);
