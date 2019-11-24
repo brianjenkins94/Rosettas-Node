@@ -827,7 +827,7 @@ The secret lies with Charlotte.
 
 #### Recursion Limit
 
--   Find the limit of [recursion](https://en.wikipedia.org/wiki/Recursion_(computer_science)).
+-   Find the limit of [recursion](https://en.wikipedia.org/wiki/Recursion_%28computer_science%29).
 
 **Solution:**
 
@@ -1298,7 +1298,7 @@ const deck = {
 
 #### Quine
 
--   Write a [quine](https://en.wikipedia.org/wiki/Quine_(computing)).
+-   Write a [quine](https://en.wikipedia.org/wiki/Quine_%28computing%29).
     -   A quine a computer program which takes no input and produces a copy of its own source code as its only output.
 
 **Solution:**
