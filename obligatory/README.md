@@ -1,5 +1,5 @@
 @invoke alphabetize();
-@invoke toc();
+@insert toc();
 
 #### FizzBuzz
 

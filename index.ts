@@ -14,77 +14,103 @@ const readStream = createInterface({
 
 const writeStream = fs.createWriteStream(outputFile);
 
+function discussThisProblem(line) {
+	const [username, repository, problemName] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.length - 2) + "]");
+
+	writeStream.write("<p align=\"right\"><em><sup><a href=\"https://github.com/" + username + "/" + repository + "/issues/new?title=[Discussion] " + problemName + "\">Discuss this problem</a></sup></em></p>\n");
+}
+
+function improveThisAnswer(line) {
+	const [username, repository, problemName] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.length - 2) + "]");
+
+	writeStream.write("<p align=\"right\"><em><sup><a href=\"https://github.com/" + username + "/" + repository + "/issues/new?title=Suggestion for " + problemName + "\">Improve this answer</a></sup></em></p>\n");
+}
+
 readStream.on("line", function readLine(line, parentReadStream = readStream) {
-	if (/^@import ".*";$/.test(line)) {
-		parentReadStream.pause();
+	switch (true) {
+		case /^@import ".*";$/.test(line):
+			parentReadStream.pause();
 
-		const parsedPath = path.parse(line.substring(line.indexOf("\"") + 1, line.length - 2));
-		const pathFragment = parsedPath.dir;
-		const fileName = parsedPath.base;
-		const filePath = path.join(path.dirname(parentReadStream.input.path), pathFragment);
+			const parsedPath = path.parse(line.substring(line.indexOf("\"") + 1, line.length - 2));
+			const pathFragment = parsedPath.dir;
+			const fileName = parsedPath.base;
+			const filePath = path.join(path.dirname(parentReadStream.input.path), pathFragment);
 
-		const readStream = createInterface({
-			"input": fs.createReadStream(path.join(filePath, fileName), { "highWaterMark": 1 })
-		});
+			const readStream = createInterface({
+				"input": fs.createReadStream(path.join(filePath, fileName), { "highWaterMark": 1 })
+			});
 
-		readStream.on("line", function(line) {
-			readLine(line, readStream);
-		});
+			readStream.on("line", function(line) {
+				readLine(line, readStream);
+			});
 
-		readStream.on("close", function() {
-			parentReadStream.resume();
-		});
-	} else if (/^@invoke toc\(.*\);$/.test(line)) {
-		parentReadStream.pause();
+			readStream.on("close", function() {
+				parentReadStream.resume();
+			});
+			break;
+		case /^@insert/.test(line):
+			switch (true) {
+				case /^@insert toc\(.*\);$/.test(line):
+					parentReadStream.pause();
 
-		const readStream = createInterface({
-			"input": fs.createReadStream(parentReadStream.input.path, { "highWaterMark": 1 })
-		});
+					const readStream = createInterface({
+						"input": fs.createReadStream(parentReadStream.input.path, { "highWaterMark": 1 })
+					});
 
-		const tableOfContents = [];
+					const tableOfContents = [];
 
-		readStream.on("line", function(line) {
-			if (/^##+/.test(line)) {
-				const captureGroups = /^(##+) (.*)$/.exec(line);
+					readStream.on("line", function(line) {
+						if (/^##+/.test(line)) {
+							const captureGroups = /^(##+) (.*)$/.exec(line);
 
-				tableOfContents.push({
-					"depth": captureGroups[1].length,
-					"id": captureGroups[2].toLowerCase().replace(/ /g, "-").replace(/[^\w-]/g, ""),
-					"name": captureGroups[2]
-				});
+							tableOfContents.push({
+								"depth": captureGroups[1].length,
+								"id": captureGroups[2].toLowerCase().replace(/ /g, "-").replace(/[^\w-]/g, ""),
+								"name": captureGroups[2]
+							});
+						}
+					});
+
+					readStream.on("close", function() {
+						let orderedList = "";
+
+						let indentationLevel = 5;
+
+						for (const [index, { depth, id, name }] of tableOfContents.entries()) {
+							if (index === 0 || tableOfContents[index - 1].depth === depth) {
+								orderedList += "\t".repeat(indentationLevel) + "<li><a href=\"#" + id + "\">" + name + "</a></li>\n";
+							} else if (tableOfContents[index - 1].depth < depth) {
+								orderedList += "\t".repeat(indentationLevel) + "<ol>\n" + "\t".repeat(indentationLevel += 1) + "<li><a href=\"#" + id + "\">" + name + "</a></li>\n";
+							} else {
+								orderedList += "\t".repeat(indentationLevel) + "<li><a href=\"#" + id + "\">" + name + "</a></li>\n" + "\t".repeat(indentationLevel -= 1) + "</ol>\n";
+							}
+						}
+
+						writeStream.write("<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th align=\"center\"><strong>Contents</strong></th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>\n\t\t\t\t<ol>\n" + orderedList + "\t\t\t\t</ol>\n\t\t\t</td>\n\t\t</tr>\n\t</tbody>\n</table>\n");
+
+						parentReadStream.resume();
+					});
+					break;
+				case /^@insert discussThisProblem\(.*\);$/.test(line):
+					discussThisProblem(line);
+					break;
+				case /^@insert improveThisAnswer\(.*\);$/.test(line):
+					improveThisAnswer(line);
+					break;
+				default:
+					throw new Error("Directive `" + line.substring(line.indexOf(" ") + 1, line.indexOf("(")) + "` unrecognized.");
 			}
-		});
-
-		readStream.on("close", function() {
-			let orderedList = "";
-
-			let indentationLevel = 5;
-
-			for (const [index, { depth, id, name }] of tableOfContents.entries()) {
-				if (index === 0 || tableOfContents[index - 1].depth === depth) {
-					orderedList += "\t".repeat(indentationLevel) + "<li><a href=\"#" + id + "\">" + name + "</a></li>\n";
-				} else if (tableOfContents[index - 1].depth < depth) {
-					orderedList += "\t".repeat(indentationLevel) + "<ol>\n" + "\t".repeat(indentationLevel += 1) + "<li><a href=\"#" + id + "\">" + name + "</a></li>\n";
-				} else {
-					orderedList += "\t".repeat(indentationLevel) + "<li><a href=\"#" + id + "\">" + name + "</a></li>\n" + "\t".repeat(indentationLevel -= 1) + "</ol>\n";
-				}
+			break;
+		case /^@invoke/.test(line):
+			switch (true) {
+				case /^@invoke alphabetize\(\);$/.test(line):
+					console.warn("Not yet implemented.");
+					break;
+				default:
+					throw new Error("Directive `" + line.substring(line.indexOf(" ") + 1, line.indexOf("(")) + "` unrecognized.");
 			}
-
-			writeStream.write("<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th align=\"center\"><strong>Contents</strong></th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>\n\t\t\t\t<ol>\n" + orderedList + "\t\t\t\t</ol>\n\t\t\t</td>\n\t\t</tr>\n\t</tbody>\n</table>\n");
-
-			parentReadStream.resume();
-		});
-	} else if (/^@invoke alphabetize\(\);$/.test(line)) {
-		console.warn("Not yet implemented.");
-	} else if (/^@insert improveThisAnswer\(.*\);$/.test(line)) {
-		const [username, repository, problemName] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.length - 2) + "]");
-
-		writeStream.write("<p align=\"right\"><em><sup><a href=\"https://github.com/" + username + "/" + repository + "/issues/new?title=Suggestion for " + problemName + "\">Improve this answer</a></sup></em></p>\n");
-	} else if (/^@insert discussThisProblem\(.*\);$/.test(line)) {
-		const [username, repository, problemName] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.length - 2) + "]");
-
-		writeStream.write("<p align=\"right\"><em><sup><a href=\"https://github.com/" + username + "/" + repository + "/issues/new?title=[Discussion] " + problemName + "\">Discuss this problem</a></sup></em></p>\n");
-	} else {
-		writeStream.write(line + "\n");
+			break;
+		default:
+			writeStream.write(line + "\n");
 	}
 });

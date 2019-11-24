@@ -4,7 +4,7 @@
 
 > Interesting problems. Quickly described.
 
-@invoke toc();
+@insert toc();
 
 <hr>
 
