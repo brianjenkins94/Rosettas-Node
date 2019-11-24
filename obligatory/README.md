@@ -8,6 +8,8 @@
     -   for multiples of five, print `"Buzz"` (instead of the number)
     -   for multiples of both three and five, print `"FizzBuzz"` (instead of the number)
 
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "FizzBuzz");
+
 **Solution:**
 
 ```typescript
@@ -44,6 +46,8 @@ Buzz
 -   Print out the `n`th number of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
     -   The Fibonacci sequence is the sequence of numbers where each element is the sum of the two previous elements.
 
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Fibonacci (Iterative)");
+
 **Solution:**
 
 ```typescript
@@ -70,6 +74,8 @@ Buzz
 -   Print out the `n`th number of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
     -   The Fibonacci sequence is the sequence of numbers where each element is the sum of the two previous elements.
 
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Fibonacci (Recursive)");
+
 **Solution:**
 
 ```typescript
@@ -95,6 +101,8 @@ Buzz
 
 -   Write a program that checks whether a given string is a [palindrome](https://en.wikipedia.org/wiki/Palindrome).
     -   A palindrome is a word or phrase which reads the same backward and forward.
+
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Palindrome Checker");
 
 **Solution:**
 
@@ -128,6 +136,8 @@ Buzz
 
 -   Write a program that checks whether a given year is a [leap year](https://en.wikipedia.org/wiki/Leap_year).
     -   A leap year is a year divisible by 4 but not 100 and is not divisible by 400.
+
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Leap Year Checker");
 
 **Solution:**
 

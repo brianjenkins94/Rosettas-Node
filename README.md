@@ -59,6 +59,8 @@ These are the problems that have been "done to death". Anything that was once in
     -   for multiples of five, print `"Buzz"` (instead of the number)
     -   for multiples of both three and five, print `"FizzBuzz"` (instead of the number)
 
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] FizzBuzz">Discuss this problem</a></sup></em></p>
+
 **Solution:**
 
 ```typescript
@@ -105,6 +107,8 @@ Buzz
 -   Print out the `n`th number of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
     -   The Fibonacci sequence is the sequence of numbers where each element is the sum of the two previous elements.
 
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Fibonacci (Iterative)">Discuss this problem</a></sup></em></p>
+
 **Solution:**
 
 ```typescript
@@ -141,6 +145,8 @@ console.log(fibonacci(10));
 -   Print out the `n`th number of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
     -   The Fibonacci sequence is the sequence of numbers where each element is the sum of the two previous elements.
 
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Fibonacci (Recursive)">Discuss this problem</a></sup></em></p>
+
 **Solution:**
 
 ```typescript
@@ -174,6 +180,8 @@ console.log(fibonacci(10));
 
 -   Write a program that checks whether a given string is a [palindrome](https://en.wikipedia.org/wiki/Palindrome).
     -   A palindrome is a word or phrase which reads the same backward and forward.
+
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Palindrome Checker">Discuss this problem</a></sup></em></p>
 
 **Solution:**
 
@@ -230,6 +238,8 @@ for (const potentialPalindrome of potentialPalindromes) {
 
 -   Write a program that checks whether a given year is a [leap year](https://en.wikipedia.org/wiki/Leap_year).
     -   A leap year is a year divisible by 4 but not 100 and is not divisible by 400.
+
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Leap Year Checker">Discuss this problem</a></sup></em></p>
 
 **Solution:**
 
@@ -1222,13 +1232,13 @@ for (let x = triangle.length - 2; x >= 0; x--) {
 	}
 }
 
-console.log(triangle[0][0]);
+console.log("The maximum path sum is: " + triangle[0][0]);
 ```
 
 **Sample Output:**
 
 ```
-1320
+The maximum path sum is: 1320
 ```
 
 **References:**

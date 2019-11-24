@@ -25,4 +25,4 @@ for (let x = triangle.length - 2; x >= 0; x--) {
 	}
 }
 
-console.log(triangle[0][0]);
+console.log("The maximum path sum is: " + triangle[0][0]);

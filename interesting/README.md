@@ -438,7 +438,7 @@ ablow
 **Sample Output:**
 
 ```
-1320
+The maximum path sum is: 1320
 ```
 
 **References:**
