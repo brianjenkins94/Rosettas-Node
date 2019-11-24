@@ -20,17 +20,23 @@ function discussThisProblem(line) {
 	writeStream.write("<p align=\"right\"><em><sup><a href=\"https://github.com/" + username + "/" + repository + "/issues/new?title=[Discussion] " + problemName + "\">Discuss this problem</a></sup></em></p>\n");
 }
 
-function expandableCodeBlock(cwd, line) {
-	const [language, unparsedPath] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.length - 2) + "]");
-
+function createReadStream(unparsedPath, cwd?) {
 	const parsedPath = path.parse(unparsedPath);
 	const pathFragment = parsedPath.dir;
 	const fileName = parsedPath.base;
-	const filePath = path.join(path.dirname(cwd), pathFragment);
+	const filePath = cwd === undefined ? pathFragment : path.join(path.dirname(cwd), pathFragment);
 
 	const readStream = createInterface({
 		"input": fs.createReadStream(path.join(filePath, fileName), { "highWaterMark": 1 })
 	});
+
+	return readStream;
+}
+
+function expandableCodeBlock(cwd, line) {
+	const [language, unparsedPath] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.length - 2) + "]");
+
+	const readStream = createReadStream(unparsedPath, cwd);
 
 	let lineCount = 0;
 
@@ -67,14 +73,7 @@ function expandableCodeBlock(cwd, line) {
 function expandableOutputBlock(cwd, line) {
 	const [unparsedPath] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.length - 2) + "]");
 
-	const parsedPath = path.parse(unparsedPath);
-	const pathFragment = parsedPath.dir;
-	const fileName = parsedPath.base;
-	const filePath = path.join(path.dirname(cwd), pathFragment);
-
-	const readStream = createInterface({
-		"input": fs.createReadStream(path.join(filePath, fileName), { "highWaterMark": 1 })
-	});
+	const readStream = createReadStream(unparsedPath, cwd);
 
 	let lineCount = 0;
 
@@ -119,14 +118,7 @@ readStream.on("line", async function readLine(line, parentReadStream = readStrea
 		case /^@import ".*";$/.test(line):
 			parentReadStream.pause();
 
-			const parsedPath = path.parse(line.substring(line.indexOf("\"") + 1, line.length - 2));
-			const pathFragment = parsedPath.dir;
-			const fileName = parsedPath.base;
-			const filePath = path.join(path.dirname(parentReadStream.input.path), pathFragment);
-
-			const readStream = createInterface({
-				"input": fs.createReadStream(path.join(filePath, fileName), { "highWaterMark": 1 })
-			});
+			const readStream = createReadStream(line.substring(line.indexOf("\"") + 1, line.length - 2), parentReadStream.input.path);
 
 			readStream.on("line", function(line) {
 				readLine(line, readStream);
@@ -141,9 +133,7 @@ readStream.on("line", async function readLine(line, parentReadStream = readStrea
 				case /^@insert toc\(.*\);$/.test(line):
 					parentReadStream.pause();
 
-					const readStream = createInterface({
-						"input": fs.createReadStream(parentReadStream.input.path, { "highWaterMark": 1 })
-					});
+					const readStream = createReadStream(parentReadStream.input.path);
 
 					const tableOfContents = [];
 
