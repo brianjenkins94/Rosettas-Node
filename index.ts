@@ -52,6 +52,10 @@ function expandableCodeBlock(cwd, line) {
 			if (belowTheFold.length === 0) {
 				writeStream.write("<table><tbody><tr></tr><tr><td><strong>Solution:" + "&nbsp;".repeat(223) + "</strong>\n\n```" + language + "\n" + aboveTheFold.join("\n") + "\n```\n</td></tr></tbody></table>\n");
 			} else {
+				if (aboveTheFold[aboveTheFold.length - 1] === "") {
+					aboveTheFold.pop();
+				}
+
 				writeStream.write("<table><tbody><tr></tr><tr><td><details><summary><strong>Solution:" + "&nbsp;".repeat(218) + "</strong>\n\n```" + language + "\n" + aboveTheFold.join("\n") + "\n```\n</summary>\n\n```" + language + "\n" + belowTheFold.join("\n") + "\n```\n</details></td></tr></tbody></table>\n");
 			}
 

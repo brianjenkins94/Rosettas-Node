@@ -201,7 +201,6 @@ const potentialPalindromes = [
 	"How vexingly quick daft zebras jump!",
 	"The five boxing wizards jump quickly."
 ];
-
 ```
 </summary>
 
@@ -256,7 +255,7 @@ for (const potentialPalindrome of potentialPalindromes) {
 ```typescript
 function isLeapYear(year) {
 	return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
-};
+}
 
 for (let x = 2000; x <= 2020; x++) {
 	if (isLeapYear(x)) {

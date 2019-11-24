@@ -1,0 +1,7 @@
+The word "A" can be spelled with these blocks.
+The word "BARK" can be spelled with these blocks.
+The word "BOOK" can NOT be spelled with these blocks.
+The word "TREAT" can be spelled with these blocks.
+The word "COMMON" can NOT be spelled with these blocks.
+The word "SQUAD" can be spelled with these blocks.
+The word "CONFUSE" can be spelled with these blocks.

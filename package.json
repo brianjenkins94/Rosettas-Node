@@ -4,6 +4,7 @@
   "description": "Interesting problems. Quickly described.",
   "scripts": {
     "start": "ts-node index.ts -- ./src/README.md ./README.md",
+    "build": "find obligatory interesting involved -name \"*.ts\" -exec sh -c './node_modules/.bin/ts-node \"{}\" > $(dirname \"{}\")/output/$(basename \"{}\" \".ts\").output.txt\"\"' \\;",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

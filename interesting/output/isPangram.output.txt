@@ -1,0 +1,8 @@
+"The quick brown fox jumps over the lazy dog." is a pangram.
+"Sphinx of black quartz, judge my vow." is a pangram.
+"How vexingly quick daft zebras jump!" is a pangram.
+"The five boxing wizards jump quickly." is a pangram.
+"Able was I ere I saw Elba." is NOT a pangram.
+"A man, a plan, a canal – Panama." is NOT a pangram.
+"Madam, I'm Adam." is NOT a pangram.
+"Never odd or even." is NOT a pangram.

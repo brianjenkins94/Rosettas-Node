@@ -1,0 +1,20 @@
+[[]][[]]]] is NOT balanced.
+        ^
+][]][[][][ is NOT balanced.
+^
+[][]]][[[] is NOT balanced.
+    ^
+][][[[][[] is NOT balanced.
+^
+[[[][]]][] is balanced.
+
+][][]][[[[ is NOT balanced.
+^
+][][[[[]][ is NOT balanced.
+^
+][[][]][[] is NOT balanced.
+^
+[[]][[]][] is balanced.
+
+[][]]][]]] is NOT balanced.
+    ^

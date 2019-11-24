@@ -1,0 +1,8 @@
+"Able was I ere I saw Elba." is a palindrome.
+"A man, a plan, a canal – Panama." is a palindrome.
+"Madam, I'm Adam." is a palindrome.
+"Never odd or even." is a palindrome.
+"The quick brown fox jumps over the lazy dog." is NOT a palindrome.
+"Sphinx of black quartz, judge my vow." is NOT a palindrome.
+"How vexingly quick daft zebras jump!" is NOT a palindrome.
+"The five boxing wizards jump quickly." is NOT a palindrome.

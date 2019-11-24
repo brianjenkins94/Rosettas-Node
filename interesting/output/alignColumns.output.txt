@@ -1,0 +1,24 @@
+Left:
+Write    a         program,  that   aligns     words   into       columns, 
+ensuring that      the       words  in         each    column     
+are      separated by        at     least      one     space.     
+Further, allow     for       each   word       in      a          column   
+to       be        either    left   justified, right   justified, 
+or       center    justified within its        column. 
+
+Right:
+   Write         a  program,   that     aligns   words       into columns, 
+ensuring      that       the  words         in    each     column 
+     are separated        by     at      least     one     space. 
+Further,     allow       for   each       word      in          a   column 
+      to        be    either   left justified,   right justified, 
+      or    center justified within        its column. 
+
+Center:
+ Write       a     program,   that    aligns    words     into    columns, 
+ensuring   that       the    words      in      each     column   
+  are    separated    by       at     least      one     space.   
+Further,   allow      for     each     word      in        a       column  
+   to       be      either    left  justified,  right  justified, 
+   or     center   justified within    its     column. 
+

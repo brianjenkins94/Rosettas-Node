@@ -1,0 +1,25 @@
+Encoded:
+Dro combod vsoc gsdr Mrkbvyddo.
+Decoded:
+The secret lies with Charlotte.
+
+20% match with a shift of 4.
+	Dro -> Znk
+	combod -> ykixkz
+	vsoc -> roky
+	gsdr -> cozn
+	Mrkbvyddo. -> Ingxruzzk.
+
+60% match with a shift of 10.
+	Dro -> The
+	combod -> secret
+	vsoc -> lies
+	gsdr -> with
+	Mrkbvyddo. -> Charlotte.
+
+20% match with a shift of 17.
+	Dro -> Max
+	combod -> lxvkxm
+	vsoc -> ebxl
+	gsdr -> pbma
+	Mrkbvyddo. -> Vatkehmmx.

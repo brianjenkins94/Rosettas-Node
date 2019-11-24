@@ -1,0 +1,20 @@
+> Print the history
+[
+  'uno',   'dos',
+  'tres',  'cuatro',
+  'cinco', 'cinco',
+  'seis'
+]
+
+> Print the previous value
+cinco
+
+> Rollback twice
+
+> Set the value to "seis"
+
+> Get the value we just added
+seis
+
+> Print the history
+[ 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis' ]
