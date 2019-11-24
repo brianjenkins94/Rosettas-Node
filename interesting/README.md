@@ -249,7 +249,7 @@ The recursion limit is: 12569
 **References:**
 
 -   <http://rosettacode.org/wiki/Find_limit_of_recursion>
--   <https://en.wikipedia.org/wiki/Recursion_(computer_science>)
+-   <https://en.wikipedia.org/wiki/Recursion_(computer_science)>
 
 #
 
@@ -509,7 +509,7 @@ ablow
 **References:**
 
 -   <http://rosettacode.org/wiki/Quine>
--   <https://en.wikipedia.org/wiki/Quine_(computing>)
+-   <https://en.wikipedia.org/wiki/Quine_(computing)>
 
 #
 
