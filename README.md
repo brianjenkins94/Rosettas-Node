@@ -63,7 +63,7 @@ These are the problems that have been "done to death". Anything that was once in
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] FizzBuzz">Discuss this problem</a></sup></em></p>
 
-<table><tbody><tr></tr><tr><td><details><summary><strong>Solution:</strong>
+<table><tbody><tr></tr><tr><td><details open><summary><strong>Solution:</strong>
 
 ```typescript
 for (let x = 1; x <= 100; x++) {
@@ -76,13 +76,9 @@ for (let x = 1; x <= 100; x++) {
 	} else {
 		console.log(x);
 	}
-```
-</summary>
-
-```typescript
 }
 ```
-</details></td></tr></tbody></table>
+</summary></details></td></tr></tbody></table>
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for FizzBuzz">Improve this answer</a></sup></em></p>
 
@@ -116,7 +112,7 @@ Buzz
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Fibonacci (Iterative)">Discuss this problem</a></sup></em></p>
 
-<table><tbody><tr></tr><tr><td><details><summary><strong>Solution:</strong>
+<table><tbody><tr></tr><tr><td><details open><summary><strong>Solution:</strong>
 
 ```typescript
 function fibonacci(n) {
@@ -129,13 +125,9 @@ function fibonacci(n) {
 	return array[n];
 }
 
-```
-</summary>
-
-```typescript
 console.log(fibonacci(10));
 ```
-</details></td></tr></tbody></table>
+</summary></details></td></tr></tbody></table>
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Iterative)">Improve this answer</a></sup></em></p>
 
@@ -209,11 +201,11 @@ const potentialPalindromes = [
 	"How vexingly quick daft zebras jump!",
 	"The five boxing wizards jump quickly."
 ];
+
 ```
 </summary>
 
 ```typescript
-
 function isPalindrome(string) {
 	const sanitizedString = string.replace(/\W/g, "").toLowerCase();
 
@@ -259,7 +251,7 @@ for (const potentialPalindrome of potentialPalindromes) {
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Leap Year Checker">Discuss this problem</a></sup></em></p>
 
-<table><tbody><tr></tr><tr><td><details><summary><strong>Solution:</strong>
+<table><tbody><tr></tr><tr><td><details open><summary><strong>Solution:</strong>
 
 ```typescript
 function isLeapYear(year) {
@@ -272,13 +264,9 @@ for (let x = 2000; x <= 2020; x++) {
 	} else {
 		console.log(x + " is NOT a leap year.");
 	}
-```
-</summary>
-
-```typescript
 }
 ```
-</details></td></tr></tbody></table>
+</summary></details></td></tr></tbody></table>
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Leap Year Checker">Improve this answer</a></sup></em></p>
 

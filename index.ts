@@ -38,7 +38,7 @@ function expandableCodeBlock(cwd, line) {
 	const belowTheFold = [];
 
 	readStream.on("line", function(line) {
-		if (lineCount < 10) {
+		if (lineCount <= 10) {
 			aboveTheFold.push(line);
 		} else {
 			belowTheFold.push(line);
@@ -49,7 +49,7 @@ function expandableCodeBlock(cwd, line) {
 
 	return new Promise(function(resolve, reject) {
 		readStream.on("close", function() {
-			if (aboveTheFold.length < 10) {
+			if (belowTheFold.length === 0) {
 				writeStream.write("<table><tbody><tr></tr><tr><td><details open><summary><strong>Solution:</strong>\n\n```" + language + "\n" + aboveTheFold.join("\n") + "\n```\n</summary></details></td></tr></tbody></table>\n");
 			} else {
 				writeStream.write("<table><tbody><tr></tr><tr><td><details><summary><strong>Solution:</strong>\n\n```" + language + "\n" + aboveTheFold.join("\n") + "\n```\n</summary>\n\n```" + language + "\n" + belowTheFold.join("\n") + "\n```\n</details></td></tr></tbody></table>\n");
