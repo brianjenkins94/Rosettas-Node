@@ -232,12 +232,6 @@ console.log(fibonacci(10));
 ```
 </td></tr></tbody></table>
 
-**Sample Output:**
-
-```
-55
-```
-
 **References:**
 
 -   <http://rosettacode.org/wiki/Fibonacci_sequence>
@@ -275,12 +269,6 @@ console.log(fibonacci(10));
 55
 ```
 </td></tr></tbody></table>
-
-**Sample Output:**
-
-```
-55
-```
 
 **References:**
 
@@ -345,19 +333,6 @@ for (const potentialPalindrome of potentialPalindromes) {
 ```
 </td></tr></tbody></table>
 
-**Sample Output:**
-
-```
-"Able was I ere I saw Elba." is a palindrome.
-"A man, a plan, a canal – Panama." is a palindrome.
-"Madam, I'm Adam." is a palindrome.
-"Never odd or even." is a palindrome.
-"The quick brown fox jumps over the lazy dog." is NOT a palindrome.
-"Sphinx of black quartz, judge my vow." is NOT a palindrome.
-"How vexingly quick daft zebras jump!" is NOT a palindrome.
-"The five boxing wizards jump quickly." is NOT a palindrome.
-```
-
 **References:**
 
 -   <http://rosettacode.org/wiki/Palindrome>
@@ -421,23 +396,6 @@ for (let x = 2000; x <= 2020; x++) {
 2020 is a leap year.
 ```
 </details></td></tr></tbody></table>
-
-**Sample Output:**
-
-```
-2000 is a leap year.
-2001 is NOT a leap year.
-2002 is NOT a leap year.
-2003 is NOT a leap year.
-2004 is a leap year.
-2005 is NOT a leap year.
-2006 is NOT a leap year.
-2007 is NOT a leap year.
-2008 is a leap year.
-2009 is NOT a leap year.
-2010 is NOT a leap year.
-...
-```
 
 **References:**
 
