@@ -63,7 +63,7 @@ These are the problems that have been "done to death". Anything that was once in
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] FizzBuzz">Discuss this problem</a></sup></em></p>
 
-<table><tbody><tr></tr><tr><td><details open><summary><strong>Solution:</strong>
+<table><tbody><tr></tr><tr><td><strong>Solution:</strong>
 
 ```typescript
 for (let x = 1; x <= 100; x++) {
@@ -78,7 +78,7 @@ for (let x = 1; x <= 100; x++) {
 	}
 }
 ```
-</summary></details></td></tr></tbody></table>
+</td></tr></tbody></table>
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for FizzBuzz">Improve this answer</a></sup></em></p>
 
@@ -112,7 +112,7 @@ Buzz
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Fibonacci (Iterative)">Discuss this problem</a></sup></em></p>
 
-<table><tbody><tr></tr><tr><td><details open><summary><strong>Solution:</strong>
+<table><tbody><tr></tr><tr><td><strong>Solution:</strong>
 
 ```typescript
 function fibonacci(n) {
@@ -127,7 +127,7 @@ function fibonacci(n) {
 
 console.log(fibonacci(10));
 ```
-</summary></details></td></tr></tbody></table>
+</td></tr></tbody></table>
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Iterative)">Improve this answer</a></sup></em></p>
 
@@ -151,7 +151,7 @@ console.log(fibonacci(10));
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Fibonacci (Recursive)">Discuss this problem</a></sup></em></p>
 
-<table><tbody><tr></tr><tr><td><details open><summary><strong>Solution:</strong>
+<table><tbody><tr></tr><tr><td><strong>Solution:</strong>
 
 ```typescript
 function fibonacci(n) {
@@ -164,7 +164,7 @@ function fibonacci(n) {
 
 console.log(fibonacci(10));
 ```
-</summary></details></td></tr></tbody></table>
+</td></tr></tbody></table>
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Recursive)">Improve this answer</a></sup></em></p>
 
@@ -251,7 +251,7 @@ for (const potentialPalindrome of potentialPalindromes) {
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Leap Year Checker">Discuss this problem</a></sup></em></p>
 
-<table><tbody><tr></tr><tr><td><details open><summary><strong>Solution:</strong>
+<table><tbody><tr></tr><tr><td><strong>Solution:</strong>
 
 ```typescript
 function isLeapYear(year) {
@@ -266,7 +266,7 @@ for (let x = 2000; x <= 2020; x++) {
 	}
 }
 ```
-</summary></details></td></tr></tbody></table>
+</td></tr></tbody></table>
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Leap Year Checker">Improve this answer</a></sup></em></p>
 

@@ -50,7 +50,7 @@ function expandableCodeBlock(cwd, line) {
 	return new Promise(function(resolve, reject) {
 		readStream.on("close", function() {
 			if (belowTheFold.length === 0) {
-				writeStream.write("<table><tbody><tr></tr><tr><td><details open><summary><strong>Solution:</strong>\n\n```" + language + "\n" + aboveTheFold.join("\n") + "\n```\n</summary></details></td></tr></tbody></table>\n");
+				writeStream.write("<table><tbody><tr></tr><tr><td><strong>Solution:</strong>\n\n```" + language + "\n" + aboveTheFold.join("\n") + "\n```\n</td></tr></tbody></table>\n");
 			} else {
 				writeStream.write("<table><tbody><tr></tr><tr><td><details><summary><strong>Solution:</strong>\n\n```" + language + "\n" + aboveTheFold.join("\n") + "\n```\n</summary>\n\n```" + language + "\n" + belowTheFold.join("\n") + "\n```\n</details></td></tr></tbody></table>\n");
 			}
