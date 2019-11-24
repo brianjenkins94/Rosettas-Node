@@ -827,7 +827,7 @@ The secret lies with Charlotte.
 
 #### Recursion Limit
 
--   Find the limit of [recursion](https://en.wikipedia.org/wiki/Recursion_%28computer_science%29).
+-   Find the limit of [recursion](https://en.wikipedia.org/wiki/Recursion_(computer_science)).
 
 **Solution:**
 
@@ -852,7 +852,7 @@ The recursion limit is: 12569
 **References:**
 
 -   <http://rosettacode.org/wiki/Find_limit_of_recursion>
--   <https://en.wikipedia.org/wiki/Recursion_(computer_science>)
+-   <https://en.wikipedia.org/wiki/Recursion_(computer_science)>
 
 #
 
@@ -1298,7 +1298,7 @@ const deck = {
 
 #### Quine
 
--   Write a [quine](https://en.wikipedia.org/wiki/Quine_%28computing%29).
+-   Write a [quine](https://en.wikipedia.org/wiki/Quine_(computing)).
     -   A quine a computer program which takes no input and produces a copy of its own source code as its only output.
 
 **Solution:**
@@ -1320,7 +1320,7 @@ const deck = {
 **References:**
 
 -   <http://rosettacode.org/wiki/Quine>
--   <https://en.wikipedia.org/wiki/Quine_(computing>)
+-   <https://en.wikipedia.org/wiki/Quine_(computing)>
 
 #
 
