@@ -64,6 +64,50 @@ function expandableCodeBlock(cwd, line) {
 	});
 }
 
+function expandableOutputBlock(cwd, line) {
+	const [unparsedPath] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.length - 2) + "]");
+
+	const parsedPath = path.parse(unparsedPath);
+	const pathFragment = parsedPath.dir;
+	const fileName = parsedPath.base;
+	const filePath = path.join(path.dirname(cwd), pathFragment);
+
+	const readStream = createInterface({
+		"input": fs.createReadStream(path.join(filePath, fileName), { "highWaterMark": 1 })
+	});
+
+	let lineCount = 0;
+
+	const aboveTheFold = [];
+	const belowTheFold = [];
+
+	readStream.on("line", function(line) {
+		if (lineCount <= 10) {
+			aboveTheFold.push(line);
+		} else {
+			belowTheFold.push(line);
+		}
+
+		lineCount += 1;
+	});
+
+	return new Promise(function(resolve, reject) {
+		readStream.on("close", function() {
+			if (belowTheFold.length === 0) {
+				writeStream.write("<table><tbody><tr></tr><tr><td><strong>Sample Output:" + "&nbsp;".repeat(200) + "</strong>\n\n```\n" + aboveTheFold.join("\n") + "\n```\n</td></tr></tbody></table>\n");
+			} else {
+				if (aboveTheFold[aboveTheFold.length - 1] === "") {
+					aboveTheFold.pop();
+				}
+
+				writeStream.write("<table><tbody><tr></tr><tr><td><details><summary><strong>Sample Output:" + "&nbsp;".repeat(200) + "</strong>\n\n```\n" + aboveTheFold.join("\n") + "\n```\n</summary>\n\n```\n" + belowTheFold.join("\n") + "\n```\n</details></td></tr></tbody></table>\n");
+			}
+
+			resolve();
+		});
+	});
+}
+
 function improveThisAnswer(line) {
 	const [username, repository, problemName] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.length - 2) + "]");
 
@@ -142,6 +186,13 @@ readStream.on("line", async function readLine(line, parentReadStream = readStrea
 					parentReadStream.pause();
 
 					await expandableCodeBlock(parentReadStream.input.path, line);
+
+					parentReadStream.resume();
+					break;
+				case /^@insert expandableOutputBlock\(.*\);$/.test(line):
+					parentReadStream.pause();
+
+					await expandableOutputBlock(parentReadStream.input.path, line);
 
 					parentReadStream.resume();
 					break;

@@ -14,21 +14,7 @@
 
 @insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "FizzBuzz");
 
-**Sample Output:**
-
-```
-1
-2
-Fizz
-4
-Buzz
-Fizz
-7
-8
-Fizz
-Buzz
-...
-```
+@insert expandableOutputBlock("./output/fizzBuzz.output.txt");
 
 **References:**
 
@@ -47,6 +33,8 @@ Buzz
 @insert expandableCodeBlock("typescript", "./iterativeFibonacci.ts");
 
 @insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Fibonacci (Iterative)");
+
+@insert expandableOutputBlock("./output/iterativeFibonacci.output.txt");
 
 **Sample Output:**
 
@@ -72,6 +60,8 @@ Buzz
 
 @insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Fibonacci (Recursive)");
 
+@insert expandableOutputBlock("./output/recursiveFibonacci.output.txt");
+
 **Sample Output:**
 
 ```
@@ -95,6 +85,8 @@ Buzz
 @insert expandableCodeBlock("typescript", "./isPalindrome.ts");
 
 @insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Palindrome Checker");
+
+@insert expandableOutputBlock("./output/isPalindrome.output.txt");
 
 **Sample Output:**
 
@@ -126,6 +118,8 @@ Buzz
 @insert expandableCodeBlock("typescript", "./isLeapYear.ts");
 
 @insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Leap Year Checker");
+
+@insert expandableOutputBlock("./output/isLeapYear.output.txt");
 
 **Sample Output:**
 
