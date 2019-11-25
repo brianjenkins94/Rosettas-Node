@@ -24,19 +24,19 @@
 		"@typescript-eslint/indent": ["warn", "tab"], // Indent using tabs
 		"@typescript-eslint/no-misused-promises": ["warn", { "checksVoidReturn": false }], // No promises in conditionals
 		"@typescript-eslint/no-unnecessary-condition": ["warn", { "ignoreRhs": true }], // Allow boolean operators for short-circuiting
+		"@typescript-eslint/space-before-function-paren": ["error", "never"], // No space before function parentheses
 		"array-bracket-newline": ["warn", "consistent"], // Per-array consistent formatting
 		"array-element-newline": ["warn", "consistent"], // Per-array consistent formatting
 		"dot-location": ["warn", "property"], // Dot on the next line for chained functions
 		"func-style": ["warn", "declaration"], // Declaration over expression
 		"function-call-argument-newline": ["warn", "never"], // No line breaks between arguments
-		"no-multiple-empty-lines": ["warn", { "max": 1, "maxEOF": 1, "maxBOF": 0 }], // No multiple consecutive lines
+		"no-multiple-empty-lines": ["warn", { "max": 1, "maxEOF": 1, "maxBOF": 0 }], // No multiple consecutive blank lines
 		"no-plusplus": ["warn", { "allowForLoopAfterthoughts": true }], // No increment/decrement operator (except for in `for` loops)
 		"no-tabs": ["warn", { "allowIndentationTabs": true }], // No tabs, excluding indentation
 		"object-curly-spacing": ["warn", "always", { "arraysInObjects": false }], // Objects should always be padded with spaces
 		"object-property-newline": ["warn", { "allowAllPropertiesOnSameLine": true }], // Per-object consistent formatting
 		"operator-linebreak": ["warn", "before"], // Operator on the next line for lengthy conditions
 		"quotes": ["warn", "double", { "allowTemplateLiterals": true }], // Prefer double-quotes, allow template strings
-		"space-before-function-paren": ["warn", "never"], // No space before function parentheses
 		"wrap-iife": ["warn", "inside"], // Parentheses after IIFEs
 
 		// Warn

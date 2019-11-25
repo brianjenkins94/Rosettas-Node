@@ -1,11 +1,11 @@
-import { createInterface } from "readline";
+import { createInterface, Interface } from "readline";
 import * as fs from "fs";
 import * as path from "path";
 import minimist from "minimist";
 
-import { discussThisProblem, expandableCodeBlock, expandableOutputBlock, generateTableOfContents, importFile, improveThisAnswer } from "./directives";
+import { alphabetize, discussThisProblem, expandableCodeBlock, expandableOutputBlock, generateTableOfContents, importFile, improveThisAnswer } from "./directives";
 
-// Monkey-patch readline.d.ts
+// Monkey-patch `readline.d.ts`
 declare module "readline" {
 	interface Interface {
 		input: fs.ReadStream;
@@ -73,9 +73,10 @@ export async function readLine(line, parentReadStream = readStream) {
 			break;
 		case /^@invoke/.test(line): {
 			switch (true) {
-				case /^@invoke alphabetize\(\);$/.test(line):
-					console.warn("Not yet implemented.");
+				case /^@invoke alphabetize\(\);$/.test(line): {
+					parentReadStream = await alphabetize(parentReadStream);
 					break;
+				}
 				default: {
 					throw new Error("Directive `" + line.substring(line.indexOf(" ") + 1, line.indexOf("(")) + "` unrecognized.");
 				}
