@@ -27,8 +27,6 @@ The problems listed here are a hand-picked selection from the programming [chres
 	</tbody>
 </table>
 
-<hr>
-
 ### Obligatory
 
 These are the problems that have been "done to death". Anything that was once interesting about these problems has since been nullified by their repetition. With that said, this collection wouldn't be complete without them.
@@ -403,7 +401,7 @@ for (let x = 2000; x <= 2020; x++) {
 -   <http://rosettacode.org/wiki/Leap_year>
 -   <https://en.wikipedia.org/wiki/Leap_year>
 
-<hr>
+#
 
 ### Interesting
 
@@ -2350,7 +2348,7 @@ readStream.on("close", function() {
 
 -
 
-<hr>
+#
 
 ### Involved
 
@@ -3358,7 +3356,7 @@ readStream.on("close", function() {
 
 -
 
-<hr>
+#
 
 ### Acknowledgements
 

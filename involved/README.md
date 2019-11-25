@@ -43,6 +43,27 @@
 
 #
 
+#### Chess960 Starting Positions
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./chess960.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
 #### Conway's Game of Life
 
 -
@@ -211,27 +232,6 @@
 
 #
 
-#### Markov Algorithm
-
--
-
-**Solution:**
-
-```typescript
-//@import "./markovAlgorithm.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
 #### Forest Fire
 
 -
@@ -261,48 +261,6 @@
 
 ```typescript
 //@import "./galtonBox.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
-#### Chess960 Starting Positions
-
--
-
-**Solution:**
-
-```typescript
-//@import "./chess960.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
-#### Random Chess Positions
-
--
-
-**Solution:**
-
-```typescript
-//@import "./randomChessPositions.ts";
 ```
 
 **Sample Output:**
@@ -547,6 +505,27 @@
 
 #
 
+#### Markov Algorithm
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./markovAlgorithm.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
 #### Mayan Numerals
 
 -
@@ -778,6 +757,27 @@
 
 #
 
+#### Password Generator
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./passwordGenerator.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
 #### RPN Calculator Algorithm
 
 -
@@ -820,14 +820,14 @@
 
 #
 
-#### Shunting Yard Algorithm
+#### Random Chess Positions
 
 -
 
 **Solution:**
 
 ```typescript
-//@import "./shuntingYardAlgorithm.ts";
+//@import "./randomChessPositions.ts";
 ```
 
 **Sample Output:**
@@ -841,14 +841,14 @@
 
 #
 
-#### Password Generator
+#### Shunting Yard Algorithm
 
 -
 
 **Solution:**
 
 ```typescript
-//@import "./passwordGenerator.ts";
+//@import "./shuntingYardAlgorithm.ts";
 ```
 
 **Sample Output:**

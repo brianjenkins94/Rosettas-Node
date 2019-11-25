@@ -23,25 +23,6 @@
 
 #
 
-#### Letter Blocks
-
--   Write a program that determines whether a word can be spelled with a given collection of blocks.
--   Blocks are guaranteed to have the same letter pairs on them.
-
-@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Letter Blocks");
-
-@insert expandableCodeBlock("typescript", "./letterBlocks.ts");
-
-@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Letter Blocks");
-
-@insert expandableOutputBlock("./output/letterBlocks.output.txt");
-
-**References:**
-
--   <http://rosettacode.org/wiki/ABC_Problem>
-
-#
-
 #### Align Columns
 
 -   Write a program that aligns words into columns, ensuring that the words in each column are separated by at least one space. Further, allow for each word in a column to be either left a justified, right justified, or center justified within its column.
@@ -81,6 +62,27 @@
 **References:**
 
 -   <http://rosettacode.org/wiki/Balanced_brackets>
+
+#
+
+#### Birthday Problem
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./birthdayProblem.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
 
 #
 
@@ -124,25 +126,6 @@
 
 #
 
-#### Recursion Limit
-
--   Find the limit of [recursion](https://en.wikipedia.org/wiki/Recursion_(computer_science)).
-
-@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Recursion Limit");
-
-@insert expandableCodeBlock("typescript", "./recursionLimit.ts");
-
-@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Recursion Limit");
-
-@insert expandableOutputBlock("./output/recursionLimit.output.txt");
-
-**References:**
-
--   <http://rosettacode.org/wiki/Find_limit_of_recursion>
--   <https://en.wikipedia.org/wiki/Recursion_(computer_science)>
-
-#
-
 #### History Variables
 
 -   Implement history variables.
@@ -177,6 +160,25 @@
 **References:**
 
 -   <http://rosettacode.org/wiki/Last_letter-first_letter>
+
+#
+
+#### Letter Blocks
+
+-   Write a program that determines whether a word can be spelled with a given collection of blocks.
+-   Blocks are guaranteed to have the same letter pairs on them.
+
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Letter Blocks");
+
+@insert expandableCodeBlock("typescript", "./letterBlocks.ts");
+
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Letter Blocks");
+
+@insert expandableOutputBlock("./output/letterBlocks.output.txt");
+
+**References:**
+
+-   <http://rosettacode.org/wiki/ABC_Problem>
 
 #
 
@@ -258,6 +260,25 @@
 
 #
 
+#### Recursion Limit
+
+-   Find the limit of [recursion](https://en.wikipedia.org/wiki/Recursion_(computer_science)).
+
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Recursion Limit");
+
+@insert expandableCodeBlock("typescript", "./recursionLimit.ts");
+
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Recursion Limit");
+
+@insert expandableOutputBlock("./output/recursionLimit.output.txt");
+
+**References:**
+
+-   <http://rosettacode.org/wiki/Find_limit_of_recursion>
+-   <https://en.wikipedia.org/wiki/Recursion_(computer_science)>
+
+#
+
 #### Remove Duplicate Elements
 
 -   Given an array with duplicates, remove the duplicates.
@@ -317,6 +338,47 @@
 
 #
 
+#### Substitution Cipher
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./subtitutionCipher.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Suffix Tree Generator
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./suffixTreeGenerator.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
 #### Textonyms
 
 -   Use a dictionary to find all of the words that are [textonyms](https://en.wikipedia.org/wiki/Predictive_text#Textonyms).
@@ -513,69 +575,6 @@
 
 ```typescript
 //@import "./wordWrap.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
-#### Birthday Problem
-
--
-
-**Solution:**
-
-```typescript
-//@import "./birthdayProblem.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
-#### Substitution Cipher
-
--
-
-**Solution:**
-
-```typescript
-//@import "./subtitutionCipher.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
-#### Suffix Tree Generator
-
--
-
-**Solution:**
-
-```typescript
-//@import "./suffixTreeGenerator.ts";
 ```
 
 **Sample Output:**

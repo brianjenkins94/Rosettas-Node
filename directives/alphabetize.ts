@@ -7,7 +7,7 @@ function objectify(array) {
 	const object = {};
 
 	for (const element of array) {
-		object[element] = array[0];
+		object[element[0]] = element;
 	}
 
 	return object;
@@ -18,19 +18,15 @@ function reorderSections(sections) {
 
 	sections = objectify(sections.slice(1));
 
-	const keys = Object.keys(sections).sort();
-
-	for (const key of keys) {
-		for (const line of sections[key]) {
-			lines.push(line);
-		}
+	for (const section of Object.keys(sections).sort()) {
+		lines.push(...sections[section]);
 	}
 
 	return lines;
 }
 
 export function alphabetize(parentReadStream): Promise<Interface> {
-	const sections = [[]];
+	const sections = [["@invoke alphabetize();"]];
 
 	parentReadStream.on("line", function(line) {
 		if (/^##+/.test(line)) {
