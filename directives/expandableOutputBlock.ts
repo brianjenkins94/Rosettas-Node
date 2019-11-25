@@ -5,7 +5,7 @@ export function expandableOutputBlock(readStream) {
 	const belowTheFold = [];
 
 	readStream.on("line", function(line) {
-		if (lineCount <= 10) {
+		if (lineCount <= 12) {
 			aboveTheFold.push(line);
 		} else if (lineCount < 100) {
 			belowTheFold.push(line);

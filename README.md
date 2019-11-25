@@ -96,12 +96,12 @@ Fizz
 Fizz
 Buzz
 11
+Fizz
+13
 ```
 </summary>
 
 ```
-Fizz
-13
 14
 FizzBuzz
 16
@@ -297,12 +297,13 @@ const potentialPalindromes = [
 	"How vexingly quick daft zebras jump!",
 	"The five boxing wizards jump quickly."
 ];
+
+function isPalindrome(string) {
+	const sanitizedString = string.replace(/\W/g, "").toLowerCase();
 ```
 </summary>
 
 ```typescript
-function isPalindrome(string) {
-	const sanitizedString = string.replace(/\W/g, "").toLowerCase();
 
 	return sanitizedString === sanitizedString.split("").reverse().join("");
 }
@@ -380,12 +381,12 @@ for (let x = 2000; x <= 2020; x++) {
 2008 is a leap year.
 2009 is NOT a leap year.
 2010 is NOT a leap year.
+2011 is NOT a leap year.
+2012 is a leap year.
 ```
 </summary>
 
 ```
-2011 is NOT a leap year.
-2012 is a leap year.
 2013 is NOT a leap year.
 2014 is NOT a leap year.
 2015 is NOT a leap year.
@@ -471,12 +472,11 @@ const arrays = [
 function getMinimumLengthUniqueAbbreviations(array) {
 	const longestStringLength = array.sort(function(a, b) {
 		return b.length - a.length;
+	})[0].length;
 ```
 </summary>
 
 ```typescript
-	})[0].length;
-
 	for (let x = longestStringLength; x >= 1; x--) {
 		const tempObject = {};
 
@@ -542,12 +542,12 @@ function isWordSpellableWithBlocks(word, blocks) {
 		for (const [index, block] of blocks.entries()) {
 			if (block[0] === letter || block[1] === letter) {
 				blocks[index] = ["", ""];
+				letterFound = true;
+				break;
 ```
 </summary>
 
 ```typescript
-				letterFound = true;
-				break;
 			}
 		}
 
@@ -610,12 +610,12 @@ const input = [
 
 function getLongestRow(input) {
 	let longestRow = 0;
+
+	for (const row of input) {
 ```
 </summary>
 
 ```typescript
-
-	for (const row of input) {
 		if (row.length > longestRow) {
 			longestRow = row.length;
 		}
@@ -712,12 +712,12 @@ or       center    justified within its        column.
 Right:
    Write         a  program,   that     aligns   words       into columns, 
 ensuring      that       the  words         in    each     column 
+     are separated        by     at      least     one     space. 
+Further,     allow       for   each       word      in          a   column 
 ```
 </summary>
 
 ```
-     are separated        by     at      least     one     space. 
-Further,     allow       for   each       word      in          a   column 
       to        be    either   left justified,   right justified, 
       or    center justified within        its column. 
 
@@ -764,12 +764,11 @@ const input = [
 	"][[][]][[]",
 	"[[]][[]][]",
 	"[][]]][]]]"
+];
 ```
 </summary>
 
 ```typescript
-];
-
 function isBalanced(input) {
 	let leftStack = 0;
 	let rightStack = 0;
@@ -817,12 +816,12 @@ for (const string of input) {
 [[[][]]][] is balanced.
 
 ][][]][[[[ is NOT balanced.
+^
+][][[[[]][ is NOT balanced.
 ```
 </summary>
 
 ```
-^
-][][[[[]][ is NOT balanced.
 ^
 ][[][]][[] is NOT balanced.
 ^
@@ -860,12 +859,12 @@ export function encode(string, key) {
 	return string.replace(/\w/g, function(a) {
 		if (a.charCodeAt(0) < ASCII_LOWERCASE_A) {
 			return String.fromCharCode(ASCII_UPPERCASE_A + ((a.charCodeAt(0) - ASCII_UPPERCASE_A + key) % ALPHABET_LENGTH));
+		} else {
+			return String.fromCharCode(ASCII_LOWERCASE_A + ((a.charCodeAt(0) - ASCII_LOWERCASE_A + key) % ALPHABET_LENGTH));
 ```
 </summary>
 
 ```typescript
-		} else {
-			return String.fromCharCode(ASCII_LOWERCASE_A + ((a.charCodeAt(0) - ASCII_LOWERCASE_A + key) % ALPHABET_LENGTH));
 		}
 	});
 }
@@ -922,12 +921,12 @@ import { secret, ALPHABET_LENGTH, encode, decode } from "./caesarCipher";
 
 function loadDictionary() {
 	return new Promise(function(resolve, reject) {
+		const readStream = createInterface({
+			"input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
 ```
 </summary>
 
 ```typescript
-		const readStream = createInterface({
-			"input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
 		});
 
 		const dictionary = [];
@@ -995,12 +994,12 @@ The secret lies with Charlotte.
 	vsoc -> roky
 	gsdr -> cozn
 	Mrkbvyddo. -> Ingxruzzk.
+
+60% match with a shift of 10.
 ```
 </summary>
 
 ```
-
-60% match with a shift of 10.
 	Dro -> The
 	combod -> secret
 	vsoc -> lies
@@ -1079,12 +1078,13 @@ class HistoryVariable {
 	public setValue(value) {
 		this.history.push(value);
 	}
+
+	public getValue(index?) {
+		if (index !== undefined) {
 ```
 </summary>
 
 ```typescript
-	public getValue(index?) {
-		if (index !== undefined) {
 			if (index < 0) {
 				// A negative index starts from the end
 				return this.history[(this.history.length - 1) + index];
@@ -1155,12 +1155,12 @@ console.log(historyVariable.getHistory());
 
 > Print the previous value
 cinco
+
+> Rollback twice
 ```
 </summary>
 
 ```
-> Rollback twice
-
 > Set the value to "seis"
 
 > Get the value we just added
@@ -1183,7 +1183,7 @@ seis
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Last Letter-First Letter">Discuss this problem</a></sup></em></p>
 
-<table><tbody><tr></tr><tr><td><details><summary><strong>Solution:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+<table><tbody><tr></tr><tr><td><strong>Solution:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
 
 ```typescript
 const pokemonNames = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate", "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu", "Raichu", "Sandshrew", "Sandslash", "Nidoran", "Nidorina", "Nidoqueen", "Nidorino", "Nidoking", "Clefairy", "Clefable", "Vulpix", "Ninetales", "Jigglypuff", "Wigglytuff", "Zubat", "Golbat", "Oddish", "Gloom", "Vileplume", "Paras", "Parasect", "Venonat", "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck", "Golduck", "Mankey", "Primeape", "Growlithe", "Arcanine", "Poliwag", "Poliwhirl", "Poliwrath", "Abra", "Kadabra", "Alakazam", "Machop", "Machoke", "Machamp", "Bellsprout", "Weepinbell", "Victreebel", "Tentacool", "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash", "Slowpoke", "Slowbro", "Magnemite", "Magneton", "Farfetch'd", "Doduo", "Dodrio", "Seel", "Dewgong", "Grimer", "Muk", "Shellder", "Cloyster", "Gastly", "Haunter", "Gengar", "Onix", "Drowzee", "Hypno", "Krabby", "Kingler", "Voltorb", "Electrode", "Exeggcute", "Exeggutor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan", "Lickitung", "Koffing", "Weezing", "Rhyhorn", "Rhydon", "Chansey", "Tangela", "Kangaskhan", "Horsea", "Seadra", "Goldeen", "Seaking", "Staryu", "Starmie", "Mr. Mime", "Scyther", "Jynx", "Electabuzz", "Magmar", "Pinsir", "Tauros", "Magikarp", "Gyarados", "Lapras", "Ditto", "Eevee", "Vaporeon", "Jolteon", "Flareon", "Porygon", "Omanyte", "Omastar", "Kabuto", "Kabutops", "Aerodactyl", "Snorlax", "Articuno", "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo", "Mew"];
@@ -1197,14 +1197,10 @@ const pokemonNames = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmel
 		if (name[0] === answer[answer.length - 1].toUpperCase()) {
 			play(name);
 		}
-```
-</summary>
-
-```typescript
 	}
 })();
 ```
-</details></td></tr></tbody></table>
+</td></tr></tbody></table>
 
 <p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Last Letter-First Letter">Improve this answer</a></sup></em></p>
 
@@ -1222,12 +1218,12 @@ Electrode
 Exeggcute
 Exeggutor
 Raticate
+Electabuzz
+Zubat
 ```
 </summary>
 
 ```
-Electabuzz
-Zubat
 Tentacool
 Lickitung
 Golbat
@@ -1345,12 +1341,13 @@ import * as path from "path";
 const readStream = createInterface({
 	"input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
 });
+
+readStream.on("line", function(word) {
+	const lowercaseWord = word.toLowerCase();
 ```
 </summary>
 
 ```typescript
-readStream.on("line", function(word) {
-	const lowercaseWord = word.toLowerCase();
 
 	for (let x = 1; x < lowercaseWord.length; x++) {
 		if (lowercaseWord.charCodeAt(x - 1) >= lowercaseWord.charCodeAt(x)) {
@@ -1379,12 +1376,12 @@ abey
 abhor
 abilo
 abir
+ablow
+ably
 ```
 </summary>
 
 ```
-ablow
-ably
 Abo
 abort
 abox
@@ -1501,12 +1498,13 @@ const potentialPangrams = [
 	"Madam, I'm Adam.",
 	"Never odd or even."
 ];
+
+function isPangram(string) {
+	const sanitizedString = string.replace(/\W/g, "").toLowerCase();
 ```
 </summary>
 
 ```typescript
-function isPangram(string) {
-	const sanitizedString = string.replace(/\W/g, "").toLowerCase();
 
 	const letters = { "a": false, "b": false, "c": false, "d": false, "e": false, "f": false, "g": false, "h": false, "i": false, "j": false, "k": false, "l": false, "m": false, "n": false, "o": false, "p": false, "q": false, "r": false, "s": false, "t": false, "u": false, "v": false, "w": false, "x": false, "y": false, "z": false };
 
@@ -1577,12 +1575,12 @@ for (let x = 0; x < 10; x++) {
 
 			triangle[x][y] = 1;
 		} else if (y === (triangle[x].length - 1)) {
+			triangle[x][y] = 1;
+		} else {
 ```
 </summary>
 
 ```typescript
-			triangle[x][y] = 1;
-		} else {
 			triangle[x][y] = triangle[x - 1][y - 1] + triangle[x - 1][y];
 		}
 	}
@@ -1712,12 +1710,13 @@ import * as path from "path";
 const readStream = createInterface({
 	"input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
 });
+
+readStream.on("line", function(word) {
+	const lowercaseWord = word.toLowerCase();
 ```
 </summary>
 
 ```typescript
-readStream.on("line", function(word) {
-	const lowercaseWord = word.toLowerCase();
 
 	if (lowercaseWord !== lowercaseWord.split("").reverse().join("")) {
 		return;
@@ -1744,12 +1743,12 @@ Adda
 adda
 Adinida
 affa
+aga
+aha
 ```
 </summary>
 
 ```
-aga
-aha
 Ajaja
 ajaja
 Aka
@@ -1868,12 +1867,12 @@ function sparkline(dataset) {
 	let line = "";
 
 	const min = Math.min(...dataset);
+	const max = Math.max(...dataset);
+	const range = max - min;
 ```
 </summary>
 
 ```typescript
-	const max = Math.max(...dataset);
-	const range = max - min;
 
 	for (const datum of dataset) {
 		line += barCharacters.charAt(Math.ceil((datum - min) / range * (barCharacters.length - 1)));
@@ -1931,12 +1930,12 @@ import * as path from "path";
 const readStream = createInterface({
 	"input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
 });
+
+const textonyms = {};
 ```
 </summary>
 
 ```typescript
-const textonyms = {};
-
 const keypad = {
 	"a": 2, "b": 2, "c": 2,
 	"d": 3, "e": 3, "f": 3,
@@ -1990,12 +1989,12 @@ readStream.on("close", function() {
 22 spells the words: aa, Ab, ba, ca
 23 spells the words: ad, ae, be, ce
 24 spells the words: Ah, ah, ai
+25 spells the words: ak, Al, al
+26 spells the words: am, an, Ao, bo
 ```
 </summary>
 
 ```
-25 spells the words: ak, Al, al
-26 spells the words: am, an, Ao, bo
 27 spells the words: ar, As, as
 28 spells the words: at, Bu, bu
 29 spells the words: aw, ax, Ay, ay, by
