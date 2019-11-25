@@ -7,8 +7,10 @@ export function expandableOutputBlock(readStream) {
 	readStream.on("line", function(line) {
 		if (lineCount <= 10) {
 			aboveTheFold.push(line);
-		} else {
+		} else if (lineCount < 1000) {
 			belowTheFold.push(line);
+		} else {
+			readStream.close();
 		}
 
 		lineCount += 1;
