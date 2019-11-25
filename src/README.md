@@ -8,27 +8,19 @@ The problems listed here are a hand-picked selection from the programming [chres
 
 @insert toc();
 
-<hr>
-
 ### Obligatory
 
 These are the problems that have been "done to death". Anything that was once interesting about these problems has since been nullified by their repetition. With that said, this collection wouldn't be complete without them.
 
 @import "../obligatory/README.md";
 
-<hr>
-
 ### Interesting
 
 @import "../interesting/README.md";
 
-<hr>
-
 ### Involved
 
 @import "../involved/README.md";
-
-<hr>
 
 ### Acknowledgements
 

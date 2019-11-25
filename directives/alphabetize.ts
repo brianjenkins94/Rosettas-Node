@@ -1,6 +1,6 @@
+import { Interface } from "readline";
 import * as fs from "fs";
 
-import { Interface } from "readline";
 import { createReadStream } from "..";
 
 function objectify(array) {
@@ -14,11 +14,11 @@ function objectify(array) {
 }
 
 function reorderSections(sections) {
-	sections = objectify(sections);
+	const lines = sections[0];
+
+	sections = objectify(sections.slice(1));
 
 	const keys = Object.keys(sections).sort();
-
-	const lines = [];
 
 	for (const key of keys) {
 		for (const line of sections[key]) {
@@ -30,7 +30,7 @@ function reorderSections(sections) {
 }
 
 export function alphabetize(parentReadStream): Promise<Interface> {
-	const sections = [];
+	const sections = [[]];
 
 	parentReadStream.on("line", function(line) {
 		if (/^##+/.test(line)) {
