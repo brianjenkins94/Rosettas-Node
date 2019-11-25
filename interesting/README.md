@@ -5,21 +5,13 @@
 
 -   Write a program to find the minimum, _same-length_ abbreviation for an array that would preserve each element's uniqueness.
 
-**Solution:**
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Abbreviations");
 
-```typescript
-@import "./abbreviations.ts";
-```
+@insert expandableCodeBlock("typescript", "./abbreviations.ts");
 
-**Sample Output:**
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Abbreviations");
 
-```
-["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] can be abbreviated to ["We", "Th", "Sa", "Tu", "Su", "Mo", "Fr"]
-["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"] can be abbreviated to ["Mi", "Do", "Vi", "Ma", "Ju", "Sá", "Lu"]
-["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"] can be abbreviated to ["Di", "Me", "Ve", "Sa", "Lu", "Ma", "Je"]
-["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"] can be abbreviated to ["Me", "Do", "Ma", "Gi", "Ve", "Lu", "Sa"]
-["Duminica", "Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata"] can be abbreviated to ["Du", "Mi", "Sa", "Vi", "Ma", "Lu", "Jo"]
-```
+@insert expandableOutputBlock("./output/abbreviations.output.txt");
 
 **Variants:**
 
@@ -36,27 +28,13 @@
 -   Write a program that determines whether a word can be spelled with a given collection of blocks.
 -   Blocks are guaranteed to have the same letter pairs on them.
 
-**Solution:**
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Letter Blocks");
 
-```typescript
-@import "./letterBlocks.ts";
-```
+@insert expandableCodeBlock("typescript", "./letterBlocks.ts");
 
-**Sample Output:**
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Letter Blocks");
 
-```
-The word "A" can be spelled with these blocks.
-The word "BARK" can be spelled with these blocks.
-The word "BOOK" can NOT be spelled with these blocks.
-The word "TREAT" can be spelled with these blocks.
-The word "COMMON" can NOT be spelled with these blocks.
-The word "SQUAD" can be spelled with these blocks.
-The word "CONFUSE" can be spelled with these blocks.
-```
-
-**Variants:**
-
--   Blocks are not guaranteed to have the same letter pairs on them.
+@insert expandableOutputBlock("./output/letterBlocks.output.txt");
 
 **References:**
 
@@ -68,39 +46,13 @@ The word "CONFUSE" can be spelled with these blocks.
 
 -   Write a program that aligns words into columns, ensuring that the words in each column are separated by at least one space. Further, allow for each word in a column to be either left a justified, right justified, or center justified within its column.
 
-**Solution:**
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Align Columns");
 
-```typescript
-@import "./alignColumns.ts";
-```
+@insert expandableCodeBlock("typescript", "./alignColumns.ts");
 
-**Sample Output:**
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Align Columns");
 
-```
-Left:
-Write    a         program,  that   aligns     words   into       columns,
-ensuring that      the       words  in         each    column
-are      separated by        at     least      one     space.
-Further, allow     for       each   word       in      a          column
-to       be        either    left   justified, right   justified,
-or       center    justified within its        column.
-
-Right:
-   Write         a  program,   that     aligns   words       into columns,
-ensuring      that       the  words         in    each     column
-     are separated        by     at      least     one     space.
-Further,     allow       for   each       word      in          a   column
-      to        be    either   left justified,   right justified,
-      or    center justified within        its column.
-
-Center:
- Write       a     program,   that    aligns    words     into    columns,
-ensuring   that       the    words      in      each     column
-  are    separated    by       at     least      one     space.
-Further,   allow      for     each     word      in        a       column
-   to       be      either    left  justified,  right  justified,
-   or     center   justified within    its     column.
-```
+@insert expandableOutputBlock("./output/alignColumns.output.txt");
 
 **Variants:**
 
@@ -118,36 +70,13 @@ Further,   allow      for     each     word      in        a       column
 
 -   Determine whether a given string is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.
 
-**Solution:**
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Balanced Brackets");
 
-```typescript
-@import "./balancedBrackets.ts";
-```
+@insert expandableCodeBlock("typescript", "./balancedBrackets.ts");
 
-**Sample Output:**
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Balanced Brackets");
 
-```
-[[]][[]]]] is NOT balanced.
-        ^
-][]][[][][ is NOT balanced.
-^
-[][]]][[[] is NOT balanced.
-    ^
-][][[[][[] is NOT balanced.
-^
-[[[][]]][] is balanced.
-
-][][]][[[[ is NOT balanced.
-^
-][][[[[]][ is NOT balanced.
-^
-][[][]][[] is NOT balanced.
-^
-[[]][[]][] is balanced.
-
-[][]]][]]] is NOT balanced.
-    ^
-```
+@insert expandableOutputBlock("./output/balancedBrackets.output.txt");
 
 **References:**
 
@@ -160,20 +89,13 @@ Further,   allow      for     each     word      in        a       column
 -   Write a program that can encode and decode a string using the [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher), given a key (an integer from 1 to 25).
     -   The Caesar cipher is a type of [substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher) in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
 
-**Solution:**
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Caesar Cipher");
 
-```typescript
-@import "./caesarCipher.ts";
-```
+@insert expandableCodeBlock("typescript", "./caesarCipher.ts");
 
-**Sample Output:**
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Caesar Cipher");
 
-```
-Encoded:
-Dro combod vsoc gsdr Mrkbvyddo.
-Decoded:
-The secret lies with Charlotte.
-```
+@insert expandableOutputBlock("./output/caesarCipher.output.txt");
 
 **References:**
 
@@ -188,41 +110,13 @@ The secret lies with Charlotte.
 -   Use a dictionary to attempt to decode the message encoded by your [Caesar cipher](#caesar-cipher).
 -   Windows users must bring their own dictionary or match against a dictionary containing the decoded message.
 
-**Solution:**
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Caesar Cipher Solver");
 
-```typescript
-@import "./caesarCipherSolver.ts";
-```
+@insert expandableCodeBlock("typescript", "./caesarCipherSolver.ts");
 
-**Sample Output:**
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Caesar Cipher Solver");
 
-```
-Encoded:
-Dro combod vsoc gsdr Mrkbvyddo.
-Decoded:
-The secret lies with Charlotte.
-
-20% match with a shift of 4.
-    Dro -> Znk
-    combod -> ykixkz
-    vsoc -> roky
-    gsdr -> cozn
-    Mrkbvyddo. -> Ingxruzzk.
-
-60% match with a shift of 10.
-    Dro -> The
-    combod -> secret
-    vsoc -> lies
-    gsdr -> with
-    Mrkbvyddo. -> Charlotte.
-
-20% match with a shift of 17.
-    Dro -> Max
-    combod -> lxvkxm
-    vsoc -> ebxl
-    gsdr -> pbma
-    Mrkbvyddo. -> Vatkehmmx.
-```
+@insert expandableOutputBlock("./output/caesarCipherSolver.output.txt");
 
 **References:**
 
@@ -234,17 +128,13 @@ The secret lies with Charlotte.
 
 -   Find the limit of [recursion](https://en.wikipedia.org/wiki/Recursion_(computer_science)).
 
-**Solution:**
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Recursion Limit");
 
-```typescript
-@import "./recursionLimit.ts";
-```
+@insert expandableCodeBlock("typescript", "./recursionLimit.ts");
 
-**Sample Output:**
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Recursion Limit");
 
-```
-The recursion limit is: 12569
-```
+@insert expandableOutputBlock("./output/recursionLimit.output.txt");
 
 **References:**
 
@@ -258,36 +148,13 @@ The recursion limit is: 12569
 -   Implement history variables.
     -   History variables are variables which store not only their current value, but also the values they have contained in the past.
 
-**Solution:**
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "History Variables");
 
-```typescript
-@import "./historyVariables.ts";
-```
+@insert expandableCodeBlock("typescript", "./historyVariables.ts");
 
-**Sample Output:**
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "History Variables");
 
-```
-> Print the history
-[
-  'uno',   'dos',
-  'tres',  'cuatro',
-  'cinco', 'cinco',
-  'seis'
-]
-
-> Print the previous value
-cinco
-
-> Rollback twice
-
-> Set the value to "seis"
-
-> Get the value we just added
-seis
-
-> Print the history
-[ 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis' ]
-```
+@insert expandableOutputBlock("./output/historyVariables.output.txt");
 
 **References:**
 
@@ -299,27 +166,13 @@ seis
 
 -   Given a collection of words and a starting value, chain as many answers together that start with the last letter of the previous word without repeating.
 
-**Solution:**
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Last Letter-First Letter");
 
-```typescript
-@import "./lastLetterFirstLetter.ts";
-```
+@insert expandableCodeBlock("typescript", "./lastLetterFirstLetter.ts");
 
-**Sample Output:**
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Last Letter-First Letter");
 
-```
-Bulbasaur
-Rattata
-Arbok
-Kakuna
-Arcanine
-Ekans
-Squirtle
-Electrode
-Exeggcute
-Exeggutor
-...
-```
+@insert expandableOutputBlock("./output/lastLetterFirstLetter.output.txt");
 
 **References:**
 
@@ -333,27 +186,13 @@ Exeggutor
     -   An ordered word is a word in which the letters appear in alphabetic order.
 -   Windows users must bring their own dictionary.
 
-**Solution:**
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Ordered Words");
 
-```typescript
-@import "./orderedWords.ts";
-```
+@insert expandableCodeBlock("typescript", "./orderedWords.ts");
 
-**Sample Output:**
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Ordered Words");
 
-```
-Ab
-abdest
-Abe
-Abel
-abet
-abey
-abhor
-abilo
-abir
-ablow
-...
-```
+@insert expandableOutputBlock("./output/orderedWords.output.txt");
 
 **References:**
 
@@ -366,24 +205,13 @@ ablow
 -   Write a program that checks whether a given string is a [pangram](https://en.wikipedia.org/wiki/Pangram).
     -   A pangram is a word or phrase that contains every letter of the alphabet.
 
-**Solution:**
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Pangram Checker");
 
-```typescript
-@import "./isPangram.ts";
-```
+@insert expandableCodeBlock("typescript", "./isPangram.ts");
 
-**Sample Output:**
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Pangram Checker");
 
-```
-"The quick brown fox jumps over the lazy dog." is a pangram.
-"Sphinx of black quartz, judge my vow." is a pangram.
-"How vexingly quick daft zebras jump!" is a pangram.
-"The five boxing wizards jump quickly." is a pangram.
-"Able was I ere I saw Elba." is NOT a pangram.
-"A man, a plan, a canal – Panama." is NOT a pangram.
-"Madam, I'm Adam." is NOT a pangram.
-"Never odd or even." is NOT a pangram.
-```
+@insert expandableOutputBlock("./output/isPangram.output.txt");
 
 **References:**
 
@@ -397,26 +225,13 @@ ablow
 -   Print the first 10 rows of [Pascal's Triangle](https://en.wikipedia.org/wiki/Pascal%27s_triangle).
     -   Pascal's Triangle is a triangular array where each successive element is the sum of the two above it.
 
-**Solution:**
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Pascal's Triangle");
 
-```typescript
-@import "./pascalsTriangle.ts";
-```
+@insert expandableCodeBlock("typescript", "./pascalsTriangle.ts");
 
-**Sample Output:**
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Pascal's Triangle");
 
-```
-                     1
-                   1   1
-                 1   2   1
-               1   3   3   1
-             1   4   6   4   1
-           1   5  10  10   5   1
-         1   6  15  20  15   6   1
-       1   7  21  35  35  21   7   1
-     1   8  28  56  70  56  28   8   1
-   1   9  36  84 126 126  84  36   9   1
-```
+@insert expandableOutputBlock("./output/pascalsTriangle.output.txt");
 
 **References:**
 
@@ -428,17 +243,13 @@ ablow
 -   Write a [quine](https://en.wikipedia.org/wiki/Quine_(computing)).
     -   A quine a computer program which takes no input and produces a copy of its own source code as its only output.
 
-**Solution:**
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Quine");
 
-```typescript
-@import "./quine.ts";
-```
+@insert expandableCodeBlock("typescript", "./quine.ts");
 
-**Sample Output:**
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Quine");
 
-```
-@import "./quine.ts";
-```
+@insert expandableOutputBlock("./output/quine.output.txt");
 
 **References:**
 
@@ -451,17 +262,13 @@ ablow
 
 -   Given an array with duplicates, remove the duplicates.
 
-**Solution:**
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Remove Duplicate Elements");
 
-```typescript
-@import "./removeDuplicateElements.ts";
-```
+@insert expandableCodeBlock("typescript", "./removeDuplicateElements.ts");
 
-**Sample Output:**
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Remove Duplicate Elements");
 
-```
-[1, 2, 3, 4]
-```
+@insert expandableOutputBlock("./output/removeDuplicateElements.output.txt");
 
 **References:**
 
@@ -475,27 +282,13 @@ ablow
     -   A semordnilap is a word that spells a different word in reverse.
 -   Windows users must bring their own dictionary
 
-**Solution:**
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Semordnilap");
 
-```typescript
-@import "./isSemordnilap.ts";
-```
+@insert expandableCodeBlock("typescript", "./isSemordnilap.ts");
 
-**Sample Output:**
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Semordnilap");
 
-```
-A
-a
-aa
-aba
-Abba
-acca
-Ada
-Adda
-adda
-Adinida
-...
-```
+@insert expandableOutputBlock("./output/isSemordnilap.output.txt");
 
 **References:**
 
@@ -509,21 +302,13 @@ Adinida
 -   Write a program to draw a [sparkline](https://en.wikipedia.org/wiki/Sparkline).
     -   A sparkline is a very small line chart that presents the general shape of a variation.
 
-**Solution:**
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Sparkline");
 
-```typescript
-@import "./sparkline.ts";
-```
+@insert expandableCodeBlock("typescript", "./sparkline.ts");
 
-**Sample Output:**
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Sparkline");
 
-```
-Input: 1, 2, 3, 4, 5, 6, 7, 8, 7, 6, 5, 4, 3, 2, 1
-▁▂▃▄▅▆▇█▇▆▅▄▃▂▁
-
-Input: 1.5, 0.5, 3.5, 2.5, 5.5, 4.5, 7.5, 6.5
-▂▁▄▃▆▅█▇
-```
+@insert expandableOutputBlock("./output/sparkline.output.txt");
 
 **References:**
 
@@ -537,27 +322,13 @@ Input: 1.5, 0.5, 3.5, 2.5, 5.5, 4.5, 7.5, 6.5
 -   Use a dictionary to find all of the words that are [textonyms](https://en.wikipedia.org/wiki/Predictive_text#Textonyms).
     -   Textonyms are words produced by the same combination of keypresses on a phone keypad.
 
-**Solution:**
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Textonyms");
 
-```typescript
-@import "./textonyms.ts";
-```
+@insert expandableCodeBlock("typescript", "./textonyms.ts");
 
-**Sample Output:**
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Textonyms");
 
-```
-2 spells the words: A, a, B, b, C, c
-3 spells the words: D, d, E, e, F, f
-4 spells the words: G, g, H, h, I, i
-5 spells the words: J, j, K, k, L, l
-6 spells the words: M, m, N, n, O, o
-7 spells the words: P, p, Q, q, R, r, S, s
-8 spells the words: T, t, U, u, V, v
-9 spells the words: W, w, X, x, Y, y, Z, z
-22 spells the words: aa, Ab, ba, ca
-23 spells the words: ad, ae, be, ce
-...
-```
+@insert expandableOutputBlock("./output/textonyms.output.txt");
 
 **References:**
 

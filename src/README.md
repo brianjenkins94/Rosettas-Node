@@ -4,7 +4,7 @@
 
 > Interesting problems. Quickly described.
 
-The problems listed here are the interesting problems from the programming [chrestomathy](https://en.wikipedia.org/wiki/Chrestomathy) site, [Rosetta's Code](http://rosettacode.org/wiki/Rosetta_Code). I personally reviewed some 1,200 or so programming tasks, selecting the ones that didn't require a degree in advanced mathematics, weren't prescriptive about how to write the solution, and that were, above all, interesting.
+The problems listed here are a hand-picked selection from the programming [chrestomathy](https://en.wikipedia.org/wiki/Chrestomathy) site, [Rosetta's Code](http://rosettacode.org/wiki/Rosetta_Code). I personally reviewed some 1,200 or so programming tasks, selecting the ones that didn't require a degree in advanced mathematics, weren't prescriptive about how to write the solution, and that were, above all, interesting.
 
 @insert toc();
 
