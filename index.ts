@@ -3,206 +3,91 @@ import * as fs from "fs";
 import * as path from "path";
 import minimist from "minimist";
 
+import { discussThisProblem, expandableCodeBlock, expandableOutputBlock, generateTableOfContents, importFile, improveThisAnswer } from "./directives";
+
+// Monkey-patch readline.d.ts
+declare module "readline" {
+	interface Interface {
+		input: fs.ReadStream;
+	}
+}
+
 const argv = minimist(process.argv.slice(2));
 
 const inputFile = path.resolve(argv._[0]);
 const outputFile = path.resolve(argv._[1]);
 
-const readStream = createInterface({
-	"input": fs.createReadStream(inputFile, { "highWaterMark": 1 })
-});
-
-const writeStream = fs.createWriteStream(outputFile);
-
-function discussThisProblem(line) {
-	const [username, repository, problemName] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.length - 2) + "]");
-
-	writeStream.write("<p align=\"right\"><em><sup><a href=\"https://github.com/" + username + "/" + repository + "/issues/new?title=[Discussion] " + problemName + "\">Discuss this problem</a></sup></em></p>\n");
-}
-
-function createReadStream(unparsedPath, cwd?) {
+export function createReadStream(unparsedPath, cwd?) {
 	const parsedPath = path.parse(unparsedPath);
 	const pathFragment = parsedPath.dir;
 	const fileName = parsedPath.base;
 	const filePath = cwd === undefined ? pathFragment : path.join(path.dirname(cwd), pathFragment);
 
-	const readStream = createInterface({
+	return createInterface({
 		"input": fs.createReadStream(path.join(filePath, fileName), { "highWaterMark": 1 })
 	});
-
-	return readStream;
 }
 
-function expandableCodeBlock(cwd, line) {
-	const [language, unparsedPath] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.length - 2) + "]");
+const readStream = createReadStream(inputFile);
 
-	const readStream = createReadStream(unparsedPath, cwd);
+const writeStream = fs.createWriteStream(outputFile);
 
-	let lineCount = 0;
+export async function readLine(line, parentReadStream = readStream) {
+	parentReadStream.pause();
 
-	const aboveTheFold = [];
-	const belowTheFold = [];
-
-	readStream.on("line", function(line) {
-		if (lineCount <= 10) {
-			aboveTheFold.push(line);
-		} else {
-			belowTheFold.push(line);
-		}
-
-		lineCount += 1;
-	});
-
-	return new Promise(function(resolve, reject) {
-		readStream.on("close", function() {
-			if (belowTheFold.length === 0) {
-				writeStream.write("<table><tbody><tr></tr><tr><td><strong>Solution:" + "&nbsp;".repeat(223) + "</strong>\n\n```" + language + "\n" + aboveTheFold.join("\n") + "\n```\n</td></tr></tbody></table>\n");
-			} else {
-				if (aboveTheFold[aboveTheFold.length - 1] === "") {
-					aboveTheFold.pop();
-				}
-
-				writeStream.write("<table><tbody><tr></tr><tr><td><details><summary><strong>Solution:" + "&nbsp;".repeat(218) + "</strong>\n\n```" + language + "\n" + aboveTheFold.join("\n") + "\n```\n</summary>\n\n```" + language + "\n" + belowTheFold.join("\n") + "\n```\n</details></td></tr></tbody></table>\n");
-			}
-
-			resolve();
-		});
-	});
-}
-
-function expandableOutputBlock(cwd, line) {
-	const [unparsedPath] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.length - 2) + "]");
-
-	const readStream = createReadStream(unparsedPath, cwd);
-
-	let lineCount = 0;
-
-	const aboveTheFold = [];
-	const belowTheFold = [];
-
-	readStream.on("line", function(line) {
-		if (lineCount <= 10) {
-			aboveTheFold.push(line);
-		} else {
-			belowTheFold.push(line);
-		}
-
-		lineCount += 1;
-	});
-
-	return new Promise(function(resolve, reject) {
-		readStream.on("close", function() {
-			if (belowTheFold.length === 0) {
-				writeStream.write("<table><tbody><tr></tr><tr><td><strong>Sample Output:" + "&nbsp;".repeat(209) + "</strong>\n\n```\n" + aboveTheFold.join("\n") + "\n```\n</td></tr></tbody></table>\n");
-			} else {
-				if (aboveTheFold[aboveTheFold.length - 1] === "") {
-					aboveTheFold.pop();
-				}
-
-				writeStream.write("<table><tbody><tr></tr><tr><td><details><summary><strong>Sample Output:" + "&nbsp;".repeat(204) + "</strong>\n\n```\n" + aboveTheFold.join("\n") + "\n```\n</summary>\n\n```\n" + belowTheFold.join("\n") + "\n```\n</details></td></tr></tbody></table>\n");
-			}
-
-			resolve();
-		});
-	});
-}
-
-function improveThisAnswer(line) {
-	const [username, repository, problemName] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.length - 2) + "]");
-
-	writeStream.write("<p align=\"right\"><em><sup><a href=\"https://github.com/" + username + "/" + repository + "/issues/new?title=Suggestion for " + problemName + "\">Improve this answer</a></sup></em></p>\n");
-}
-
-readStream.on("line", async function readLine(line, parentReadStream = readStream) {
 	switch (true) {
-		case /^@import ".*";$/.test(line):
-			parentReadStream.pause();
-
-			const readStream = createReadStream(line.substring(line.indexOf("\"") + 1, line.length - 2), parentReadStream.input.path);
-
-			readStream.on("line", function(line) {
-				readLine(line, readStream);
-			});
-
-			readStream.on("close", function() {
-				parentReadStream.resume();
-			});
+		case /^@import ".*";$/.test(line): {
+			await importFile(createReadStream(line.substring(line.indexOf("\"") + 1, line.length - 2), parentReadStream.input.path));
 			break;
+		}
 		case /^@insert/.test(line):
 			switch (true) {
-				case /^@insert toc\(.*\);$/.test(line):
-					parentReadStream.pause();
-
-					const readStream = createReadStream(parentReadStream.input.path);
-
-					const tableOfContents = [];
-
-					readStream.on("line", function(line) {
-						if (/^##+/.test(line)) {
-							const captureGroups = /^(##+) (.*)$/.exec(line);
-
-							tableOfContents.push({
-								"depth": captureGroups[1].length,
-								"id": captureGroups[2].toLowerCase().replace(/ /g, "-").replace(/[^\w-]/g, ""),
-								"name": captureGroups[2]
-							});
-						}
-					});
-
-					readStream.on("close", function() {
-						let orderedList = "";
-
-						let indentationLevel = 5;
-
-						for (const [index, { depth, id, name }] of tableOfContents.entries()) {
-							if (index === 0 || tableOfContents[index - 1].depth === depth) {
-								orderedList += "\t".repeat(indentationLevel) + "<li><a href=\"#" + id + "\">" + name + "</a></li>\n";
-							} else if (tableOfContents[index - 1].depth < depth) {
-								orderedList += "\t".repeat(indentationLevel) + "<ol>\n" + "\t".repeat(indentationLevel += 1) + "<li><a href=\"#" + id + "\">" + name + "</a></li>\n";
-							} else {
-								orderedList += "\t".repeat(indentationLevel) + "<li><a href=\"#" + id + "\">" + name + "</a></li>\n" + "\t".repeat(indentationLevel -= 1) + "</ol>\n";
-							}
-						}
-
-						writeStream.write("<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th align=\"center\"><strong>Contents</strong></th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>\n\t\t\t\t<ol>\n" + orderedList + "\t\t\t\t</ol>\n\t\t\t</td>\n\t\t</tr>\n\t</tbody>\n</table>\n");
-
-						parentReadStream.resume();
-					});
+				case /^@insert toc\(.*\);$/.test(line): {
+					writeStream.write(await generateTableOfContents(createReadStream(parentReadStream.input.path)));
 					break;
-				case /^@insert discussThisProblem\(.*\);$/.test(line):
-					discussThisProblem(line);
+				}
+				case /^@insert discussThisProblem\(.*\);$/.test(line): {
+					writeStream.write(discussThisProblem(line));
 					break;
-				case /^@insert expandableCodeBlock\(.*\);$/.test(line):
-					parentReadStream.pause();
+				}
+				case /^@insert expandableCodeBlock\(.*\);$/.test(line): {
+					const [language, unparsedPath] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.length - 2) + "]");
 
-					await expandableCodeBlock(parentReadStream.input.path, line);
-
-					parentReadStream.resume();
+					writeStream.write(await expandableCodeBlock(language, createReadStream(unparsedPath, parentReadStream.input.path)));
 					break;
-				case /^@insert expandableOutputBlock\(.*\);$/.test(line):
-					parentReadStream.pause();
+				}
+				case /^@insert expandableOutputBlock\(.*\);$/.test(line): {
+					const [unparsedPath] = JSON.parse("[" + line.substring(line.indexOf("(") + 1, line.length - 2) + "]");
 
-					await expandableOutputBlock(parentReadStream.input.path, line);
-
-					parentReadStream.resume();
+					writeStream.write(await expandableOutputBlock(createReadStream(unparsedPath, parentReadStream.input.path)));
 					break;
-				case /^@insert improveThisAnswer\(.*\);$/.test(line):
-					improveThisAnswer(line);
+				}
+				case /^@insert improveThisAnswer\(.*\);$/.test(line): {
+					writeStream.write(improveThisAnswer(line));
 					break;
-				default:
+				}
+				default: {
 					throw new Error("Directive `" + line.substring(line.indexOf(" ") + 1, line.indexOf("(")) + "` unrecognized.");
+				}
 			}
 			break;
-		case /^@invoke/.test(line):
+		case /^@invoke/.test(line): {
 			switch (true) {
 				case /^@invoke alphabetize\(\);$/.test(line):
 					console.warn("Not yet implemented.");
 					break;
-				default:
+				default: {
 					throw new Error("Directive `" + line.substring(line.indexOf(" ") + 1, line.indexOf("(")) + "` unrecognized.");
+				}
 			}
 			break;
-		default:
+		}
+		default: {
 			writeStream.write(line + "\n");
+		}
 	}
-});
+
+	parentReadStream.resume();
+}
+
+readStream.on("line", readLine);
