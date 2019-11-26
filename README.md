@@ -41,16 +41,94 @@ These are the problems that have been "done to death". Anything that was once in
 		<tr>
 			<td>
 				<ol>
-					<li><a href="#fizzbuzz">FizzBuzz</a></li>
 					<li><a href="#fibonacci-iterative">Fibonacci (Iterative)</a></li>
 					<li><a href="#fibonacci-recursive">Fibonacci (Recursive)</a></li>
-					<li><a href="#palindrome-checker">Palindrome Checker</a></li>
+					<li><a href="#fizzbuzz">FizzBuzz</a></li>
 					<li><a href="#leap-year-checker">Leap Year Checker</a></li>
+					<li><a href="#palindrome-checker">Palindrome Checker</a></li>
 				</ol>
 			</td>
 		</tr>
 	</tbody>
 </table>
+
+#### Fibonacci (Iterative)
+
+-   Print out the `n`th number of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
+    -   The Fibonacci sequence is the sequence of numbers where each element is the sum of the two previous elements.
+
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Fibonacci (Iterative)">Discuss this problem</a></sup></em></p>
+
+<table><tbody><tr></tr><tr><td><strong>Solution:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+
+```typescript
+function fibonacci(n) {
+	const array = [0, 1];
+
+	for (let x = 2; x <= n; x++) {
+		array.push(array[x - 2] + array[x - 1]);
+	}
+
+	return array[n];
+}
+
+console.log(fibonacci(10));
+```
+</td></tr></tbody></table>
+
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Iterative)">Improve this answer</a></sup></em></p>
+
+<table><tbody><tr></tr><tr><td><strong>Sample Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+
+```
+55
+```
+</td></tr></tbody></table>
+
+**References:**
+
+-   <http://rosettacode.org/wiki/Fibonacci_sequence>
+-   <https://en.wikipedia.org/wiki/Fibonacci_number>
+
+#
+
+#### Fibonacci (Recursive)
+
+-   Print out the `n`th number of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
+    -   The Fibonacci sequence is the sequence of numbers where each element is the sum of the two previous elements.
+
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Fibonacci (Recursive)">Discuss this problem</a></sup></em></p>
+
+<table><tbody><tr></tr><tr><td><strong>Solution:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+
+```typescript
+function fibonacci(n) {
+	if (n < 2) {
+		return n;
+	}
+
+	return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+console.log(fibonacci(10));
+```
+</td></tr></tbody></table>
+
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Recursive)">Improve this answer</a></sup></em></p>
+
+<table><tbody><tr></tr><tr><td><strong>Sample Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+
+```
+55
+```
+</td></tr></tbody></table>
+
+**References:**
+
+-   <http://rosettacode.org/wiki/Fibonacci_sequence>
+-   <https://en.wikipedia.org/wiki/Fibonacci_number>
+
+#
 
 #### FizzBuzz
 
@@ -197,84 +275,69 @@ Buzz
 
 #
 
-#### Fibonacci (Iterative)
+#### Leap Year Checker
 
--   Print out the `n`th number of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
-    -   The Fibonacci sequence is the sequence of numbers where each element is the sum of the two previous elements.
+-   Write a program that checks whether a given year is a [leap year](https://en.wikipedia.org/wiki/Leap_year).
+    -   A leap year is a year divisible by 4 but not 100 and is not divisible by 400.
 
-<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Fibonacci (Iterative)">Discuss this problem</a></sup></em></p>
-
-<table><tbody><tr></tr><tr><td><strong>Solution:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
-
-```typescript
-function fibonacci(n) {
-	const array = [0, 1];
-
-	for (let x = 2; x <= n; x++) {
-		array.push(array[x - 2] + array[x - 1]);
-	}
-
-	return array[n];
-}
-
-console.log(fibonacci(10));
-```
-</td></tr></tbody></table>
-
-<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Iterative)">Improve this answer</a></sup></em></p>
-
-<table><tbody><tr></tr><tr><td><strong>Sample Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
-
-```
-55
-```
-</td></tr></tbody></table>
-
-**References:**
-
--   <http://rosettacode.org/wiki/Fibonacci_sequence>
--   <https://en.wikipedia.org/wiki/Fibonacci_number>
-
-#
-
-#### Fibonacci (Recursive)
-
--   Print out the `n`th number of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
-    -   The Fibonacci sequence is the sequence of numbers where each element is the sum of the two previous elements.
-
-<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Fibonacci (Recursive)">Discuss this problem</a></sup></em></p>
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Leap Year Checker">Discuss this problem</a></sup></em></p>
 
 <table><tbody><tr></tr><tr><td><strong>Solution:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
 
 ```typescript
-function fibonacci(n) {
-	if (n < 2) {
-		return n;
-	}
-
-	return fibonacci(n - 1) + fibonacci(n - 2);
+function isLeapYear(year) {
+	return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
 }
 
-console.log(fibonacci(10));
+for (let x = 2000; x <= 2020; x++) {
+	if (isLeapYear(x)) {
+		console.log(x + " is a leap year.");
+	} else {
+		console.log(x + " is NOT a leap year.");
+	}
+}
 ```
 </td></tr></tbody></table>
 
-<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Fibonacci (Recursive)">Improve this answer</a></sup></em></p>
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Leap Year Checker">Improve this answer</a></sup></em></p>
 
-<table><tbody><tr></tr><tr><td><strong>Sample Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+<table><tbody><tr></tr><tr><td><details><summary><strong>Sample Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
 
 ```
-55
+2000 is a leap year.
+2001 is NOT a leap year.
+2002 is NOT a leap year.
+2003 is NOT a leap year.
+2004 is a leap year.
+2005 is NOT a leap year.
+2006 is NOT a leap year.
+2007 is NOT a leap year.
+2008 is a leap year.
+2009 is NOT a leap year.
+2010 is NOT a leap year.
+2011 is NOT a leap year.
 ```
-</td></tr></tbody></table>
+</summary>
+
+```
+2012 is a leap year.
+2013 is NOT a leap year.
+2014 is NOT a leap year.
+2015 is NOT a leap year.
+2016 is a leap year.
+2017 is NOT a leap year.
+2018 is NOT a leap year.
+2019 is NOT a leap year.
+2020 is a leap year.
+```
+</details></td></tr></tbody></table>
 
 **References:**
 
--   <http://rosettacode.org/wiki/Fibonacci_sequence>
--   <https://en.wikipedia.org/wiki/Fibonacci_number>
+-   <http://rosettacode.org/wiki/Leap_year>
+-   <https://en.wikipedia.org/wiki/Leap_year>
 
 #
-
 #### Palindrome Checker
 
 -   Write a program that checks whether a given string is a [palindrome](https://en.wikipedia.org/wiki/Palindrome).
@@ -339,70 +402,6 @@ for (const potentialPalindrome of potentialPalindromes) {
 
 #
 
-#### Leap Year Checker
-
--   Write a program that checks whether a given year is a [leap year](https://en.wikipedia.org/wiki/Leap_year).
-    -   A leap year is a year divisible by 4 but not 100 and is not divisible by 400.
-
-<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Leap Year Checker">Discuss this problem</a></sup></em></p>
-
-<table><tbody><tr></tr><tr><td><strong>Solution:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
-
-```typescript
-function isLeapYear(year) {
-	return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
-}
-
-for (let x = 2000; x <= 2020; x++) {
-	if (isLeapYear(x)) {
-		console.log(x + " is a leap year.");
-	} else {
-		console.log(x + " is NOT a leap year.");
-	}
-}
-```
-</td></tr></tbody></table>
-
-<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Leap Year Checker">Improve this answer</a></sup></em></p>
-
-<table><tbody><tr></tr><tr><td><details><summary><strong>Sample Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
-
-```
-2000 is a leap year.
-2001 is NOT a leap year.
-2002 is NOT a leap year.
-2003 is NOT a leap year.
-2004 is a leap year.
-2005 is NOT a leap year.
-2006 is NOT a leap year.
-2007 is NOT a leap year.
-2008 is a leap year.
-2009 is NOT a leap year.
-2010 is NOT a leap year.
-2011 is NOT a leap year.
-```
-</summary>
-
-```
-2012 is a leap year.
-2013 is NOT a leap year.
-2014 is NOT a leap year.
-2015 is NOT a leap year.
-2016 is a leap year.
-2017 is NOT a leap year.
-2018 is NOT a leap year.
-2019 is NOT a leap year.
-2020 is a leap year.
-```
-</details></td></tr></tbody></table>
-
-**References:**
-
--   <http://rosettacode.org/wiki/Leap_year>
--   <https://en.wikipedia.org/wiki/Leap_year>
-
-#
-
 ### Interesting
 
 <table>
@@ -416,21 +415,24 @@ for (let x = 2000; x <= 2020; x++) {
 			<td>
 				<ol>
 					<li><a href="#abbreviations">Abbreviations</a></li>
-					<li><a href="#letter-blocks">Letter Blocks</a></li>
 					<li><a href="#align-columns">Align Columns</a></li>
 					<li><a href="#balanced-brackets">Balanced Brackets</a></li>
+					<li><a href="#birthday-problem">Birthday Problem</a></li>
 					<li><a href="#caesar-cipher">Caesar Cipher</a></li>
 					<li><a href="#caesar-cipher-solver">Caesar Cipher Solver</a></li>
-					<li><a href="#recursion-limit">Recursion Limit</a></li>
 					<li><a href="#history-variables">History Variables</a></li>
 					<li><a href="#last-letter-first-letter">Last Letter-First Letter</a></li>
+					<li><a href="#letter-blocks">Letter Blocks</a></li>
 					<li><a href="#ordered-words">Ordered Words</a></li>
 					<li><a href="#pangram-checker">Pangram Checker</a></li>
 					<li><a href="#pascals-triangle">Pascal's Triangle</a></li>
 					<li><a href="#quine">Quine</a></li>
+					<li><a href="#recursion-limit">Recursion Limit</a></li>
 					<li><a href="#remove-duplicate-elements">Remove Duplicate Elements</a></li>
 					<li><a href="#semordnilap">Semordnilap</a></li>
 					<li><a href="#sparkline">Sparkline</a></li>
+					<li><a href="#substitution-cipher">Substitution Cipher</a></li>
+					<li><a href="#suffix-tree-generator">Suffix Tree Generator</a></li>
 					<li><a href="#textonyms">Textonyms</a></li>
 					<li><a href="#towers-of-hanoi">Towers of Hanoi</a></li>
 					<li><a href="#truth-tables">Truth Tables</a></li>
@@ -441,9 +443,6 @@ for (let x = 2000; x <= 2020; x++) {
 					<li><a href="#word-search-generator">Word Search Generator</a></li>
 					<li><a href="#word-search-solver">Word Search Solver</a></li>
 					<li><a href="#word-wrap">Word Wrap</a></li>
-					<li><a href="#birthday-problem">Birthday Problem</a></li>
-					<li><a href="#substitution-cipher">Substitution Cipher</a></li>
-					<li><a href="#suffix-tree-generator">Suffix Tree Generator</a></li>
 				</ol>
 			</td>
 		</tr>
@@ -517,75 +516,6 @@ for (const array of arrays) {
 **References:**
 
 -   <http://rosettacode.org/wiki/Abbreviations,_automatic>
-
-#
-
-#### Letter Blocks
-
--   Write a program that determines whether a word can be spelled with a given collection of blocks.
--   Blocks are guaranteed to have the same letter pairs on them.
-
-<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Letter Blocks">Discuss this problem</a></sup></em></p>
-
-<table><tbody><tr></tr><tr><td><details><summary><strong>Solution:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
-
-```typescript
-const blocks = [["B", "O"], ["X", "K"], ["D", "Q"], ["C", "P"], ["N", "A"], ["G", "T"], ["R", "E"], ["T", "G"], ["Q", "D"], ["F", "S"], ["J", "W"], ["H", "U"], ["V", "I"], ["A", "N"], ["O", "B"], ["E", "R"], ["F", "S"], ["L", "Y"], ["P", "C"], ["Z", "M"]];
-
-const words = ["A", "BARK", "BOOK", "TREAT", "COMMON", "SQUAD", "CONFUSE"];
-
-function isWordSpellableWithBlocks(word, blocks) {
-	for (const letter of word) {
-		let letterFound = false;
-
-		for (const [index, block] of blocks.entries()) {
-			if (block[0] === letter || block[1] === letter) {
-				blocks[index] = ["", ""];
-				letterFound = true;
-```
-</summary>
-
-```typescript
-				break;
-			}
-		}
-
-		if (letterFound === false) {
-			return false;
-		}
-	}
-
-	return true;
-}
-
-for (const word of words) {
-	if (isWordSpellableWithBlocks(word, [...blocks])) {
-		console.log("The word \"" + word + "\" can be spelled with these blocks.");
-	} else {
-		console.log("The word \"" + word + "\" can NOT be spelled with these blocks.");
-	}
-}
-```
-</details></td></tr></tbody></table>
-
-<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Letter Blocks">Improve this answer</a></sup></em></p>
-
-<table><tbody><tr></tr><tr><td><strong>Sample Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
-
-```
-The word "A" can be spelled with these blocks.
-The word "BARK" can be spelled with these blocks.
-The word "BOOK" can NOT be spelled with these blocks.
-The word "TREAT" can be spelled with these blocks.
-The word "COMMON" can NOT be spelled with these blocks.
-The word "SQUAD" can be spelled with these blocks.
-The word "CONFUSE" can be spelled with these blocks.
-```
-</td></tr></tbody></table>
-
-**References:**
-
--   <http://rosettacode.org/wiki/ABC_Problem>
 
 #
 
@@ -838,6 +768,27 @@ for (const string of input) {
 
 #
 
+#### Birthday Problem
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./birthdayProblem.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
 #### Caesar Cipher
 
 -   Write a program that can encode and decode a string using the [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher), given a key (an integer from 1 to 25).
@@ -1018,43 +969,6 @@ The secret lies with Charlotte.
 **References:**
 
 -   <http://rosettacode.org/wiki/Caesar_cipher>
-
-#
-
-#### Recursion Limit
-
--   Find the limit of [recursion](https://en.wikipedia.org/wiki/Recursion_(computer_science)).
-
-<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Recursion Limit">Discuss this problem</a></sup></em></p>
-
-<table><tbody><tr></tr><tr><td><strong>Solution:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
-
-```typescript
-function computeMaximumCallStackSize() {
-	try {
-		return 1 + computeMaximumCallStackSize();
-	} catch (error) {
-		return 1;
-	}
-}
-
-console.log("The recursion limit is: " + computeMaximumCallStackSize());
-```
-</td></tr></tbody></table>
-
-<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Recursion Limit">Improve this answer</a></sup></em></p>
-
-<table><tbody><tr></tr><tr><td><strong>Sample Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
-
-```
-The recursion limit is: 12551
-```
-</td></tr></tbody></table>
-
-**References:**
-
--   <http://rosettacode.org/wiki/Find_limit_of_recursion>
--   <https://en.wikipedia.org/wiki/Recursion_(computer_science)>
 
 #
 
@@ -1322,6 +1236,75 @@ Pinsir
 **References:**
 
 -   <http://rosettacode.org/wiki/Last_letter-first_letter>
+
+#
+
+#### Letter Blocks
+
+-   Write a program that determines whether a word can be spelled with a given collection of blocks.
+-   Blocks are guaranteed to have the same letter pairs on them.
+
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Letter Blocks">Discuss this problem</a></sup></em></p>
+
+<table><tbody><tr></tr><tr><td><details><summary><strong>Solution:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+
+```typescript
+const blocks = [["B", "O"], ["X", "K"], ["D", "Q"], ["C", "P"], ["N", "A"], ["G", "T"], ["R", "E"], ["T", "G"], ["Q", "D"], ["F", "S"], ["J", "W"], ["H", "U"], ["V", "I"], ["A", "N"], ["O", "B"], ["E", "R"], ["F", "S"], ["L", "Y"], ["P", "C"], ["Z", "M"]];
+
+const words = ["A", "BARK", "BOOK", "TREAT", "COMMON", "SQUAD", "CONFUSE"];
+
+function isWordSpellableWithBlocks(word, blocks) {
+	for (const letter of word) {
+		let letterFound = false;
+
+		for (const [index, block] of blocks.entries()) {
+			if (block[0] === letter || block[1] === letter) {
+				blocks[index] = ["", ""];
+				letterFound = true;
+```
+</summary>
+
+```typescript
+				break;
+			}
+		}
+
+		if (letterFound === false) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+for (const word of words) {
+	if (isWordSpellableWithBlocks(word, [...blocks])) {
+		console.log("The word \"" + word + "\" can be spelled with these blocks.");
+	} else {
+		console.log("The word \"" + word + "\" can NOT be spelled with these blocks.");
+	}
+}
+```
+</details></td></tr></tbody></table>
+
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Letter Blocks">Improve this answer</a></sup></em></p>
+
+<table><tbody><tr></tr><tr><td><strong>Sample Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+
+```
+The word "A" can be spelled with these blocks.
+The word "BARK" can be spelled with these blocks.
+The word "BOOK" can NOT be spelled with these blocks.
+The word "TREAT" can be spelled with these blocks.
+The word "COMMON" can NOT be spelled with these blocks.
+The word "SQUAD" can be spelled with these blocks.
+The word "CONFUSE" can be spelled with these blocks.
+```
+</td></tr></tbody></table>
+
+**References:**
+
+-   <http://rosettacode.org/wiki/ABC_Problem>
 
 #
 
@@ -1662,6 +1645,43 @@ for (let x = 0; x < triangle.length; x++) {
 
 #
 
+#### Recursion Limit
+
+-   Find the limit of [recursion](https://en.wikipedia.org/wiki/Recursion_(computer_science)).
+
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=[Discussion] Recursion Limit">Discuss this problem</a></sup></em></p>
+
+<table><tbody><tr></tr><tr><td><strong>Solution:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+
+```typescript
+function computeMaximumCallStackSize() {
+	try {
+		return 1 + computeMaximumCallStackSize();
+	} catch (error) {
+		return 1;
+	}
+}
+
+console.log("The recursion limit is: " + computeMaximumCallStackSize());
+```
+</td></tr></tbody></table>
+
+<p align="right"><em><sup><a href="https://github.com/brianjenkins94/Rosettas-Node/issues/new?title=Suggestion for Recursion Limit">Improve this answer</a></sup></em></p>
+
+<table><tbody><tr></tr><tr><td><strong>Sample Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+
+```
+The recursion limit is: 12551
+```
+</td></tr></tbody></table>
+
+**References:**
+
+-   <http://rosettacode.org/wiki/Find_limit_of_recursion>
+-   <https://en.wikipedia.org/wiki/Recursion_(computer_science)>
+
+#
+
 #### Remove Duplicate Elements
 
 -   Given an array with duplicates, remove the duplicates.
@@ -1915,6 +1935,47 @@ Input: 1.5, 0.5, 3.5, 2.5, 5.5, 4.5, 7.5, 6.5
 
 #
 
+#### Substitution Cipher
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./subtitutionCipher.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
+#### Suffix Tree Generator
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./suffixTreeGenerator.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
 #### Textonyms
 
 -   Use a dictionary to find all of the words that are [textonyms](https://en.wikipedia.org/wiki/Predictive_text#Textonyms).
@@ -2287,69 +2348,6 @@ readStream.on("close", function() {
 
 #
 
-#### Birthday Problem
-
--
-
-**Solution:**
-
-```typescript
-//@import "./birthdayProblem.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
-#### Substitution Cipher
-
--
-
-**Solution:**
-
-```typescript
-//@import "./subtitutionCipher.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
-#### Suffix Tree Generator
-
--
-
-**Solution:**
-
-```typescript
-//@import "./suffixTreeGenerator.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
 ### Involved
 
 <table>
@@ -2364,6 +2362,7 @@ readStream.on("close", function() {
 				<ol>
 					<li><a href="#abelian-sandpile-model">Abelian Sandpile Model</a></li>
 					<li><a href="#chaocipher">Chaocipher</a></li>
+					<li><a href="#chess960-starting-positions">Chess960 Starting Positions</a></li>
 					<li><a href="#conways-game-of-life">Conway's Game of Life</a></li>
 					<li><a href="#dijkstras-algorithm">Dijkstra's Algorithm</a></li>
 					<li><a href="#dinesmans-multiple-dwelling-problem">Dinesman's Multiple-dwelling Problem</a></li>
@@ -2372,11 +2371,8 @@ readStream.on("close", function() {
 					<li><a href="#egyptian-division">Egyptian Division</a></li>
 					<li><a href="#egyptian-fractions">Egyptian Fractions</a></li>
 					<li><a href="#evolutionary-algorithm">Evolutionary Algorithm</a></li>
-					<li><a href="#markov-algorithm">Markov Algorithm</a></li>
 					<li><a href="#forest-fire">Forest Fire</a></li>
 					<li><a href="#galton-box-animation">Galton Box Animation</a></li>
-					<li><a href="#chess960-starting-positions">Chess960 Starting Positions</a></li>
-					<li><a href="#random-chess-positions">Random Chess Positions</a></li>
 					<li><a href="#huffman-encoding">Huffman Encoding</a></li>
 					<li><a href="#hunt-the-wumpus">Hunt the Wumpus</a></li>
 					<li><a href="#inverted-index">Inverted Index</a></li>
@@ -2388,6 +2384,7 @@ readStream.on("close", function() {
 					<li><a href="#levenshtein-distance">Levenshtein Distance</a></li>
 					<li><a href="#longest-common-subsequence">Longest Common Subsequence</a></li>
 					<li><a href="#longest-common-substring">Longest Common Substring</a></li>
+					<li><a href="#markov-algorithm">Markov Algorithm</a></li>
 					<li><a href="#mayan-numerals">Mayan Numerals</a></li>
 					<li><a href="#maze-generator">Maze Generator</a></li>
 					<li><a href="#maze-solver">Maze Solver</a></li>
@@ -2399,10 +2396,11 @@ readStream.on("close", function() {
 					<li><a href="#morse-code">Morse Code</a></li>
 					<li><a href="#move-to-front-algorithm">Move-to-front Algorithm</a></li>
 					<li><a href="#n-queens-problem">N-queens Problem</a></li>
+					<li><a href="#password-generator">Password Generator</a></li>
 					<li><a href="#rpn-calculator-algorithm">RPN Calculator Algorithm</a></li>
 					<li><a href="#rpn-to-infix-converter">RPN to Infix Converter</a></li>
+					<li><a href="#random-chess-positions">Random Chess Positions</a></li>
 					<li><a href="#shunting-yard-algorithm">Shunting Yard Algorithm</a></li>
-					<li><a href="#password-generator">Password Generator</a></li>
 					<li><a href="#sokoban">Sokoban</a></li>
 					<li><a href="#straddling-checkerboard">Straddling Checkerboard</a></li>
 					<li><a href="#sudoku-generator">Sudoku Generator</a></li>
@@ -2452,6 +2450,27 @@ readStream.on("close", function() {
 **References:**
 
 -   http://www.rosettacode.org/wiki/Chaocipher
+
+#
+
+#### Chess960 Starting Positions
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./chess960.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
 
 #
 
@@ -2623,27 +2642,6 @@ readStream.on("close", function() {
 
 #
 
-#### Markov Algorithm
-
--
-
-**Solution:**
-
-```typescript
-//@import "./markovAlgorithm.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
 #### Forest Fire
 
 -
@@ -2673,48 +2671,6 @@ readStream.on("close", function() {
 
 ```typescript
 //@import "./galtonBox.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
-#### Chess960 Starting Positions
-
--
-
-**Solution:**
-
-```typescript
-//@import "./chess960.ts";
-```
-
-**Sample Output:**
-
-```
-```
-
-**References:**
-
--
-
-#
-
-#### Random Chess Positions
-
--
-
-**Solution:**
-
-```typescript
-//@import "./randomChessPositions.ts";
 ```
 
 **Sample Output:**
@@ -2959,6 +2915,27 @@ readStream.on("close", function() {
 
 #
 
+#### Markov Algorithm
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./markovAlgorithm.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
 #### Mayan Numerals
 
 -
@@ -3190,6 +3167,27 @@ readStream.on("close", function() {
 
 #
 
+#### Password Generator
+
+-
+
+**Solution:**
+
+```typescript
+//@import "./passwordGenerator.ts";
+```
+
+**Sample Output:**
+
+```
+```
+
+**References:**
+
+-
+
+#
+
 #### RPN Calculator Algorithm
 
 -
@@ -3232,14 +3230,14 @@ readStream.on("close", function() {
 
 #
 
-#### Shunting Yard Algorithm
+#### Random Chess Positions
 
 -
 
 **Solution:**
 
 ```typescript
-//@import "./shuntingYardAlgorithm.ts";
+//@import "./randomChessPositions.ts";
 ```
 
 **Sample Output:**
@@ -3253,14 +3251,14 @@ readStream.on("close", function() {
 
 #
 
-#### Password Generator
+#### Shunting Yard Algorithm
 
 -
 
 **Solution:**
 
 ```typescript
-//@import "./passwordGenerator.ts";
+//@import "./shuntingYardAlgorithm.ts";
 ```
 
 **Sample Output:**
