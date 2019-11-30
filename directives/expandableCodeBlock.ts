@@ -16,18 +16,18 @@ export function expandableCodeBlock(language, readStream) {
 
 	return new Promise(function(resolve, reject) {
 		readStream.on("close", function() {
-			// 2016 MacBook Pro (2560x1600)
+			// 2016 13" MacBook Pro (2560x1600)
 			//  - Static: 223
 			//  - Expandable: 218
 			//
-			// Work Desktop (1920x1080)
+			// Windows Desktop (1920x1080, 2560x1440)
 			//  - Static: 179
 			//  - Expandable: 175
 
 			if (belowTheFold.length === 0) {
-				resolve("<table><tbody><tr></tr><tr><td><strong>Solution:" + "&nbsp;".repeat(179) + "</strong>\n\n```" + language + "\n" + aboveTheFold.join("\n") + "\n```\n</td></tr></tbody></table>\n");
+				resolve("<table><tbody><tr></tr><tr><td><strong>Solution:" + "&nbsp;".repeat(223) + "</strong>\n\n```" + language + "\n" + aboveTheFold.join("\n") + "\n```\n</td></tr></tbody></table>\n");
 			} else {
-				resolve("<table><tbody><tr></tr><tr><td><details><summary><strong>Solution:" + "&nbsp;".repeat(175) + "</strong>\n\n```" + language + "\n" + aboveTheFold.join("\n") + "\n```\n</summary>\n\n```" + language + "\n" + belowTheFold.join("\n") + "\n```\n</details></td></tr></tbody></table>\n");
+				resolve("<table><tbody><tr></tr><tr><td><details><summary><strong>Solution:" + "&nbsp;".repeat(218) + "</strong>\n\n```" + language + "\n" + aboveTheFold.join("\n") + "\n```\n</summary>\n\n```" + language + "\n" + belowTheFold.join("\n") + "\n```\n</details></td></tr></tbody></table>\n");
 			}
 		});
 	});
