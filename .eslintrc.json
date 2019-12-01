@@ -43,6 +43,7 @@
 		"@typescript-eslint/no-extra-parens": ["warn"],
 		"@typescript-eslint/no-unused-vars": ["warn"],
 		"no-empty": ["warn"],
+		"no-param-reassign": ["warn"],
 		"no-shadow": ["warn"],
 		"sort-keys": ["warn"],
 

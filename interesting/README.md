@@ -443,22 +443,21 @@
 
 #### Ulam spiral
 
--
+- Write a program that, given a dimension, draws an [Ulam spiral](https://en.wikipedia.org/wiki/Ulam_spiral).
+    -   An Ulam spiral is a graphical depiction of the set of prime numbers constructed by writing the positive integers in a square spiral and specially marking the prime numbers.
 
-**Solution:**
+@insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Ulam spiral");
 
-```typescript
-//@import "./ulamSpiral.ts";
-```
+@insert expandableCodeBlock("typescript", "./ulamSpiral.ts");
 
-**Sample Output:**
+@insert improveThisAnswer("brianjenkins94", "Rosettas-Node", "Ulam spiral");
 
-```
-```
+@insert expandableOutputBlock("./output/ulamSpiral.output.txt");
 
 **References:**
 
--
+-   <http://rosettacode.org/wiki/Ulam_spiral_(for_primes)>
+-   <https://en.wikipedia.org/wiki/Ulam_spiral>
 
 #
 
