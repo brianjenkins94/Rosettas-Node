@@ -2216,7 +2216,7 @@ function isPrime(number) {
 		return false;
 	}
 
-	for (let x = 2; x < Math.sqrt(number); x++) {
+	for (let x = 2; x <= Math.sqrt(number); x++) {
 		if (number % x === 0) {
 			return false;
 		}
