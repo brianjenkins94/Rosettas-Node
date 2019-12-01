@@ -3,7 +3,7 @@ function isPrime(number) {
 		return false;
 	}
 
-	for (let x = 2; x <= Math.sqrt(number); x++) {
+	for (let x = 2; x < Math.sqrt(number); x++) {
 		if (number % x === 0) {
 			return false;
 		}
@@ -19,7 +19,7 @@ function ulamSpiral(dimension) {
 
 	const primes = [];
 
-	for (let x = 1; x <= dimension * dimension; x++) {
+	for (let x = 1; x <= dimension ** 2; x++) {
 		if (isPrime(x)) {
 			primes.push("*");
 		} else {
