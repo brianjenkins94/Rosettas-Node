@@ -7,23 +7,23 @@
 The problems listed here are a hand-picked selection from the programming [chrestomathy](https://en.wikipedia.org/wiki/Chrestomathy) site, [Rosetta's Code](http://rosettacode.org/wiki/Rosetta_Code). I personally reviewed some 1,200 or so programming tasks, selecting the ones that didn't require a degree in advanced mathematics, weren't prescriptive about how to write the solution, and that were, above all, interesting.
 
 <table>
-	<thead>
-		<tr>
-			<th align="center"><strong>Contents</strong></th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				<ol>
-					<li><a href="#obligatory">Obligatory</a></li>
-					<li><a href="#interesting">Interesting</a></li>
-					<li><a href="#acknowledgements">Acknowledgements</a></li>
-					<li><a href="#license">License</a></li>
-				</ol>
-			</td>
-		</tr>
-	</tbody>
+    <thead>
+        <tr>
+            <th align="center"><strong>Contents</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <ol>
+                    <li><a href="#obligatory">Obligatory</a></li>
+                    <li><a href="#interesting">Interesting</a></li>
+                    <li><a href="#acknowledgements">Acknowledgements</a></li>
+                    <li><a href="#license">License</a></li>
+                </ol>
+            </td>
+        </tr>
+    </tbody>
 </table>
 
 ### Obligatory
@@ -31,24 +31,24 @@ The problems listed here are a hand-picked selection from the programming [chres
 These are the problems that have been "done to death". Anything that was once interesting about these problems has since been nullified by their repetition. With that said, this collection wouldn't be complete without them.
 
 <table>
-	<thead>
-		<tr>
-			<th align="center"><strong>Contents</strong></th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				<ol>
-					<li><a href="#fibonacci-iterative">Fibonacci (Iterative)</a></li>
-					<li><a href="#fibonacci-recursive">Fibonacci (Recursive)</a></li>
-					<li><a href="#fizzbuzz">FizzBuzz</a></li>
-					<li><a href="#leap-year-checker">Leap Year Checker</a></li>
-					<li><a href="#palindrome-checker">Palindrome Checker</a></li>
-				</ol>
-			</td>
-		</tr>
-	</tbody>
+    <thead>
+        <tr>
+            <th align="center"><strong>Contents</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <ol>
+                    <li><a href="#fibonacci-iterative">Fibonacci (Iterative)</a></li>
+                    <li><a href="#fibonacci-recursive">Fibonacci (Recursive)</a></li>
+                    <li><a href="#fizzbuzz">FizzBuzz</a></li>
+                    <li><a href="#leap-year-checker">Leap Year Checker</a></li>
+                    <li><a href="#palindrome-checker">Palindrome Checker</a></li>
+                </ol>
+            </td>
+        </tr>
+    </tbody>
 </table>
 
 #### Fibonacci (Iterative)
@@ -62,13 +62,13 @@ These are the problems that have been "done to death". Anything that was once in
 
 ```typescript
 function fibonacci(n) {
-	const array = [0, 1];
+    const array = [0, 1];
 
-	for (let x = 2; x <= n; x++) {
-		array.push(array[x - 2] + array[x - 1]);
-	}
+    for (let x = 2; x <= n; x++) {
+        array.push(array[x - 2] + array[x - 1]);
+    }
 
-	return array[n];
+    return array[n];
 }
 
 console.log(fibonacci(10));
@@ -102,11 +102,11 @@ console.log(fibonacci(10));
 
 ```typescript
 function fibonacci(n) {
-	if (n < 2) {
-		return n;
-	}
+    if (n < 2) {
+        return n;
+    }
 
-	return fibonacci(n - 1) + fibonacci(n - 2);
+    return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
 console.log(fibonacci(10));
@@ -142,15 +142,15 @@ console.log(fibonacci(10));
 
 ```typescript
 for (let x = 1; x <= 100; x++) {
-	if (x % 15 === 0) {
-		console.log("FizzBuzz");
-	} else if (x % 3 === 0) {
-		console.log("Fizz");
-	} else if (x % 5 === 0) {
-		console.log("Buzz");
-	} else {
-		console.log(x);
-	}
+    if (x % 15 === 0) {
+        console.log("FizzBuzz");
+    } else if (x % 3 === 0) {
+        console.log("Fizz");
+    } else if (x % 5 === 0) {
+        console.log("Buzz");
+    } else {
+        console.log(x);
+    }
 }
 ```
 </td></tr></tbody></table>
@@ -285,15 +285,15 @@ Buzz
 
 ```typescript
 function isLeapYear(year) {
-	return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
+    return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
 }
 
 for (let x = 2000; x <= 2020; x++) {
-	if (isLeapYear(x)) {
-		console.log(x + " is a leap year.");
-	} else {
-		console.log(x + " is NOT a leap year.");
-	}
+    if (isLeapYear(x)) {
+        console.log(x + " is a leap year.");
+    } else {
+        console.log(x + " is NOT a leap year.");
+    }
 }
 ```
 </td></tr></tbody></table>
@@ -348,14 +348,14 @@ for (let x = 2000; x <= 2020; x++) {
 
 ```typescript
 const potentialPalindromes = [
-	"Able was I ere I saw Elba.",
-	"A man, a plan, a canal – Panama.",
-	"Madam, I'm Adam.",
-	"Never odd or even.",
-	"The quick brown fox jumps over the lazy dog.",
-	"Sphinx of black quartz, judge my vow.",
-	"How vexingly quick daft zebras jump!",
-	"The five boxing wizards jump quickly."
+    "Able was I ere I saw Elba.",
+    "A man, a plan, a canal – Panama.",
+    "Madam, I'm Adam.",
+    "Never odd or even.",
+    "The quick brown fox jumps over the lazy dog.",
+    "Sphinx of black quartz, judge my vow.",
+    "How vexingly quick daft zebras jump!",
+    "The five boxing wizards jump quickly."
 ];
 
 function isPalindrome(string) {
@@ -363,17 +363,17 @@ function isPalindrome(string) {
 </summary>
 
 ```typescript
-	const sanitizedString = string.replace(/\W/g, "").toLowerCase();
+    const sanitizedString = string.replace(/\W/g, "").toLowerCase();
 
-	return sanitizedString === sanitizedString.split("").reverse().join("");
+    return sanitizedString === sanitizedString.split("").reverse().join("");
 }
 
 for (const potentialPalindrome of potentialPalindromes) {
-	if (isPalindrome(potentialPalindrome)) {
-		console.log("\"" + potentialPalindrome + "\" is a palindrome.");
-	} else {
-		console.log("\"" + potentialPalindrome + "\" is NOT a palindrome.");
-	}
+    if (isPalindrome(potentialPalindrome)) {
+        console.log("\"" + potentialPalindrome + "\" is a palindrome.");
+    } else {
+        console.log("\"" + potentialPalindrome + "\" is NOT a palindrome.");
+    }
 }
 ```
 </details></td></tr></tbody></table>
@@ -404,48 +404,48 @@ for (const potentialPalindrome of potentialPalindromes) {
 ### Interesting
 
 <table>
-	<thead>
-		<tr>
-			<th align="center"><strong>Contents</strong></th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				<ol>
-					<li><a href="#abbreviations">Abbreviations</a></li>
-					<li><a href="#align-columns">Align Columns</a></li>
-					<li><a href="#balanced-brackets">Balanced Brackets</a></li>
-					<li><a href="#birthday-problem">Birthday Problem</a></li>
-					<li><a href="#caesar-cipher">Caesar Cipher</a></li>
-					<li><a href="#caesar-cipher-solver">Caesar Cipher Solver</a></li>
-					<li><a href="#history-variables">History Variables</a></li>
-					<li><a href="#last-letter-first-letter">Last Letter-First Letter</a></li>
-					<li><a href="#letter-blocks">Letter Blocks</a></li>
-					<li><a href="#ordered-words">Ordered Words</a></li>
-					<li><a href="#pangram-checker">Pangram Checker</a></li>
-					<li><a href="#pascals-triangle">Pascal's Triangle</a></li>
-					<li><a href="#quine">Quine</a></li>
-					<li><a href="#recursion-limit">Recursion Limit</a></li>
-					<li><a href="#remove-duplicate-elements">Remove Duplicate Elements</a></li>
-					<li><a href="#semordnilap">Semordnilap</a></li>
-					<li><a href="#sparkline">Sparkline</a></li>
-					<li><a href="#substitution-cipher">Substitution Cipher</a></li>
-					<li><a href="#suffix-tree-generator">Suffix Tree Generator</a></li>
-					<li><a href="#textonyms">Textonyms</a></li>
-					<li><a href="#towers-of-hanoi">Towers of Hanoi</a></li>
-					<li><a href="#truth-tables">Truth Tables</a></li>
-					<li><a href="#ulam-spiral">Ulam spiral</a></li>
-					<li><a href="#vigenre-cipher">Vigenère cipher</a></li>
-					<li><a href="#visualize-a-tree">Visualize a Tree</a></li>
-					<li><a href="#water-collected-between-towers">Water Collected Between Towers</a></li>
-					<li><a href="#word-search-generator">Word Search Generator</a></li>
-					<li><a href="#word-search-solver">Word Search Solver</a></li>
-					<li><a href="#word-wrap">Word Wrap</a></li>
-				</ol>
-			</td>
-		</tr>
-	</tbody>
+    <thead>
+        <tr>
+            <th align="center"><strong>Contents</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <ol>
+                    <li><a href="#abbreviations">Abbreviations</a></li>
+                    <li><a href="#align-columns">Align Columns</a></li>
+                    <li><a href="#balanced-brackets">Balanced Brackets</a></li>
+                    <li><a href="#birthday-problem">Birthday Problem</a></li>
+                    <li><a href="#caesar-cipher">Caesar Cipher</a></li>
+                    <li><a href="#caesar-cipher-solver">Caesar Cipher Solver</a></li>
+                    <li><a href="#history-variables">History Variables</a></li>
+                    <li><a href="#last-letter-first-letter">Last Letter-First Letter</a></li>
+                    <li><a href="#letter-blocks">Letter Blocks</a></li>
+                    <li><a href="#ordered-words">Ordered Words</a></li>
+                    <li><a href="#pangram-checker">Pangram Checker</a></li>
+                    <li><a href="#pascals-triangle">Pascal's Triangle</a></li>
+                    <li><a href="#quine">Quine</a></li>
+                    <li><a href="#recursion-limit">Recursion Limit</a></li>
+                    <li><a href="#remove-duplicate-elements">Remove Duplicate Elements</a></li>
+                    <li><a href="#semordnilap">Semordnilap</a></li>
+                    <li><a href="#sparkline">Sparkline</a></li>
+                    <li><a href="#substitution-cipher">Substitution Cipher</a></li>
+                    <li><a href="#suffix-tree-generator">Suffix Tree Generator</a></li>
+                    <li><a href="#textonyms">Textonyms</a></li>
+                    <li><a href="#towers-of-hanoi">Towers of Hanoi</a></li>
+                    <li><a href="#truth-tables">Truth Tables</a></li>
+                    <li><a href="#ulam-spiral">Ulam spiral</a></li>
+                    <li><a href="#vigenre-cipher">Vigenère cipher</a></li>
+                    <li><a href="#visualize-a-tree">Visualize a Tree</a></li>
+                    <li><a href="#water-collected-between-towers">Water Collected Between Towers</a></li>
+                    <li><a href="#word-search-generator">Word Search Generator</a></li>
+                    <li><a href="#word-search-solver">Word Search Solver</a></li>
+                    <li><a href="#word-wrap">Word Wrap</a></li>
+                </ol>
+            </td>
+        </tr>
+    </tbody>
 </table>
 
 #### Abbreviations
@@ -458,39 +458,39 @@ for (const potentialPalindrome of potentialPalindromes) {
 
 ```typescript
 const arrays = [
-	["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-	["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
-	["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
-	["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"],
-	["Duminica", "Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata"]
+    ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+    ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
+    ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"],
+    ["Duminica", "Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata"]
 ];
 
 function getMinimumLengthUniqueAbbreviations(array) {
-	const longestStringLength = array.sort(function(a, b) {
-		return b.length - a.length;
-	})[0].length;
+    const longestStringLength = array.sort(function(a, b) {
+        return b.length - a.length;
+    })[0].length;
 ```
 </summary>
 
 ```typescript
 
-	for (let x = longestStringLength; x >= 1; x--) {
-		const tempObject = {};
+    for (let x = longestStringLength; x >= 1; x--) {
+        const tempObject = {};
 
-		for (const string of array) {
-			tempObject[string.substring(0, x)] = undefined;
-		}
+        for (const string of array) {
+            tempObject[string.substring(0, x)] = undefined;
+        }
 
-		if (Object.keys(tempObject).length === array.length) {
-			array = Object.keys(tempObject);
-		}
-	}
+        if (Object.keys(tempObject).length === array.length) {
+            array = Object.keys(tempObject);
+        }
+    }
 
-	return array;
+    return array;
 }
 
 for (const array of arrays) {
-	console.log("[\"" + array.join("\", \"") + "\"] can be abbreviated to [\"" + getMinimumLengthUniqueAbbreviations(array).join("\", \"") + "\"]");
+    console.log("[\"" + array.join("\", \"") + "\"] can be abbreviated to [\"" + getMinimumLengthUniqueAbbreviations(array).join("\", \"") + "\"]");
 }
 ```
 </details></td></tr></tbody></table>
@@ -528,89 +528,89 @@ for (const array of arrays) {
 
 ```typescript
 const input = [
-	["Write", "a", "program,", "that", "aligns", "words", "into", "columns,"],
-	["ensuring", "that", "the", "words", "in", "each", "column"],
-	["are", "separated", "by", "at", "least", "one", "space."],
-	["Further,", "allow", "for", "each", "word", "in", "a", "column"],
-	["to", "be", "either", "left", "justified,", "right", "justified,"],
-	["or", "center", "justified", "within", "its", "column."]
+    ["Write", "a", "program,", "that", "aligns", "words", "into", "columns,"],
+    ["ensuring", "that", "the", "words", "in", "each", "column"],
+    ["are", "separated", "by", "at", "least", "one", "space."],
+    ["Further,", "allow", "for", "each", "word", "in", "a", "column"],
+    ["to", "be", "either", "left", "justified,", "right", "justified,"],
+    ["or", "center", "justified", "within", "its", "column."]
 ];
 
 function getLongestRow(input) {
-	let longestRow = 0;
+    let longestRow = 0;
 
 ```
 </summary>
 
 ```typescript
-	for (const row of input) {
-		if (row.length > longestRow) {
-			longestRow = row.length;
-		}
-	}
+    for (const row of input) {
+        if (row.length > longestRow) {
+            longestRow = row.length;
+        }
+    }
 
-	return longestRow;
+    return longestRow;
 }
 
 function getColumnWidths(input) {
-	const longestRow = getLongestRow(input);
+    const longestRow = getLongestRow(input);
 
-	const columnWidths = [];
+    const columnWidths = [];
 
-	for (let x = 0; x < longestRow; x++) {
-		let columnWidth = 0;
+    for (let x = 0; x < longestRow; x++) {
+        let columnWidth = 0;
 
-		for (let y = 0; y < input.length; y++) {
-			if ((input[y][x] || "").length > columnWidth) {
-				columnWidth = (input[y][x] || "").length;
-			}
-		}
+        for (let y = 0; y < input.length; y++) {
+            if ((input[y][x] || "").length > columnWidth) {
+                columnWidth = (input[y][x] || "").length;
+            }
+        }
 
-		columnWidths.push(columnWidth);
-	}
+        columnWidths.push(columnWidth);
+    }
 
-	return columnWidths;
+    return columnWidths;
 }
 
 function align(alignment, input) {
-	const columnWidths = getColumnWidths(input);
+    const columnWidths = getColumnWidths(input);
 
-	let output = "";
+    let output = "";
 
-	for (let x = 0; x < input.length; x++) {
-		for (let y = 0; y < input[x].length; y++) {
-			const word = input[x][y] || "";
-			let padding;
+    for (let x = 0; x < input.length; x++) {
+        for (let y = 0; y < input[x].length; y++) {
+            const word = input[x][y] || "";
+            let padding;
 
-			switch (alignment) {
-				case "left":
-					padding = columnWidths[y] - (word.length);
+            switch (alignment) {
+                case "left":
+                    padding = columnWidths[y] - (word.length);
 
-					output += word + " ".repeat(padding + 1);
-					break;
-				case "right":
-					padding = columnWidths[y] - word.length;
+                    output += word + " ".repeat(padding + 1);
+                    break;
+                case "right":
+                    padding = columnWidths[y] - word.length;
 
-					output += " ".repeat(padding) + word + " ";
-					break;
-				case "center":
-					padding = Math.floor(columnWidths[y] - word.length) / 2;
+                    output += " ".repeat(padding) + word + " ";
+                    break;
+                case "center":
+                    padding = Math.floor(columnWidths[y] - word.length) / 2;
 
-					if (((columnWidths[y] - word.length) / 2) % 1) {
-						output += " ".repeat(padding) + word + " ".repeat(padding + 2);
-					} else {
-						output += " ".repeat(padding) + word + " ".repeat(padding + 1);
-					}
-					break;
-				default:
-					throw new Error("Invalid option for `alignment`.");
-			}
-		}
+                    if (((columnWidths[y] - word.length) / 2) % 1) {
+                        output += " ".repeat(padding) + word + " ".repeat(padding + 2);
+                    } else {
+                        output += " ".repeat(padding) + word + " ".repeat(padding + 1);
+                    }
+                    break;
+                default:
+                    throw new Error("Invalid option for `alignment`.");
+            }
+        }
 
-		output += "\n";
-	}
+        output += "\n";
+    }
 
-	return output;
+    return output;
 }
 
 console.log("Left:");
@@ -630,32 +630,32 @@ console.log(align("center", input));
 
 ```
 Left:
-Write    a         program,  that   aligns     words   into       columns, 
-ensuring that      the       words  in         each    column     
-are      separated by        at     least      one     space.     
-Further, allow     for       each   word       in      a          column   
-to       be        either    left   justified, right   justified, 
-or       center    justified within its        column. 
+Write    a         program,  that   aligns     words   into       columns,
+ensuring that      the       words  in         each    column
+are      separated by        at     least      one     space.
+Further, allow     for       each   word       in      a          column
+to       be        either    left   justified, right   justified,
+or       center    justified within its        column.
 
 Right:
-   Write         a  program,   that     aligns   words       into columns, 
-ensuring      that       the  words         in    each     column 
-     are separated        by     at      least     one     space. 
+   Write         a  program,   that     aligns   words       into columns,
+ensuring      that       the  words         in    each     column
+     are separated        by     at      least     one     space.
 ```
 </summary>
 
 ```
-Further,     allow       for   each       word      in          a   column 
-      to        be    either   left justified,   right justified, 
-      or    center justified within        its column. 
+Further,     allow       for   each       word      in          a   column
+      to        be    either   left justified,   right justified,
+      or    center justified within        its column.
 
 Center:
- Write       a     program,   that    aligns    words     into    columns, 
-ensuring   that       the    words      in      each     column   
-  are    separated    by       at     least      one     space.   
-Further,   allow      for     each     word      in        a       column  
-   to       be      either    left  justified,  right  justified, 
-   or     center   justified within    its     column. 
+ Write       a     program,   that    aligns    words     into    columns,
+ensuring   that       the    words      in      each     column
+  are    separated    by       at     least      one     space.
+Further,   allow      for     each     word      in        a       column
+   to       be      either    left  justified,  right  justified,
+   or     center   justified within    its     column.
 
 ```
 </details></td></tr></tbody></table>
@@ -682,16 +682,16 @@ Further,   allow      for     each     word      in        a       column
 
 ```typescript
 const input = [
-	"[[]][[]]]]",
-	"][]][[][][",
-	"[][]]][[[]",
-	"][][[[][[]",
-	"[[[][]]][]",
-	"][][]][[[[",
-	"][][[[[]][",
-	"][[][]][[]",
-	"[[]][[]][]",
-	"[][]]][]]]"
+    "[[]][[]]]]",
+    "][]][[][][",
+    "[][]]][[[]",
+    "][][[[][[]",
+    "[[[][]]][]",
+    "][][]][[[[",
+    "][][[[[]][",
+    "][[][]][[]",
+    "[[]][[]][]",
+    "[][]]][]]]"
 ];
 ```
 </summary>
@@ -699,32 +699,32 @@ const input = [
 ```typescript
 
 function isBalanced(input) {
-	let leftStack = 0;
-	let rightStack = 0;
+    let leftStack = 0;
+    let rightStack = 0;
 
-	for (const [index, character] of Object.entries(input)) {
-		if (character === "[") {
-			leftStack += 1;
-		} else if (leftStack > rightStack) {
-			rightStack += 1;
-		} else {
-			return parseInt(index, 10);
-		}
-	}
+    for (const [index, character] of Object.entries(input)) {
+        if (character === "[") {
+            leftStack += 1;
+        } else if (leftStack > rightStack) {
+            rightStack += 1;
+        } else {
+            return parseInt(index, 10);
+        }
+    }
 
-	return true;
+    return true;
 }
 
 for (const string of input) {
-	const balanced = isBalanced(string);
+    const balanced = isBalanced(string);
 
-	if (balanced === true) {
-		console.log(string + " is balanced.");
-		console.log();
-	} else {
-		console.log(string + " is NOT balanced.");
-		console.log(" ".repeat(balanced) + "^");
-	}
+    if (balanced === true) {
+        console.log(string + " is balanced.");
+        console.log();
+    } else {
+        console.log(string + " is NOT balanced.");
+        console.log(" ".repeat(balanced) + "^");
+    }
 }
 ```
 </details></td></tr></tbody></table>
@@ -806,21 +806,21 @@ const ASCII_LOWERCASE_A = 97;
 export const ALPHABET_LENGTH = 26;
 
 export function encode(string, key) {
-	return string.replace(/\w/g, function(a) {
-		if (a.charCodeAt(0) < ASCII_LOWERCASE_A) {
-			return String.fromCharCode(ASCII_UPPERCASE_A + ((a.charCodeAt(0) - ASCII_UPPERCASE_A + key) % ALPHABET_LENGTH));
-		} else {
+    return string.replace(/\w/g, function(a) {
+        if (a.charCodeAt(0) < ASCII_LOWERCASE_A) {
+            return String.fromCharCode(ASCII_UPPERCASE_A + ((a.charCodeAt(0) - ASCII_UPPERCASE_A + key) % ALPHABET_LENGTH));
+        } else {
 ```
 </summary>
 
 ```typescript
-			return String.fromCharCode(ASCII_LOWERCASE_A + ((a.charCodeAt(0) - ASCII_LOWERCASE_A + key) % ALPHABET_LENGTH));
-		}
-	});
+            return String.fromCharCode(ASCII_LOWERCASE_A + ((a.charCodeAt(0) - ASCII_LOWERCASE_A + key) % ALPHABET_LENGTH));
+        }
+    });
 }
 
 export function decode(string, key) {
-	return encode(string, ALPHABET_LENGTH - key);
+    return encode(string, ALPHABET_LENGTH - key);
 }
 
 console.log("Encoded:");
@@ -870,60 +870,60 @@ import * as path from "path";
 import { secret, ALPHABET_LENGTH, encode, decode } from "./caesarCipher";
 
 function loadDictionary() {
-	return new Promise(function(resolve, reject) {
-		const readStream = createInterface({
+    return new Promise(function(resolve, reject) {
+        const readStream = createInterface({
 ```
 </summary>
 
 ```typescript
-			"input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
-		});
+            "input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
+        });
 
-		const dictionary = [];
+        const dictionary = [];
 
-		readStream.on("line", function(word) {
-			dictionary.push(word);
-		});
+        readStream.on("line", function(word) {
+            dictionary.push(word);
+        });
 
-		readStream.on("close", function() {
-			resolve(dictionary);
-		});
-	});
+        readStream.on("close", function() {
+            resolve(dictionary);
+        });
+    });
 }
 
 let dictionary;
 
 function getNumberOfMatches(string, key) {
-	let matches = 0;
+    let matches = 0;
 
-	for (const word of string.split(" ")) {
-		if (dictionary.indexOf(decode(word, key)) !== -1) {
-			matches += 1;
-		}
-	}
+    for (const word of string.split(" ")) {
+        if (dictionary.indexOf(decode(word, key)) !== -1) {
+            matches += 1;
+        }
+    }
 
-	return matches;
+    return matches;
 }
 
 (async function() {
-	dictionary = await loadDictionary();
+    dictionary = await loadDictionary();
 
-	const encodedSecret = encode(secret, 10);
+    const encodedSecret = encode(secret, 10);
 
-	for (let x = 0; x < ALPHABET_LENGTH; x++) {
-		const matchCount = getNumberOfMatches(encodedSecret, x);
+    for (let x = 0; x < ALPHABET_LENGTH; x++) {
+        const matchCount = getNumberOfMatches(encodedSecret, x);
 
-		if (matchCount !== 0) {
-			const encodedWords = encodedSecret.split(" ");
-			const decodedWords = decode(encodedSecret, x).split(" ");
+        if (matchCount !== 0) {
+            const encodedWords = encodedSecret.split(" ");
+            const decodedWords = decode(encodedSecret, x).split(" ");
 
-			console.log("\n" + (((matchCount / encodedWords.length) * 100) + "% match with a shift of " + x + "."));
+            console.log("\n" + (((matchCount / encodedWords.length) * 100) + "% match with a shift of " + x + "."));
 
-			for (let y = 0; y < encodedWords.length; y++) {
-				console.log("\t" + encodedWords[y] + " -> " + decodedWords[y]);
-			}
-		}
-	}
+            for (let y = 0; y < encodedWords.length; y++) {
+                console.log("\t" + encodedWords[y] + " -> " + decodedWords[y]);
+            }
+        }
+    }
 })();
 ```
 </details></td></tr></tbody></table>
@@ -939,29 +939,29 @@ Decoded:
 The secret lies with Charlotte.
 
 20% match with a shift of 4.
-	Dro -> Znk
-	combod -> ykixkz
-	vsoc -> roky
-	gsdr -> cozn
-	Mrkbvyddo. -> Ingxruzzk.
+    Dro -> Znk
+    combod -> ykixkz
+    vsoc -> roky
+    gsdr -> cozn
+    Mrkbvyddo. -> Ingxruzzk.
 
 ```
 </summary>
 
 ```
 60% match with a shift of 10.
-	Dro -> The
-	combod -> secret
-	vsoc -> lies
-	gsdr -> with
-	Mrkbvyddo. -> Charlotte.
+    Dro -> The
+    combod -> secret
+    vsoc -> lies
+    gsdr -> with
+    Mrkbvyddo. -> Charlotte.
 
 20% match with a shift of 17.
-	Dro -> Max
-	combod -> lxvkxm
-	vsoc -> ebxl
-	gsdr -> pbma
-	Mrkbvyddo. -> Vatkehmmx.
+    Dro -> Max
+    combod -> lxvkxm
+    vsoc -> ebxl
+    gsdr -> pbma
+    Mrkbvyddo. -> Vatkehmmx.
 ```
 </details></td></tr></tbody></table>
 
@@ -982,46 +982,46 @@ The secret lies with Charlotte.
 
 ```typescript
 class HistoryVariable {
-	private readonly history = [];
+    private readonly history = [];
 
-	public constructor(initialValue?) {
-		this.history.push(initialValue);
-	}
+    public constructor(initialValue?) {
+        this.history.push(initialValue);
+    }
 
-	public setValue(value) {
-		this.history.push(value);
-	}
+    public setValue(value) {
+        this.history.push(value);
+    }
 
-	public getValue(index?) {
+    public getValue(index?) {
 ```
 </summary>
 
 ```typescript
-		if (index !== undefined) {
-			if (index < 0) {
-				// A negative index starts from the end
-				return this.history[(this.history.length - 1) + index];
-			} else {
-				// A positive index or zero starts from the beginning
-				return this.history[index];
-			}
-		} else {
-			// No index returns the current value
-			return this.history[this.history.length - 1];
-		}
-	}
+        if (index !== undefined) {
+            if (index < 0) {
+                // A negative index starts from the end
+                return this.history[(this.history.length - 1) + index];
+            } else {
+                // A positive index or zero starts from the beginning
+                return this.history[index];
+            }
+        } else {
+            // No index returns the current value
+            return this.history[this.history.length - 1];
+        }
+    }
 
-	public getHistory() {
-		return this.history;
-	}
+    public getHistory() {
+        return this.history;
+    }
 
-	public rollback() {
-		if (this.history.length > 0) {
-			this.history.pop();
-		}
+    public rollback() {
+        if (this.history.length > 0) {
+            this.history.pop();
+        }
 
-		return this;
-	}
+        return this;
+    }
 }
 
 const historyVariable = new HistoryVariable("uno");
@@ -1103,15 +1103,15 @@ seis
 const pokemonNames = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate", "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu", "Raichu", "Sandshrew", "Sandslash", "Nidoran", "Nidorina", "Nidoqueen", "Nidorino", "Nidoking", "Clefairy", "Clefable", "Vulpix", "Ninetales", "Jigglypuff", "Wigglytuff", "Zubat", "Golbat", "Oddish", "Gloom", "Vileplume", "Paras", "Parasect", "Venonat", "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck", "Golduck", "Mankey", "Primeape", "Growlithe", "Arcanine", "Poliwag", "Poliwhirl", "Poliwrath", "Abra", "Kadabra", "Alakazam", "Machop", "Machoke", "Machamp", "Bellsprout", "Weepinbell", "Victreebel", "Tentacool", "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash", "Slowpoke", "Slowbro", "Magnemite", "Magneton", "Farfetch'd", "Doduo", "Dodrio", "Seel", "Dewgong", "Grimer", "Muk", "Shellder", "Cloyster", "Gastly", "Haunter", "Gengar", "Onix", "Drowzee", "Hypno", "Krabby", "Kingler", "Voltorb", "Electrode", "Exeggcute", "Exeggutor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan", "Lickitung", "Koffing", "Weezing", "Rhyhorn", "Rhydon", "Chansey", "Tangela", "Kangaskhan", "Horsea", "Seadra", "Goldeen", "Seaking", "Staryu", "Starmie", "Mr. Mime", "Scyther", "Jynx", "Electabuzz", "Magmar", "Pinsir", "Tauros", "Magikarp", "Gyarados", "Lapras", "Ditto", "Eevee", "Vaporeon", "Jolteon", "Flareon", "Porygon", "Omanyte", "Omastar", "Kabuto", "Kabutops", "Aerodactyl", "Snorlax", "Articuno", "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo", "Mew"];
 
 (function play(answer = "Bulbasaur") {
-	console.log(answer);
+    console.log(answer);
 
-	pokemonNames[pokemonNames.indexOf(answer)] = "";
+    pokemonNames[pokemonNames.indexOf(answer)] = "";
 
-	for (const name of pokemonNames) {
-		if (name[0] === answer[answer.length - 1].toUpperCase()) {
-			play(name);
-		}
-	}
+    for (const name of pokemonNames) {
+        if (name[0] === answer[answer.length - 1].toUpperCase()) {
+            play(name);
+        }
+    }
 ```
 </summary>
 
@@ -1253,35 +1253,35 @@ const blocks = [["B", "O"], ["X", "K"], ["D", "Q"], ["C", "P"], ["N", "A"], ["G"
 const words = ["A", "BARK", "BOOK", "TREAT", "COMMON", "SQUAD", "CONFUSE"];
 
 function isWordSpellableWithBlocks(word, blocks) {
-	for (const letter of word) {
-		let letterFound = false;
+    for (const letter of word) {
+        let letterFound = false;
 
-		for (const [index, block] of blocks.entries()) {
-			if (block[0] === letter || block[1] === letter) {
-				blocks[index] = ["", ""];
-				letterFound = true;
+        for (const [index, block] of blocks.entries()) {
+            if (block[0] === letter || block[1] === letter) {
+                blocks[index] = ["", ""];
+                letterFound = true;
 ```
 </summary>
 
 ```typescript
-				break;
-			}
-		}
+                break;
+            }
+        }
 
-		if (letterFound === false) {
-			return false;
-		}
-	}
+        if (letterFound === false) {
+            return false;
+        }
+    }
 
-	return true;
+    return true;
 }
 
 for (const word of words) {
-	if (isWordSpellableWithBlocks(word, [...blocks])) {
-		console.log("The word \"" + word + "\" can be spelled with these blocks.");
-	} else {
-		console.log("The word \"" + word + "\" can NOT be spelled with these blocks.");
-	}
+    if (isWordSpellableWithBlocks(word, [...blocks])) {
+        console.log("The word \"" + word + "\" can be spelled with these blocks.");
+    } else {
+        console.log("The word \"" + word + "\" can NOT be spelled with these blocks.");
+    }
 }
 ```
 </details></td></tr></tbody></table>
@@ -1326,7 +1326,7 @@ import * as fs from "fs";
 import * as path from "path";
 
 const readStream = createInterface({
-	"input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
+    "input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
 });
 
 readStream.on("line", function(word) {
@@ -1334,15 +1334,15 @@ readStream.on("line", function(word) {
 </summary>
 
 ```typescript
-	const lowercaseWord = word.toLowerCase();
+    const lowercaseWord = word.toLowerCase();
 
-	for (let x = 1; x < lowercaseWord.length; x++) {
-		if (lowercaseWord.charCodeAt(x - 1) >= lowercaseWord.charCodeAt(x)) {
-			return;
-		}
-	}
+    for (let x = 1; x < lowercaseWord.length; x++) {
+        if (lowercaseWord.charCodeAt(x - 1) >= lowercaseWord.charCodeAt(x)) {
+            return;
+        }
+    }
 
-	console.log(word);
+    console.log(word);
 });
 ```
 </details></td></tr></tbody></table>
@@ -1476,14 +1476,14 @@ amy
 
 ```typescript
 const potentialPangrams = [
-	"The quick brown fox jumps over the lazy dog.",
-	"Sphinx of black quartz, judge my vow.",
-	"How vexingly quick daft zebras jump!",
-	"The five boxing wizards jump quickly.",
-	"Able was I ere I saw Elba.",
-	"A man, a plan, a canal – Panama.",
-	"Madam, I'm Adam.",
-	"Never odd or even."
+    "The quick brown fox jumps over the lazy dog.",
+    "Sphinx of black quartz, judge my vow.",
+    "How vexingly quick daft zebras jump!",
+    "The five boxing wizards jump quickly.",
+    "Able was I ere I saw Elba.",
+    "A man, a plan, a canal – Panama.",
+    "Madam, I'm Adam.",
+    "Never odd or even."
 ];
 
 function isPangram(string) {
@@ -1491,29 +1491,29 @@ function isPangram(string) {
 </summary>
 
 ```typescript
-	const sanitizedString = string.replace(/\W/g, "").toLowerCase();
+    const sanitizedString = string.replace(/\W/g, "").toLowerCase();
 
-	const letters = { "a": false, "b": false, "c": false, "d": false, "e": false, "f": false, "g": false, "h": false, "i": false, "j": false, "k": false, "l": false, "m": false, "n": false, "o": false, "p": false, "q": false, "r": false, "s": false, "t": false, "u": false, "v": false, "w": false, "x": false, "y": false, "z": false };
+    const letters = { "a": false, "b": false, "c": false, "d": false, "e": false, "f": false, "g": false, "h": false, "i": false, "j": false, "k": false, "l": false, "m": false, "n": false, "o": false, "p": false, "q": false, "r": false, "s": false, "t": false, "u": false, "v": false, "w": false, "x": false, "y": false, "z": false };
 
-	for (const character of sanitizedString) {
-		letters[character] = true;
-	}
+    for (const character of sanitizedString) {
+        letters[character] = true;
+    }
 
-	for (const letter of Object.keys(letters)) {
-		if (letters[letter] === false) {
-			return false;
-		}
-	}
+    for (const letter of Object.keys(letters)) {
+        if (letters[letter] === false) {
+            return false;
+        }
+    }
 
-	return true;
+    return true;
 }
 
 for (const potentialPangram of potentialPangrams) {
-	if (isPangram(potentialPangram)) {
-		console.log("\"" + potentialPangram + "\" is a pangram.");
-	} else {
-		console.log("\"" + potentialPangram + "\" is NOT a pangram.");
-	}
+    if (isPangram(potentialPangram)) {
+        console.log("\"" + potentialPangram + "\" is a pangram.");
+    } else {
+        console.log("\"" + potentialPangram + "\" is NOT a pangram.");
+    }
 }
 ```
 </details></td></tr></tbody></table>
@@ -1556,33 +1556,33 @@ const TAB_SIZE = 4;
 const triangle = [];
 
 for (let x = 0; x < 10; x++) {
-	for (let y = 0; y < x + 1; y++) {
-		if (y === 0) {
-			triangle.push(new Array(x + 1));
+    for (let y = 0; y < x + 1; y++) {
+        if (y === 0) {
+            triangle.push(new Array(x + 1));
 
-			triangle[x][y] = 1;
-		} else if (y === (triangle[x].length - 1)) {
-			triangle[x][y] = 1;
+            triangle[x][y] = 1;
+        } else if (y === (triangle[x].length - 1)) {
+            triangle[x][y] = 1;
 ```
 </summary>
 
 ```typescript
-		} else {
-			triangle[x][y] = triangle[x - 1][y - 1] + triangle[x - 1][y];
-		}
-	}
+        } else {
+            triangle[x][y] = triangle[x - 1][y - 1] + triangle[x - 1][y];
+        }
+    }
 }
 
 const lastRowLength = triangle[triangle.length - 1].length;
 
 for (let x = 0; x < triangle.length; x++) {
-	let row = " ".repeat((lastRowLength - (x + 1)) * (TAB_SIZE / 2));
+    let row = " ".repeat((lastRowLength - (x + 1)) * (TAB_SIZE / 2));
 
-	for (const element of triangle[x]) {
-		row += " ".repeat(TAB_SIZE - element.toString().length) + element;
-	}
+    for (const element of triangle[x]) {
+        row += " ".repeat(TAB_SIZE - element.toString().length) + element;
+    }
 
-	console.log(row);
+    console.log(row);
 }
 ```
 </details></td></tr></tbody></table>
@@ -1621,7 +1621,7 @@ for (let x = 0; x < triangle.length; x++) {
 
 ```typescript
 (function quine() {
-	console.log("(" + quine.toString() + ")();");
+    console.log("(" + quine.toString() + ")();");
 })();
 ```
 </td></tr></tbody></table>
@@ -1654,11 +1654,11 @@ for (let x = 0; x < triangle.length; x++) {
 
 ```typescript
 function computeMaximumCallStackSize() {
-	try {
-		return 1 + computeMaximumCallStackSize();
-	} catch (error) {
-		return 1;
-	}
+    try {
+        return 1 + computeMaximumCallStackSize();
+    } catch (error) {
+        return 1;
+    }
 }
 
 console.log("The recursion limit is: " + computeMaximumCallStackSize());
@@ -1691,7 +1691,7 @@ The recursion limit is: 12550
 
 ```typescript
 function removeDuplicates(array) {
-	return [...new Set(array)];
+    return [...new Set(array)];
 }
 
 console.log(removeDuplicates([1, 2, 3, 4, 1, 2, 3, 4]));
@@ -1732,7 +1732,7 @@ import * as fs from "fs";
 import * as path from "path";
 
 const readStream = createInterface({
-	"input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
+    "input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
 });
 
 readStream.on("line", function(word) {
@@ -1740,13 +1740,13 @@ readStream.on("line", function(word) {
 </summary>
 
 ```typescript
-	const lowercaseWord = word.toLowerCase();
+    const lowercaseWord = word.toLowerCase();
 
-	if (lowercaseWord !== lowercaseWord.split("").reverse().join("")) {
-		return;
-	}
+    if (lowercaseWord !== lowercaseWord.split("").reverse().join("")) {
+        return;
+    }
 
-	console.log(word);
+    console.log(word);
 });
 ```
 </details></td></tr></tbody></table>
@@ -1881,34 +1881,34 @@ l
 
 ```typescript
 const input = [
-	[1, 2, 3, 4, 5, 6, 7, 8, 7, 6, 5, 4, 3, 2, 1],
-	[1.5, 0.5, 3.5, 2.5, 5.5, 4.5, 7.5, 6.5]
+    [1, 2, 3, 4, 5, 6, 7, 8, 7, 6, 5, 4, 3, 2, 1],
+    [1.5, 0.5, 3.5, 2.5, 5.5, 4.5, 7.5, 6.5]
 ];
 
 const barCharacters = "▁▂▃▄▅▆▇█";
 
 function sparkline(dataset) {
-	let line = "";
+    let line = "";
 
-	const min = Math.min(...dataset);
-	const max = Math.max(...dataset);
+    const min = Math.min(...dataset);
+    const max = Math.max(...dataset);
 ```
 </summary>
 
 ```typescript
-	const range = max - min;
+    const range = max - min;
 
-	for (const datum of dataset) {
-		line += barCharacters.charAt(Math.ceil((datum - min) / range * (barCharacters.length - 1)));
-	}
+    for (const datum of dataset) {
+        line += barCharacters.charAt(Math.ceil((datum - min) / range * (barCharacters.length - 1)));
+    }
 
-	return line;
+    return line;
 }
 
 for (const dataset of input) {
-	console.log("Input: " + dataset.join(", "));
+    console.log("Input: " + dataset.join(", "));
 
-	console.log(sparkline(dataset) + "\n");
+    console.log(sparkline(dataset) + "\n");
 }
 ```
 </details></td></tr></tbody></table>
@@ -1993,7 +1993,7 @@ import * as fs from "fs";
 import * as path from "path";
 
 const readStream = createInterface({
-	"input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
+    "input": fs.createReadStream(path.join("/", "usr", "share", "dict", "words"))
 });
 
 const textonyms = {};
@@ -2003,38 +2003,38 @@ const textonyms = {};
 ```typescript
 
 const keypad = {
-	"a": 2, "b": 2, "c": 2,
-	"d": 3, "e": 3, "f": 3,
-	"g": 4, "h": 4, "i": 4,
-	"j": 5, "k": 5, "l": 5,
-	"m": 6, "n": 6, "o": 6,
-	"p": 7, "q": 7, "r": 7, "s": 7,
-	"t": 8, "u": 8, "v": 8,
-	"w": 9, "x": 9, "y": 9, "z": 9
+    "a": 2, "b": 2, "c": 2,
+    "d": 3, "e": 3, "f": 3,
+    "g": 4, "h": 4, "i": 4,
+    "j": 5, "k": 5, "l": 5,
+    "m": 6, "n": 6, "o": 6,
+    "p": 7, "q": 7, "r": 7, "s": 7,
+    "t": 8, "u": 8, "v": 8,
+    "w": 9, "x": 9, "y": 9, "z": 9
 };
 
 readStream.on("line", function(word) {
-	const lowercaseWord = word.toLowerCase();
+    const lowercaseWord = word.toLowerCase();
 
-	let key = "";
+    let key = "";
 
-	for (const letter of lowercaseWord) {
-		key += keypad[letter];
-	}
+    for (const letter of lowercaseWord) {
+        key += keypad[letter];
+    }
 
-	if (textonyms[key] !== undefined) {
-		textonyms[key].push(word);
-	} else {
-		textonyms[key] = [word];
-	}
+    if (textonyms[key] !== undefined) {
+        textonyms[key].push(word);
+    } else {
+        textonyms[key] = [word];
+    }
 });
 
 readStream.on("close", function() {
-	for (const [key, value] of Object.entries(textonyms)) {
-		if ((value as string[]).length > 1) {
-			console.log(key + " spells the words: " + (value as string[]).join(", "));
-		}
-	}
+    for (const [key, value] of Object.entries(textonyms)) {
+        if ((value as string[]).length > 1) {
+            console.log(key + " spells the words: " + (value as string[]).join(", "));
+        }
+    }
 });
 ```
 </details></td></tr></tbody></table>
@@ -2211,17 +2211,17 @@ readStream.on("close", function() {
 
 ```typescript
 function isPrime(number) {
-	if (number === 1) {
-		return false;
-	}
+    if (number === 1) {
+        return false;
+    }
 
-	for (let x = 2; x <= Math.sqrt(number); x++) {
-		if (number % x === 0) {
-			return false;
-		}
-	}
+    for (let x = 2; x <= Math.sqrt(number); x++) {
+        if (number % x === 0) {
+            return false;
+        }
+    }
 
-	return true;
+    return true;
 ```
 </summary>
 
@@ -2229,75 +2229,75 @@ function isPrime(number) {
 }
 
 function ulamSpiral(dimension) {
-	if (dimension % 2 === 0) {
-		throw new Error("`dimension` must be odd.");
-	}
+    if (dimension % 2 === 0) {
+        throw new Error("`dimension` must be odd.");
+    }
 
-	const primes = [];
+    const primes = [];
 
-	for (let x = 1; x <= dimension ** 2; x++) {
-		if (isPrime(x)) {
-			primes.push("*");
-		} else {
-			primes.push(" ");
-		}
-	}
+    for (let x = 1; x <= dimension ** 2; x++) {
+        if (isPrime(x)) {
+            primes.push("*");
+        } else {
+            primes.push(" ");
+        }
+    }
 
-	const spiral = new Array(dimension).fill("").map(() => new Array(dimension).fill(""));
+    const spiral = new Array(dimension).fill("").map(() => new Array(dimension).fill(""));
 
-	let direction;
-	let x = dimension - 1;
-	let y = dimension - 1;
+    let direction;
+    let x = dimension - 1;
+    let y = dimension - 1;
 
-	for (let index = (dimension ** 2) - 1; index >= 0; index--) {
-		spiral[x][y] = primes[index];
+    for (let index = (dimension ** 2) - 1; index >= 0; index--) {
+        spiral[x][y] = primes[index];
 
-		switch (direction) {
-			case "up":
-				if (x === 0 || spiral[x - 1][y] !== "") {
-					direction = "right";
-					y += 1;
-				} else {
-					x -= 1;
-				}
-				break;
-			case "down":
-				if (x === dimension - 1 || spiral[x + 1][y] !== "") {
-					direction = "left";
-					y -= 1;
-				} else {
-					x += 1;
-				}
-				break;
-			default:
-			case "left":
-				if (y === 0 || spiral[x][y - 1] !== "") {
-					direction = "up";
-					x -= 1;
-				} else {
-					y -= 1;
-				}
-				break;
-			case "right":
-				if (y === dimension - 1 || spiral[x][y + 1] !== "") {
-					direction = "down";
-					x += 1;
-				} else {
-					y += 1;
-				}
-				break;
-		}
-	}
+        switch (direction) {
+            case "up":
+                if (x === 0 || spiral[x - 1][y] !== "") {
+                    direction = "right";
+                    y += 1;
+                } else {
+                    x -= 1;
+                }
+                break;
+            case "down":
+                if (x === dimension - 1 || spiral[x + 1][y] !== "") {
+                    direction = "left";
+                    y -= 1;
+                } else {
+                    x += 1;
+                }
+                break;
+            default:
+            case "left":
+                if (y === 0 || spiral[x][y - 1] !== "") {
+                    direction = "up";
+                    x -= 1;
+                } else {
+                    y -= 1;
+                }
+                break;
+            case "right":
+                if (y === dimension - 1 || spiral[x][y + 1] !== "") {
+                    direction = "down";
+                    x += 1;
+                } else {
+                    y += 1;
+                }
+                break;
+        }
+    }
 
-	for (const row of spiral) {
-		let line = "";
+    for (const row of spiral) {
+        let line = "";
 
-		for (const column of row) {
-			line += column;
-		}
+        for (const column of row) {
+            line += column;
+        }
 
-		console.log(line);
-	}
+        console.log(line);
+    }
 }
 
 ulamSpiral(9);
@@ -2309,15 +2309,15 @@ ulamSpiral(9);
 <table><tbody><tr></tr><tr><td><strong>Sample Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
 
 ```
-    * *  
- *     * 
-* *   *  
-   * * * 
+    * *
+ *     *
+* *   *
+   * * *
   *  ** *
- * *     
-*   *    
- *   *   
-*     *  
+ * *
+*   *
+ *   *
+*     *
 ```
 </td></tr></tbody></table>
 
