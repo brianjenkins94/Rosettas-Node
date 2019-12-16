@@ -379,6 +379,7 @@
 -
 
 #
+
 #### Textonyms
 
 -   Use a dictionary to find all of the words that are [textonyms](https://en.wikipedia.org/wiki/Predictive_text#Textonyms).
@@ -443,7 +444,7 @@
 
 #### Ulam spiral
 
-- Write a program that, given a dimension, draws an [Ulam spiral](https://en.wikipedia.org/wiki/Ulam_spiral).
+-   Write a program that, given a dimension, draws an [Ulam spiral](https://en.wikipedia.org/wiki/Ulam_spiral).
     -   An Ulam spiral is a graphical depiction of the set of prime numbers constructed by writing the positive integers in a square spiral and specially marking the prime numbers.
 
 @insert discussThisProblem("brianjenkins94", "Rosettas-Node", "Ulam spiral");

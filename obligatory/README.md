@@ -82,6 +82,7 @@
 -   <https://en.wikipedia.org/wiki/Leap_year>
 
 #
+
 #### Palindrome Checker
 
 -   Write a program that checks whether a given string is a [palindrome](https://en.wikipedia.org/wiki/Palindrome).

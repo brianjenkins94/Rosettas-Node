@@ -39,7 +39,7 @@
 
 **References:**
 
--   http://www.rosettacode.org/wiki/Chaocipher
+-   <http://www.rosettacode.org/wiki/Chaocipher>
 
 #
 
