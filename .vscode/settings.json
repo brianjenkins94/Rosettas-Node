@@ -6,10 +6,6 @@
 		"editor.formatOnSave": true
 	},
 	"editor.formatOnSave": false,
-	"eslint.validate": [
-		{ "language": "javascript", "autoFix": true },
-		{ "language": "typescript", "autoFix": true }
-	],
 	"files.insertFinalNewline": true,
 	"files.trimTrailingWhitespace": true,
 	"javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
