@@ -23,9 +23,7 @@
 		// Configured
 		"@typescript-eslint/indent": ["warn", "tab"], // Indent using tabs
 		"@typescript-eslint/no-misused-promises": ["warn", { "checksVoidReturn": false }], // No promises in conditionals
-		"@typescript-eslint/no-unnecessary-condition": ["warn", { "ignoreRhs": true }], // Allow boolean operators for short-circuiting
-		"@typescript-eslint/space-before-function-paren": ["error", "never"], // No space before function parentheses
-		"@typescript-eslint/strict-boolean-expressions": ["warn", { "ignoreRhs": true }], // Allow boolean operators for short-circuiting
+		"@typescript-eslint/space-before-function-paren": ["error", { "anonymous": "never", "named": "never", "asyncArrow": "always" }], // No space before function parentheses, except for async arrow
 		"array-bracket-newline": ["warn", "consistent"], // Per-array consistent formatting
 		"array-element-newline": ["warn", "consistent"], // Per-array consistent formatting
 		"dot-location": ["warn", "property"], // Dot on the next line for chained functions
@@ -42,17 +40,22 @@
 
 		// Warn
 		"@typescript-eslint/no-extra-parens": ["warn"],
+		"@typescript-eslint/no-unnecessary-condition": ["warn"],
 		"@typescript-eslint/no-unused-vars": ["warn"],
+		"@typescript-eslint/strict-boolean-expressions": ["warn"],
 		"no-empty": ["warn"],
 		"no-param-reassign": ["warn"],
 		"no-shadow": ["warn"],
 		"sort-keys": ["warn"],
 
 		// Disabled
+		"@typescript-eslint/dot-notation": "off",
 		"@typescript-eslint/explicit-function-return-type": "off",
 		"@typescript-eslint/explicit-module-boundary-types": "off",
+		"@typescript-eslint/no-dynamic-delete": "off",
 		"@typescript-eslint/no-floating-promises": "off",
 		"@typescript-eslint/no-magic-numbers": "off",
+		"@typescript-eslint/no-unsafe-assignment": "off",
 		"@typescript-eslint/no-unsafe-call": "off",
 		"@typescript-eslint/no-unsafe-member-access": "off",
 		"@typescript-eslint/no-unsafe-return": "off",
@@ -78,6 +81,7 @@
 		"multiline-comment-style": "off",
 		"multiline-ternary": "off",
 		"newline-per-chained-call": "off",
+		"no-async-promise-executor": "off",
 		"no-await-in-loop": "off",
 		"no-case-declarations": "off",
 		"no-console": "off",
